@@ -1,0 +1,40 @@
+/* 모든 margin 과 padding 이 0인 상태 및 box-sizing 설정하고 디자인 시작 */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* content-box */
+}
+
+/* margin 중첩시 그냥 10px로 적용 */
+.s1{
+    font-size: 16px;
+    border: 2px solid black;
+    margin: 10px;
+    padding: 5px;
+    display: block; /* display 를 사용하여 block, inline, inline-block 사용으로 변경 가능 */
+}
+
+.s2{
+    font-size: 16px;
+    border: 2px solid black;
+    margin: 10px;
+    padding: 5px;
+    display: inline-block;
+}
+
+.boxsizing{
+    width: 300px;
+    height: 100px;
+    border: 1px solid black;
+    margin: 0 auto;
+    /* margin: 0px 10px 20px 30px; */
+    padding: 10px;
+}
+
+.boxsizing2{
+    width: 300px;
+    height: 100px;
+    border: 1px solid black;
+    margin: 0 auto;
+    padding: 50px;
+}

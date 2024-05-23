@@ -1,0 +1,33 @@
+/* p Tag 는 잘 안사용함, 모든 p Tag 가 바뀜*/ 
+p {
+    font-style: italic;
+}
+
+/* 해당 class 의 이름에 적용, 스타일링에 보통 사용, 그룹 */
+.classSelect{
+    color: dodgerblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700; /* font 에서 지원해 줘야 가능 */
+}
+
+/* 해당 id 의 이름에 적용, 해당 위치 지정 */
+#idSelect{
+    color: green;
+    text-decoration: underline;
+}
+
+.s1{
+    text-transform: uppercase; /* capitalize 첫문자만 대문자 */
+    letter-spacing: 4px; /* 자간 간격 */
+    word-spacing: 16px; /* 단어간 간격 */
+    border: 1px solid gray;
+    padding: 5px 10px;
+    background-color: rgba(95, 158, 160, 0.5);
+}
+
+/* 전체 적용 */
+*{
+    background-color: aquamarine;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Javascript page</h1>
+    <div>
+        <p>이것은 p태그 요소입니다.</p>
+    </div>
+    <script>
+
+        /* var 중복 선언 허용 => let, const 사용 추천 */
+        // var 는 전역변수
+        var x = 10;
+        console.log(x);
+        var x = 100; // var는 이중선언 허용
+        console.log(x);
+
+        y = 1000; // 변수의 호이스팅(hoisting)
+        console.log(y);
+
+        let a = 1;
+        //let a = 2; // 에러!! let과 const는 더 이상 이중선언을 허용하지 않음
+
+        b = 2; // 전역변수
+        console.log(b);
+
+        function displayNumber() {
+            console.log(z);
+            /* var 는 공식적으로 함수형 스코프 */
+            var z = 5; // 호이스팅으로 에러 안남
+            // let z = 5; // console.log(z) 의 위 라인으로 올려야 에러가 안남
+
+            if (z >= 10) {
+                let w; // 지역 변수
+                console.log("z는 두자리 숫자")
+            }
+        }
+
+        displayNumber();
+
+        // let, const 정리
+        // 1. 호이스팅된 변수의 선언에는 사용할 수 없음.
+        //    이유는 let과 const가 블럭스코프(제한된 스코프)를 가지므로 호이스팅된
+        //    최상위스코프를 가질 수 없기 때문
+        // 2. 재선언 안됨
+        //    let v1 = 10;
+        //    let v1 = 100; // 재선언 에러
+        // 3. 재할당은 let은 가능, const는 불가능
+        //    let v2 = 1;
+        //    v2 = 2;
+        //    const v3 = 1;
+        //    v3 = 2; // 에러, 재할당 불가능
+
+
+
+    </script>
+    
+</body>
+</html>
