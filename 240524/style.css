@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;  /* viewport 부모의 영역 가로 전체 */
+    height: 100vh; /* viewport 부모의 영역 세로 전체 */
+    /* display: flex;           */ /* flex box 로 적용 */
+    /* justify-content: center; */ /* 컨테이너의 부모에 기재, 주축 방향 정렬 방법 */
+    /* align-items: center;     */ /* 컨테이너의 부모에 기재, 교차축 방향 정렬 방법 */
+}
+
+/* flex 사용 */
+/*
+.container {
+    background-color: aquamarine;
+    width: 1200px;
+    height: 500px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+*/
+
+/* grid 상용 */
+/*
+.container {
+    background-color: aquamarine;
+    width: 1200px;
+    height: 500px;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+*/
+
+.container {
+    position: absolute;
+    background-color: aquamarine;
+
+    top: 50%; left: 50%; /* Left Top 모서리 위치 기준 부모의 각각 50% */
+    transform: translate(-50%, -50%); /* 컨테이너의 50% */
+    
+    width: 1200px;
+    height: 500px;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.namecard {
+    width: 250px;
+    height: 150px;
+    margin: 0 20px;
+    padding: 20px;
+}
+
+.heading {
+    font-size: 24px;
+    color: dodgerblue;
+    margin-bottom: 30px;
+}
+
+.c1 {background-color: lightgreen;}
+.c2 {background-color: teal;}
+.c3 {background-color: lightgray;}
+.c4 {background-color: khaki;}
