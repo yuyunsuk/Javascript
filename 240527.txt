@@ -1,0 +1,110 @@
+※ 프로젝트 관련 내용 설명 및 팀내 역할 가이드 설명
+
+※ 자바스크립트 => 이벤트 & REST API 관련 처리
+
+[프런트 구조]
+Gameshop
+    index.html
+    singleProduct.html
+    mypage.html
+    login.html
+    cart.html
+    js 폴더
+        index.js
+        singleProduct.js
+        mypage.js
+        login.js
+        cart.js
+    css 폴더
+        style.css
+
+1. gameshop DB => games 데이터 확인
+2. SpringBoot 구동 => products
+3. gameshop.html 및 css, js, axios 사용
+4. index.js 에서 dom 구조로 자동 태그 입력
+
+[시간에 따라 작동]
+쓰레드 2개 작동시 같이 끝나는 경우 동기
+비동기 => 서로 다르게 작동, 쓰레드 멈추는 코드 내장,
+              진행에 따른 값 필요시 멈추고 대기하는 경우.
+
+1. 동기 => 바로 값을 리턴
+2. 비동기 => REST API 를 수행하기 위한 비동기 Axios
+                 라이브러리 import 사용
+
+Promise 객체 : 비동기 작업이 맞이할 미래의 완료 또는
+                   실패와 그 결과 값을 나타냅니다.
+
+Promise 는 자바스크립트에서 제공하는 비동기를 간편하게
+           처리할 수 있게 도와주는 객체이다.
+
+Promise 객체, . (마침표)로 연결. 연결방식으로 비동기 구현
+① Rest API 송신 후 멈춤
+② wait
+③ JSON 으로 도착하면, 실제 객체로 변환
+④ wait
+⑤ 실제 데이터 획득
+
+①->③, ③->⑤ Promise
+
+1. 자바스크립트는 비동기 방식을 구현하기 위해서 promise 객체를 사용
+2. Promise 는 Promise 끼리만 동작할 수 있음
+
+get 으로 보냅
+get.
+처리. try catch
+처리.
+처리.
+
+중간에 예외처리가 필요한 경우 중간에 넣음
+try catch 사용
+
+구글 서치 => javascript CDN
+CDN은 콘텐츠를 분산하여 저장한 다음, 요청할 때마다
+신속하게 전송해 주는 서버 집단을 말합니다
+
+CDN => 다운받아 서버에서 작동하도록 해야 함(나중에)
+
+https://www.jsdelivr.com/
+=> search => axios => Script 복사 사용
+
+※ 동기, 비동기 설명
+1. 스택 => 할일
+   => 비동기인 경우 비동기 스택에 담아놓고 다음 일 진행
+2. 비동기 스택 진행
+
+[Security 관련 수업]
+1. pom.xml에 spring security 의존성 추가
+2. config 폴더에 SecurityConfig, WebConfig 추가
+3. controller 폴더에 UserController 추가
+4. dto 폴더에 UserDto 추가
+5. exception 폴더에 My~ 파일 2개 추가
+6. model 폴더에 User 추가
+7. repository 폴더에 UserRepository 추가
+8. service 폴더에 UserDetailService, UserService 추가
+
+ > dependency 추가
+1. <dependency> 의존성 추가
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-starter-security</artifactId>
+</dependency>
+
+2. Config 2개를 폴더 안에 추가
+   - SecurityConfig, WebConfig 추가
+3. UserController 추가
+4. dto 폴더에 UserDto 추가
+5. exception 폴더에 My~ 파일 2개 추가
+6. model user 추가
+7. repository 폴더에 UserRepository 추가
+8. service 폴더에 UserDetailService, UserService 추가
+
+[DOM 구조]
+div content
+  div.game
+    img
+    <p></p>
+    <p></p>
+    <p></p>
+  </div>
+</div>

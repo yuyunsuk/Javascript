@@ -10,6 +10,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Poppins, GmarketSansMedium;
+    text-decoration: none;
+    color: inherit;
 }
 
 /*
@@ -57,7 +59,7 @@ em 단위  => 부모의 폰트 사이즈 대비 비율
     text-align: center;
 
     /* 블록이 아닌 text 의 위아래 중앙 배치는 line-height(줄간격) 사용 */
-    line-height: 46px;
+    line-height: 50px;
 
     color: white;
     font-weight: 700; /* 폰트 굵기 */
@@ -90,7 +92,14 @@ em 단위  => 부모의 폰트 사이즈 대비 비율
     border-radius: 5px;
     background-color: white;
     box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2); /* 주의 => 쉼표가 없음 */
+    transition: all 0.2s ease;
     padding: 20px;
+}
+
+.game:hover {
+    box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.4);
+    transform: translate(0px, -5px); /* 위로 5px 올라가도록 */
+    cursor: pointer;
 }
 
 .footer {
@@ -106,4 +115,55 @@ em 단위  => 부모의 폰트 사이즈 대비 비율
 
 .content p { /* 자손 */
     margin: 0 0 5px 10px; /* 위 오른쪽 아래 왼쪽 순서 */
+}
+
+.product {
+    width: 100%;
+    background-color: khaki;
+    padding: 20px;
+}
+
+.product p {
+    margin: 10px 20px;
+}
+
+.login {
+    height: 300px;
+    background-color: khaki;
+    display: flex;
+    align-items: center;
+}
+
+.login-box {
+    width: 450px;
+    display: grid;
+    grid-template-columns: 40% 60%; /* 갭 포함 적용됨 */
+    /* grid-template-columns: 4fr 6fr; => 갭 포함 안됨 */
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 20px 0; /* 세로, 가로 */
+    margin-left: 30px;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
+    font-size: 1.3rem;
+    border-radius: 5px;
+}
+
+.loginBtn {
+    width: 100px;
+    height: 40px;
+    background-color: dodgerblue;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.loginBtn:hover {
+    background-color: lightblue;
+    color: dodgerblue;
 }

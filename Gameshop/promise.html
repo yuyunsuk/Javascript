@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 비동기 작업 수행
+
+        // Promise 객체 선언법
+        const success = true;
+        const promise = new Promise((resolve, reject)=>{
+            if (success) {
+                resolve("성공"); /* 함수 호출만 의미가 있음 */
+            } else {
+                reject("실패"); /* 함수 호출만 의미가 있음 */
+            }
+            /* return 은 의미가 없음 */
+            return "리턴구문은 처리될까요?? 안됩니다."
+        });
+
+        // Promise 객체 사용
+        promise
+        .then((response)=>{
+            console.log(response);
+            // then 구문에서 리턴한 데이터는 다음 then 구문의 매개변수로 전달됨
+            return "성공 리턴";
+        })
+        .then((response)=>{
+            console.log(response);
+        })
+        .catch((error)=>{
+            console.log(error);
+        });
+    </script>
+</body>
+</html>

@@ -13,7 +13,7 @@ const url = "http://localhost:8080/products";
 axios.get(url) /* get 방식으로 보냄 */
 .then((response)=>{ /* 받은 데이터 처리, 매개변수 용도는  */
     console.log("응답 Response: ", response);
-    displayProducts(response.data);
+    displayProducts(response.data); /* 아래 함수 사용 */
 })
 .catch((response)=>{
     console.log("에러 발생: ", error)
@@ -23,15 +23,16 @@ function displayProducts(gameData) {
     console.log(gameData.length);
     if (gameData.length > 0) {
         const content = document.querySelector(".content");
+        
         gameData.forEach((data)=>{
             const game = document.createElement("div");
-            game.classList.add("game");
             content.appendChild(game);
+            game.classList.add("game");
 
             const img = document.createElement("img");
+            game.appendChild(img);
             img.classList.add("image");
             img.src = data.image;
-            game.appendChild(img);
 
             const title = document.createElement("p");
             const genre = document.createElement("p");
@@ -42,6 +43,11 @@ function displayProducts(gameData) {
             game.appendChild(title);
             game.appendChild(genre);
             game.appendChild(price);
+
+            game.addEventListener("click", ()=>{
+                window.location.href = "singleProduct.html?id=" + data.id;
+            })
+
         })
     }
 
