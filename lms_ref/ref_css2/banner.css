@@ -1,0 +1,30 @@
+.top_banner {
+    position: relative;
+}
+
+.top_banner .bnrclose {
+    position: absolute;
+    z-index: 9999999;
+    top: 15px;
+    right: 20px;
+}
+
+.top_banner .bnrclose span {
+    background: url('/asset/img/pop_check.png')no-repeat left center;
+    background-size: 15px;
+    padding-left: 20px;
+    margin-right: 20px;
+}
+
+.top_banner figure {
+    width: 100%;
+}
+
+.top_banner figure img {
+    width: 100%;
+    height: 53px;
+}
+
+.top_banner .bnrclose img {
+    width: 20px;
+}

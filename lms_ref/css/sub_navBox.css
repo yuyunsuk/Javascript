@@ -1,0 +1,87 @@
+:root {
+  --skin01: #317abe;
+  --skin02: #30619c;
+  --skin03: #317abe; /* 변수값 설정 */
+  --skin-bg: #f5f9fd;
+  --skin-bg2: #d6dee9;
+  --ft-color: #00cccc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul, ol, li, dl, dd {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+  word-break: break-all
+}
+a:hover {
+  text-decoration: none;
+}
+
+/* Layout */
+.content_wrap { /* 네비게이션 링크 박스 안쪽 컨텐츠 랩 */
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* 왼쪽 네비박스 css */
+
+.sub_navBox { /* 네비게이션 링크 박스 */
+  width: 330px;
+  float: left;
+}
+
+.nav_tit { /* 네비게이션 타이틀 */
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  color: #000;
+}
+
+.sub_navBoxIn { /* 네비게이션 링크 박스 안쪽 */
+  border-radius: 15px;
+  border: 1px solid #dcdcdc;
+  padding: 20px;
+}
+
+/* <ul> 태그: 순서가 없는 HTML 리스트(list) 정의 */
+.sub_nav {}
+
+/* :not(:last-of-type): 이 중에서 마지막 자식이 아닌 요소들 선택 */
+.sub_nav>li:not(:last-of-type) {
+  margin-bottom: 5px;
+}
+
+.sub_nav>li>a { /* 앵커 테그[하이퍼링크를 걸어주는 태그] */
+  /* display: inline-block; */
+  width: 100%;
+  height: 100%;
+  padding-left: 29px;
+  line-height: 49px;
+  border-radius: 5px;
+  background-color: #e6e7eb;
+  font-size: 20px;
+  
+  display: flex;
+  justify-content: space-between;
+  padding-right: 29px;
+}
+
+/* <a> 태그들 중에서, 마우스가 호버(hover)된 상태 */
+/* .active 클래스가 지정된 요소들의 하위에 있는 모든 <a> 태그들 */
+.sub_nav>li>a:hover, .sub_nav>li.active a {
+  background-color: var(--skin03);
+  color: #fff;
+}
+
+/* EOD : sub_Layout */

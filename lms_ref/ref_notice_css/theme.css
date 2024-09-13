@@ -1,0 +1,168 @@
+.rounded-4 { border-radius: 0.4rem}
+.rounded-5 { border-radius: 0.5rem}
+.min-vh-50 { min-height: 50vh !important;}
+
+/* 동록 버튼 */
+.btn-new {
+    color: #fff;
+    background-color: #546fb6;
+    border-color: #546fb6;
+}
+.btn-new:hover {
+    color: #fff;
+    background-color: #448aca;
+    border-color: #448aca;
+}
+
+/* 수정 버튼 */
+.btn-save {
+    color: #fff;
+    background-color: #546fb6;
+    border-color: #546fb6;
+}
+
+.btn-save:hover {
+    color: #fff;
+    background-color: #448aca;
+    border-color: #448aca;
+}
+
+/* 삭제 버튼 */
+.btn-delete {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+.btn-delete:hover {
+    color: #fff;
+    background-color: #bb2d3b;
+    border-color: #b02a37;
+}
+
+/* 목록 버튼 */
+.btn-list {
+    color: #fff;
+    background-color: #333;
+    border-color: #333;
+}
+.btn-list:hover {
+    color: #fff;
+    background-color: #111;
+    border-color: #111;
+}
+
+/* 작업 버튼 */
+.btn-job {
+    color: #000;
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+.btn-job:hover {
+    color: #000;
+    background-color: #ffca2c;
+    border-color: #ffc720;
+}
+
+.form-box { border-bottom: 1px solid #e4e4e4 !important; border-right: 1px solid #e4e4e4 !important; vertical-align: middle; padding: 0.5em; line-height: 35px;  }
+.input-layout >  .form-control, .form-select{width:auto}
+.detail-form > .row div:last-child {border-right: 0 !important;}
+.detail-form > .row:first-child {border-top: 1px solid #595959;}
+.detail-form .normal-row {border-top: 0px solid #e4e4e4  !important;}
+.detail-form .form-switch {padding-top: 4px}
+.col-form-label { background-color: #f9f9f9 !important; border-bottom: 1px solid #e4e4e4 !important; border-right: 1px solid #e4e4e4 !important; vertical-align: middle; padding: 0.5rem; font-weight: normal; vertical-align: middle;padding-top: 0.75rem;min-height: 54px  }
+.form-box .form-check-input { margin-top: 10px !important;}
+.text-color-red { color:red}
+
+/* hide table caption*/
+table caption {display: none}
+
+/* datetime column width */
+.w-dt {width:11rem}
+.hasDatepicker{width:7rem}
+/* date width */
+.w-d {width:7rem}
+.w-h {width:5rem}
+
+
+.w-1 {width:1rem}
+.w-2 {width:2rem}
+.w-3 {width:3rem}
+.w-4 {width:4rem}
+.w-5 {width:5rem}
+.w-6 {width:6rem}
+.w-7 {width:7rem}
+.w-8 {width:8rem}
+.w-9 {width:9rem}
+
+
+/** jstree leaf icon */
+
+.jstree-leaf > .jstree-anchor > .jstree-themeicon {
+    background-image: url(/images/admin/jstree-leaf.png) !important;
+}
+
+.jstree-node > .jstree-anchor > .jstree-themeicon {
+    background-image: url(/images/admin/jstree-node.png);
+}
+
+.jstree { overflow: auto}
+
+
+.jstree-themeicon {
+    background-position: 4px 4px !important;
+    background-size: 16px 16px !important;
+}
+
+.tree-icon {
+    background-position: 4px 4px !important;
+    background-size: 16px 16px !important;
+    background-repeat: no-repeat;
+    padding-left : 24px;
+}
+
+.off {
+    opacity: 50%;
+}
+
+.menu-type-B, .jstree-node > .jstree-anchor > .menu-type-B {
+    background-image: url(/images/admin/menu-type-board.png) !important;
+}
+
+
+.menu-type-G, .jstree-node > .jstree-anchor > .menu-type-G {
+    background-image: url(/images/admin/menu-type-pgm.png) !important;
+}
+
+.menu-type-L, .jstree-node > .jstree-anchor > .menu-type-L {
+    background-image: url(/images/admin/menu-type-link.png) !important;
+}
+
+.menu-type-P, .jstree-node > .jstree-anchor > .menu-type-P {
+    background-image: url(/images/admin/menu-type-page.png) !important;
+}
+
+.menu-type-X, .jstree-node > .jstree-anchor > .menu-type-X {
+    background-image: url(/images/admin/menu-type-ext.png) !important;
+}
+
+
+.page-type-H, .jstree-node > .jstree-anchor > .page-type-H {
+    background-image: url(/images/admin/page-type-html.png) !important;
+}
+
+.page-type-P, .jstree-node > .jstree-anchor > .page-type-P {
+    background-image: url(/images/admin/page-type-pdf.png) !important;
+}
+
+.page-type-W, .jstree-node > .jstree-anchor > .page-type-W {
+    background-image: url(/images/admin/page-type-widget.png) !important;
+}
+
+
+/** grid-stack-item-content border */
+.grid-stack>.grid-stack-item>.grid-stack-item-content {vertical-align: middle;  border: 1px solid #dcdee3; border-radius: 8px; background-color: #fff;}
+
+.h-25p { height: 25%}
+.h-50p { height: 50%}
+.h-75p { height: 75%}
+.h-40p { height: 40%}

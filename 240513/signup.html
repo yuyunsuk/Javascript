@@ -1,0 +1,62 @@
+<!-- signup.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<body>
+    <div>
+        <h2>회원가입</h2>
+        <!-- <br> 줄바꿈 -->
+        <input type="text"> 텍스트 또는 숫자, 기호작성 타입 <br>
+        <input type="number"> 숫자 입력 타입 (type=number) <br>
+        <input type="password"> 비밀번호 입력 타입 (type=password) <br>
+        <input type="email" required> 이메일 입력 타입 (type=password) <br>
+        <input type="date"> 날짜 선택 타입 (type=date) <br>
+        <input type="month"> 년도와 월만 선택 타입 (type=month) <br>
+        <input type="time"> 시간 선택 타입 (type=time) <br>
+        <input type="week"> 주 선택 타입 (type=week) <br>
+        <input type="datetime-local"> 시간 선택 타입 (type=datetime-local) <br>
+        <input type="hidden"> 데이터를 화면 표시 없이 저장 관리 타입 (type=hidden) <br>
+        <input type="file"> 파일선택 타입 (type=file) <br>
+
+        체크박스 타입 (type=checkbox) <br> <!-- 값 전달 배열, 여러개 선택 가능-->
+        <input type="checkbox" name="interest" value="게임"> 게임
+        <input type="checkbox" name="interest" value="영화"> 영화
+        <input type="checkbox" name="interest" value="음악"> 음악 <br>
+
+        라디오 타입 (type=radio)
+        <input type="radio" name="gender" value="w"> 여자
+        <input type="radio" name="gender" value="m"> 남자<br>
+
+        <input type="range" min="10" max="50" step="5"> 범위 선택 타입 (type=range) <br>
+
+        <input type="button" value="등록"> 버튼 타입 (type=button) <br>
+        <input type="submit" value="가입"> 가입 타입 (type=submit) <br>
+        <input type="reset" value="취소"> 취소 타입 (type=reset) <br>
+
+        <input type="tel"> 전화 타입 (type=tel) <br>
+        <input type="search"> 검색 타입 (type=search) <br> <!-- x 취소 아이콘 존재 -->
+        <input type="url"> 인터넷 주소 타입 (type=url) <br> <!-- 인터넷 주소 형식 확인 -->
+
+        <form action="#">
+            <label for="lang">Language</label>
+            <select name="languages" id="lang">
+              <option value="javascript">JavaScript</option>
+              <option value="php">PHP</option>
+              <option value="java">Java</option>
+              <option value="golang">Golang</option>
+              <option value="python">Python</option>
+              <option value="c#">C#</option>
+              <option value="C++">C++</option>
+              <option value="erlang">Erlang</option>
+            </select>
+            <input type="submit" value="Submit" />
+        </form>
+
+    </div>
+</body>
+</html>

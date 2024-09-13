@@ -1,0 +1,1570 @@
+
+<link rel="stylesheet" type="text/css" href="ref_css2/rMatePopup.css" /><!DOCTYPE html>
+<html lang="ko" class="colorTypeA cmn_all OL mdBrowser">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EKT 관리자 [5]</title>
+<link rel="stylesheet" type="text/css" href="/ref_css2/jquery-ui.css" />
+<link rel="stylesheet" href="/ref_css2/style.css" />
+<link rel="stylesheet" type="text/css" href="/ref_css2/banner.css" />
+<link rel="stylesheet" type="text/css" href="/ref_css2/pop_contents.css" />
+<link rel="stylesheet" type="text/css" href="/ref_css2/bootstrap-datepicker.css" />
+<link rel="stylesheet" type="text/css" href="/ref_css2/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="/ref_css2/bootstrap-select.min.css" />
+<script>
+	var CP = "";
+</script>
+<script type="text/javascript" src="/js/jquery-3.6.0.js?ver=20240614"></script>
+<script type="text/javascript" src="/js/jquery.blockUI.js?ver=20240614"></script>
+<script type="text/javascript" src="/js/jquery.cookie.js?ver=20240614"></script>
+<script type="text/javascript" src="/asset/jquery-ui-1.13.2/jquery-ui.js?ver=20240614"></script>
+<script type="text/javascript" src="/js/common/common_util.js?ver=20240614"></script>
+<script type="text/javascript" src="/js/step.ekt.js?ver=20240614"></script>
+<script type="text/javascript" src="/js/step.ekt.popup.js?ver=20240614"></script>
+<script type="text/javascript" src="/js/popup.js?ver=20240614"></script>
+<script type="text/javascript" src="/common/js/datepicker.js?ver=20240614"></script>
+<script type="text/javascript" src="/js/jquery.tablednd.js?ver=20240614"></script>
+<script type="text/javascript" src="/js/LxPlayer/js/lx-player.js?ver=20240614"></script>
+<script type="text/javascript" src="/js/common/common.js?ver=20240614"></script>
+<script type="text/javascript" src="/common/usrs/plugin/swiper/swiper.min.js?ver=20240614"></script>
+<script type="text/javascript" src="/js/renewal/usrs/bootstrap/bootstrap.min.js?ver=20240614"></script>
+<script type="text/javascript" src="/js/renewal/usrs/bootstrap/bootstrap-select.min.js?ver=20240614"></script>
+<script>
+	var MSG_ASK_TARGET = `대상을 선택하세요.`;
+	var MSG_SAVE_OKAY = `저장에 성공하였습니다.`;
+	var MSG_SAVE_FAIL = `저장에 실패하였습니다.`;
+	var MSG_SAVE_ERROR = `데이터 처리 중 오류가 발생하였습니다.`;
+	var MSG_ASK_DEL = `삭제하시겠습니까?`;
+	var MSG_ASK_SAVE = `저장하시겠습니까?`;
+	var MSG_ASK_UPLOAD = `업로드하시겠습니까?`;
+
+	var CMS_FILE_GET_PATH = "https://cms23.step.or.kr/file/download?filePath=";
+
+</script>
+</head>
+	<body>
+		<div id="wrap" class="layer">
+			<link rel="stylesheet" type="text/css" href="/ref_css2/rMatePopup.css" /><script>
+    var CP = "";
+    var childFramePadding;
+    var scrollPosition;
+    var potalHeaderHeight;
+    var popupMarginTopPx = 10;
+	var STEP_URL = "https://www.step.or.kr";
+</script>
+<script type="text/javascript" src="/rMateGridH5/LicenseKey/rMateGridH5License.js?ver=20240614"></script>
+<script type="text/javascript" src="/rMateGridH5/JS/rMateGridH5.js?ver=20240614"></script>
+<link rel="stylesheet" type="text/css" href="/ref_css2/crsNcsListPopUp.css" />
+
+<style>
+	a[btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f].active {
+		color: #0066cc !important;
+	}
+	[btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f] span:first-child {
+		display: inline-block;
+		line-height: 2;
+	}
+	[btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f] span:last-child {
+		float: right;
+		line-height: 2;
+	    margin-right: 8px;
+	}
+
+	.btn_size {
+		font-size: 17px;
+		/*background-color: #000 !important;
+		color: #fff !important;
+		border-radius: 100px;
+		padding: 0 40px;*/
+	}
+	.heart_btn_tmp {
+		color: #fff;
+		border-radius: 5px;
+		width: 150px;
+		height: 40px;
+		font-size: 17px;
+		background-color: #363c4b;
+	}
+	.btn-basic{
+		min-height : 25px;
+	}
+	/* hwson 고민 많이했는데, 오은영(?) 요청사항으로 수정, 웹에서 안맞을 시 margin-top삭제
+		class 개별 수정하면 추후 수정 힘든거아는데 해달라해서 했어요.. 흑흑
+	*/
+	.board_list_btn{
+		vertical-align: top;
+	}
+	.board_excel_btn_type2{
+	}
+	.marginChange{
+		margin-top: 1px;
+	}
+
+	.left_menu>ul>li .menu_btn {
+		  background-color: #F5F5F5 important;
+	}
+
+	.popWidth{
+		max-width: 350px !important;
+		min-width: 100px !important;
+	}
+	/* hwson 끝 */
+</style>
+<div app="2382440f_c092_447e_9e89_ab17de4a6c4f">
+	<div>
+		<div class="page_hd">
+			<div class="hd_con">
+				<span onclick="moLeftMenuOpen()" class="hd_cate_btn">
+							K-디지털
+							<b class="M_only"><img src="/img/hd_select_arrow.png" alt="" ></b>
+						</span>
+						<ul class="page_menu">
+							<li><a href="javascript:void(0);" btnHome_2382440f_c092_447e_9e89_ab17de4a6c4f>HOME</a></li>
+							<li><a href="/kdcCrsForm.do">K-디지털</a></li>
+						</ul>
+					</div>
+		</div>
+	</div>
+	<div class="left_menu_wrapper">
+		<!-- 왼쪽 메뉴 시작 -->
+		<div class="left_menu" leftMenu_2382440f_c092_447e_9e89_ab17de4a6c4f z-index="999">
+			<ul>
+				<li class="no_sub"><button type="button" class="menu_btn chk_mboile_sub_menu" onclick="resize_chk_mobile_menu(this)" data-url="all"  btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f="all"><span>전체과정</span><span>530</span></button></li>
+				<li>
+						<button type="button" class="menu_btn" ncsLvl_2382440f_c092_447e_9e89_ab17de4a6c4f="3" btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f="U20101"><span>디지털</span><span>375</span></button>
+					</li>
+				<li>
+						<button type="button" class="menu_btn" ncsLvl_2382440f_c092_447e_9e89_ab17de4a6c4f="3" btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f="U20102"><span>소재‧부품</span><span>101</span></button>
+					</li>
+				<li>
+						<button type="button" class="menu_btn" ncsLvl_2382440f_c092_447e_9e89_ab17de4a6c4f="3" btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f="U20103"><span>로봇‧드론</span><span>29</span></button>
+					</li>
+				<li>
+						<button type="button" class="menu_btn" ncsLvl_2382440f_c092_447e_9e89_ab17de4a6c4f="3" btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f="U20104"><span>바이오헬스</span><span>2</span></button>
+					</li>
+				<li>
+						<button type="button" class="menu_btn" ncsLvl_2382440f_c092_447e_9e89_ab17de4a6c4f="3" btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f="U20105"><span>에코업</span><span>10</span></button>
+					</li>
+				<li>
+						<button type="button" class="menu_btn" ncsLvl_2382440f_c092_447e_9e89_ab17de4a6c4f="3" btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f="U20106"><span>에너지</span><span>13</span></button>
+					</li>
+			</ul>
+		</div>
+		<!-- 왼쪽 메뉴 끝 -->
+
+		<!-- 내용 시작  -->
+		<div class="content w_1240 column">
+			<div class="step_top_title"></div>
+			<div class="admin_sch_box wp" areaSearchCondition_2382440f_c092_447e_9e89_ab17de4a6c4f>
+				<ul>
+					<li class="sch_input_btn ">
+						<span class="label w_150 mr-5 text_right" id="nameValue">과정/운영사</span>
+						<input type="text" placeholder="검색어를 입력하세요" class="flex1" title="searchValueInput" name="searchValue" searchValue_2382440f_c092_447e_9e89_ab17de4a6c4f>
+						<button type="button" class="sch_admin_btn mr-30" btnSearch_2382440f_c092_447e_9e89_ab17de4a6c4f>검색</button>
+					</li>
+					<li class="sch_input_btn">
+						<span class="label w_150 mr-5 text_right">학습기간</span>
+						<div class="datepicker_box w_150 mr-5">
+							<input type="text" class="dp " name="searchStartDt" title="searchStartDtInput" searchStartDt_2382440f_c092_447e_9e89_ab17de4a6c4f>
+						</div>
+						<span>~</span>
+						<div class="datepicker_box w_150 ml-5 mr-15">
+							<input type="text" class="dp " name="searchEndDt" title="searchEndDtInput" searchEndDt_2382440f_c092_447e_9e89_ab17de4a6c4f>
+						</div>
+						<div class="check-list" id="dateCheckDiv">
+							<input type="hidden" name="hiddenSearchPeriodDt"	hiddenSearchPeriodDt_2382440f_c092_447e_9e89_ab17de4a6c4f value="">
+							<label class="checkbox mr-10"><input type="checkbox" name="searchPeriodDt" value="7" searchPeriodDt_2382440f_c092_447e_9e89_ab17de4a6c4f="7"><span class="mr-5"></span><P style="vertical-align: top; display:inline-block;">7일</P></label>
+							<label class="checkbox mr-10"><input type="checkbox" name="searchPeriodDt" value="15" searchPeriodDt_2382440f_c092_447e_9e89_ab17de4a6c4f="15"><span class="mr-5"></span><P style="vertical-align: top; display:inline-block;">15일</P></label>
+							<label class="checkbox mr-10"><input type="checkbox" name="searchPeriodDt" value="30" searchPeriodDt_2382440f_c092_447e_9e89_ab17de4a6c4f="30"><span class="mr-5"></span><P style="vertical-align: top; display:inline-block;">30일</P></label>
+						</div>
+					</li>
+					<li class="sch_input_btn checkList_rp" style="padding-bottom:20px;">
+						<div>
+							<span class="label w_150 mr-5 text_right">교육비</span>
+							<div class="check-list">
+								<label class="checkbox mr-10"><input type="checkbox" name="searchFeeType" value="A" searchFeeType_2382440f_c092_447e_9e89_ab17de4a6c4f="A"><span class="mr-5"></span><P style="vertical-align: top; display:inline-block;">전체</P></label>
+								<label class="checkbox mr-10"><input type="checkbox" name="searchFeeType" value="F" searchFeeType_2382440f_c092_447e_9e89_ab17de4a6c4f="F"><span class="mr-5"></span><P style="vertical-align: top; display:inline-block;">무료</P></label>
+								<label class="checkbox mr-10"><input type="checkbox" name="searchFeeType" value="P" searchFeeType_2382440f_c092_447e_9e89_ab17de4a6c4f="P"><span class="mr-5"></span><P style="vertical-align: top; display:inline-block;">유료</P></label>
+							</div>
+						</div>
+						<div>
+							<span class="label w_150 mr-5 text_right">교육구분</span>
+							<div class="check-list">
+								<label class="checkbox mr-10"><input type="checkbox" name="searchAlwsCrsseqYn" value="A" searchAlwsCrsseqYn_2382440f_c092_447e_9e89_ab17de4a6c4f="A"><span class="mr-5"></span><P style="vertical-align: top; display:inline-block;">전체</P></label>
+								<label class="checkbox mr-10"><input type="checkbox" name="searchAlwsCrsseqYn" value="N" searchAlwsCrsseqYn_2382440f_c092_447e_9e89_ab17de4a6c4f="N"><span class="mr-5"></span><P style="vertical-align: top; display:inline-block;">정규</P></label>
+								<label class="checkbox mr-10"><input type="checkbox" name="searchAlwsCrsseqYn" value="Y" searchAlwsCrsseqYn_2382440f_c092_447e_9e89_ab17de4a6c4f="Y"><span class="mr-5"></span><P style="vertical-align: top; display:inline-block;">상시</P></label>
+								<label class="checkbox mr-10"><input type="checkbox" name="searchAlwsCrsseqYn" value="M" searchAlwsCrsseqYn_2382440f_c092_447e_9e89_ab17de4a6c4f="M"><span class="mr-5"></span><P style="vertical-align: top; display:inline-block;">마켓</P></label>
+							</div>
+						</div>
+						<div>
+							<span class="label w_150 mr-5 text_right">지원기기</span>
+							<div class="check-list">
+								<label class="checkbox mr-10"><input type="checkbox" name="searchDeviceType" value="A" searchDeviceType_2382440f_c092_447e_9e89_ab17de4a6c4f="A"><span class="mr-5"></span><P style="vertical-align: top; display:inline-block;">전체</P></label>
+								<!-- 2023.12.20 jmryou 검색조건 수정 start -->
+	<!-- 							<label class="checkbox mr-10"><input type="checkbox" name="searchDeviceType" value="M" searchDeviceType_2382440f_c092_447e_9e89_ab17de4a6c4f="M"><span class="mr-5"></span>모바일</label> -->
+	<!-- 							<label class="checkbox mr-10"><input type="checkbox" name="searchDeviceType" value="MP" searchDeviceType_2382440f_c092_447e_9e89_ab17de4a6c4f="MP"><span class="mr-5"></span>모바일 + PC</label> -->
+								<label class="checkbox mr-10"><input type="checkbox" name="searchDeviceType" value="P" searchDeviceType_2382440f_c092_447e_9e89_ab17de4a6c4f="P"><span class="mr-5"></span><P style="vertical-align: top; display:inline-block;">PC</P></label>
+								<label class="checkbox mr-10"><input type="checkbox" name="searchDeviceType" value="MP" searchDeviceType_2382440f_c092_447e_9e89_ab17de4a6c4f="MP"><span class="mr-5"></span><P style="vertical-align: top; display:inline-block;">PC + 모바일</P></label>
+								<!-- 2023.12.20 jmryou 검색조건 수정 end -->
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="board_list">
+				<div class="board_top">
+					<div class="count_box">
+						<span class="count">총 <b areaTotalCount_2382440f_c092_447e_9e89_ab17de4a6c4f>0</b>건</span>
+					</div>
+					<div class="board_btns">
+						<ul class="sort_btns mr-5">
+							<li><button type="button" btnSortType_2382440f_c092_447e_9e89_ab17de4a6c4f="latest">최신순</button></li>
+							<li><button type="button" btnSortType_2382440f_c092_447e_9e89_ab17de4a6c4f="pop">인기순</button></li>
+							<li><button type="button" btnSortType_2382440f_c092_447e_9e89_ab17de4a6c4f="deadline">마감순</button></li>
+						</ul>
+						<button type="button"  name="btnList" class="mr-5 board_change_btn" imgOn="/common/usrs/img/gallery_ico_on.png" imgOff="/common/usrs/img/gallery_ico.png" btnShowType_2382440f_c092_447e_9e89_ab17de4a6c4f="album">
+							<img src="/common/usrs/img/gallery_ico.png" alt="">
+						</button>
+						<button type="button" name="btnList" class="mr-5 board_change_btn" imgOn="/common/usrs/img/thumb_ico_on.png" imgOff="/common/usrs/img/thumb_ico.png" btnShowType_2382440f_c092_447e_9e89_ab17de4a6c4f="thum">
+							<img src="/common/usrs/img/thumb_ico.png" alt="">
+						</button>
+						<button type="button" name="btnList" class="mr-5 board_change_btn" imgOn="/common/usrs/img/user/list_ico_on.png" imgOff="/common/usrs/img/user/list_ico.png" btnShowType_2382440f_c092_447e_9e89_ab17de4a6c4f="table">
+							<img src="/common/usrs/img/user/list_ico.png" alt="">
+						</button>
+						<button type="button" class="mr-5 board_list_btn" btnLink_2382440f_c092_447e_9e89_ab17de4a6c4f id="btnLink"><img src="/common/usrs/img/link_ico.png" alt=""></button>
+						<button type="button" class="board_excel_btn_type2" btnExcel_2382440f_c092_447e_9e89_ab17de4a6c4f id="btnExcel" ><img src="/common/usrs/img/excel_ico_type2.png" alt=""></button>
+					</div>
+				</div>
+				<ul class="work-process-album" areaList_2382440f_c092_447e_9e89_ab17de4a6c4f="album"></ul>
+				<ul class="work-process-thum" areaList_2382440f_c092_447e_9e89_ab17de4a6c4f="thum"></ul>
+				</div>
+				<div class="board_list" style="overflow-x: auto;">
+				<table class="t_notice fix_table" areaList_2382440f_c092_447e_9e89_ab17de4a6c4f="table">
+					<caption class="blind">t_notice fix_table</caption>
+					<colgroup>
+						<col style="width:250px;">
+						<col style="width:280px;">
+						<col style="width:250px;">
+						<col style="width:120px;">
+						<col style="width:70px;">
+						<col style="width:100px;">
+						<col style="width:100px;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>과정명</th>
+							<th>수강신청기간</th>
+							<th>교육기간</th>
+							<th>교육비</th>
+							<th>맛보기</th>
+							<th>관심과정</th>
+							<th>수강신청</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+					</div>
+				<div class="pg_wrap" areaPage_2382440f_c092_447e_9e89_ab17de4a6c4f></div>
+		</div>
+			<!-- 내용 끝 -->
+	</div>
+</div>
+<script type="text/javascript">
+		var pagingCheck = "N";
+
+		rMateGridH5.setAssetsPath(CP + "/rMateGridH5/Assets/");
+		var portalDomain = "https://www.step.or.kr";
+		//로딩 후 부모 프레임으로 메세지 전달
+		window.parent.postMessage({ type: 'URL', url: window.location.origin }, portalDomain);
+
+		//submenu가 없는 li는 no_sub으로 class 변경
+		var mainMenuList = $(".left_menu > ul > li");
+		for(let mainMenu of mainMenuList){
+			let subLength = $(mainMenu).find(".sub_in_nav > li ").length;
+			if (subLength == 0){
+				$(mainMenu).addClass("no_sub");
+			}
+		}
+
+		//부모프레임이 전달한 메세지 리스너
+		window.addEventListener('message', function(event) {
+			// 메시지의 출처를 검증
+			if (event.origin !== portalDomain) {
+				return;
+			}
+			//부모프레임이 전달한 값
+			const receivedData = event.data;
+
+			//스크롤 이벤트
+		    if (receivedData.eventType === 'scrollEvent') {
+		        scrollPosition = receivedData.position;
+		        potalHeaderHeight = receivedData.potalHeaderHeight;
+		        handleScrollEvent(receivedData.viewportHeight, receivedData.position, receivedData.potalHeaderHeight, receivedData.potalFooterHeight, receivedData.potalScrollMaxHeight);
+		    }
+
+			//현재 스크롤 위치
+			if (receivedData.eventType === 'currentPosition') {
+				var tab_h = receivedData.viewportHeight-224;
+				$("#tab-1").css("height",tab_h);
+			}
+
+			//클릭 이벤트
+			if (receivedData.eventType === 'clickPosition') {
+				childFramePadding = receivedData.position+124;
+			}
+		});
+
+	    //부모페이지에서 스크롤 위치 변경 시 호출할 함수
+	    function handleScrollEvent(viewportHeight, scrollPosition, potalHeaderHeight, potalFooterHeight, potalScrollMaxHeight) {
+	    	/*팝업 위치 계산 시작*/
+	    	//팝업 크기
+	    	var popupHeight = $(".pop-cont").height();
+
+	    	//팝업이 있다면 팝업위치 조정 마진적용
+	        $(".pop-in").css("align-items",'start');
+	        $(".pop-in").css("margin-top",popupMarginTopPx+'px');
+
+	        //여백을 포함해서 현재 팝업이 차지하는 높이(팝업크기 + 스크롤 위치 + 헤더높이 + 고정 탑 마진)
+	        let popupTotalHeight = Number(popupHeight) + scrollPosition + potalHeaderHeight //
+
+	        //팝업 사이즈가 보여지는 화면보다 크다면 스크롤 생성
+	        if (popupHeight > $(document).height()) {
+	        	$(".pop-cont").css("max-height", (popupHeight-potalScrollMaxHeight)+ 'px')
+	        	$(".pop-cont").css("overflow-y", "auto");
+	        }
+
+	        //팝업 위치 조정
+	        if (popupTotalHeight >= $(document).height()) {
+	        	//팝업이 화면 사이즈를 넘어가지 않게 고정
+	        	$(".pop-in").css("padding-top",$(document).height() - popupHeight - popupMarginTopPx- popupMarginTopPx);
+	        } else {
+	        	//팝업 위치 수정
+	        	$(".pop-in").css("padding-top",scrollPosition+ potalHeaderHeight + potalHeaderHeight);
+	        }
+	        /*팝업 위치 계산 끝*/
+
+
+	        /*레프트 메뉴 위치 계산 시작*/
+	        var tab_h = viewportHeight-100;
+
+	        var left_t = scrollPosition;
+
+
+	        if(scrollPosition>0){
+	        	left_t = scrollPosition+potalHeaderHeight;
+	        }
+	        var cm_h = $(".cms_container").height();
+	        if(viewportHeight>cm_h){
+	        	cm_h = viewportHeight;
+	        }
+	        var min_sc = cm_h-tab_h-potalHeaderHeight;
+
+	        if(scrollPosition>0&&viewportHeight==cm_h){
+	            $(".left_menu").stop().animate( {
+	                top:124
+	            },0);
+	        }
+	        if(scrollPosition>0 && scrollPosition<min_sc && viewportHeight<cm_h){
+	            $(".left_menu").stop().animate( {
+	                top:left_t
+	            },0);
+	        }else if(scrollPosition==0){
+	            $(".left_menu").stop().animate( {
+	                top:0
+	            },0);
+	        }
+	        /*레프트 메뉴 위치 계산 끝*/
+	    }
+
+		const $app = $("[app=2382440f_c092_447e_9e89_ab17de4a6c4f]");
+		let currPage = 0;
+		let totalPage = 0;
+		let totalCount = 0;
+		let formData = new FormData();
+		let totalList = [];
+		var btnNcsCd = "all" == "" ? "all" : "all";
+
+		$app.find("[btnHome_2382440f_c092_447e_9e89_ab17de4a6c4f]").click(function(evt) {
+			evt.preventDefault();
+			try {
+				top.location.href="https://www.step.or.kr";
+			} catch (e) {
+				window.location.href = "/";
+			}
+			return false;
+		});
+
+		$app.find("[btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f]").click(function(evt) {
+			evt.preventDefault();
+			const $self = $(this);
+			const value = $self.attr("btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f");
+			if (value != "") {
+				btnNcsCd = value;
+				fnSetNcsCd(value);
+ 				fnSearch(1);
+			}
+			//$self.next("ul").slideToggle("400");
+			return false;
+		});
+
+		$app.find("[btnSearch_2382440f_c092_447e_9e89_ab17de4a6c4f]").click(function(evt) {
+			evt.preventDefault();
+			fnSearch(1);
+			return false;
+		});
+		$app.find("[searchType_2382440f_c092_447e_9e89_ab17de4a6c4f]").change(function(evt) {
+			evt.preventDefault();
+			const $self = $(this);
+			return false;
+		});;
+		$app.find("[searchPeriodDt_2382440f_c092_447e_9e89_ab17de4a6c4f]").change(function(evt) {
+			evt.preventDefault();
+			const $self = $(this);
+			const value = $self.val();
+
+			// 같은 체크박스 클릭 했을 때 체크박스 해제 + 학습기간 빈 값 넣기 start
+			if($app.find("[hiddenSearchPeriodDt_2382440f_c092_447e_9e89_ab17de4a6c4f]").val() == value){
+				// 기존 체크박스 value 와 신규 체크박스 value가 같은 경우 학습기간 빈 값 처리 start
+				$app.find("[searchStartDt_2382440f_c092_447e_9e89_ab17de4a6c4f]").val('');
+				$app.find("[searchEndDt_2382440f_c092_447e_9e89_ab17de4a6c4f]").val('');
+
+				$app.find("[hiddenSearchPeriodDt_2382440f_c092_447e_9e89_ab17de4a6c4f]").val('');
+				// 기존 체크박스 value 와 신규 체크박스 value가 같은 경우 학습기간 빈 값 처리 end
+
+			} else {
+				// 기존 체크박스 valu 와 신규 체크박스 value가 다른 경우 처리 start
+				if ($self.prop("checked")) {
+					$app.find("[searchPeriodDt_2382440f_c092_447e_9e89_ab17de4a6c4f]").prop("checked", false);
+				}
+				$app.find("[searchPeriodDt_2382440f_c092_447e_9e89_ab17de4a6c4f][value=" + value + "]").prop("checked", true);
+
+				const currentDate = new Date();
+				const afterDay = new Date(currentDate);
+				afterDay.setDate(currentDate.getDate() + parseInt(value));
+
+				$app.find("[searchStartDt_2382440f_c092_447e_9e89_ab17de4a6c4f]").val(fnDateFormat(currentDate));
+				$app.find("[searchEndDt_2382440f_c092_447e_9e89_ab17de4a6c4f]").val(fnDateFormat(afterDay));
+
+				function fnDateFormat(date) {
+					const year = date.getFullYear();
+					const month = String(date.getMonth() + 1).padStart(2, '0');
+					const day = String(date.getDate()).padStart(2, '0');
+					return year + '-' + month + '-' + day;
+				}
+				// 기존 체크박스 valu 와 신규 체크박스 value가 다른 경우 처리 end
+
+				$app.find("[hiddenSearchPeriodDt_2382440f_c092_447e_9e89_ab17de4a6c4f]").val(value);
+			}
+
+			return false;
+		});
+		$app.find("[searchCategory_2382440f_c092_447e_9e89_ab17de4a6c4f]").change(function(evt) {
+			evt.preventDefault();
+			const $self = $(this);
+			return false;
+		});
+		$app.find("[searchFeeType_2382440f_c092_447e_9e89_ab17de4a6c4f]").change(function(evt) {
+			evt.preventDefault();
+			const $self = $(this);
+			const value = $self.val();
+			if ($self.prop("checked")) {
+				$app.find("[searchFeeType_2382440f_c092_447e_9e89_ab17de4a6c4f]").prop("checked", false);
+			}
+			$app.find("[searchFeeType_2382440f_c092_447e_9e89_ab17de4a6c4f][value=" + value + "]").prop("checked", true);
+			return false;
+		});
+		$app.find("[searchAlwsCrsseqYn_2382440f_c092_447e_9e89_ab17de4a6c4f]").change(function(evt) {
+			evt.preventDefault();
+			const $self = $(this);
+			const value = $self.val();
+			if ($self.prop("checked")) {
+				$app.find("[searchAlwsCrsseqYn_2382440f_c092_447e_9e89_ab17de4a6c4f]").prop("checked", false);
+			}
+			$app.find("[searchAlwsCrsseqYn_2382440f_c092_447e_9e89_ab17de4a6c4f][value=" + value + "]").prop("checked", true);
+			return false;
+		});
+		$app.find("[searchDeviceType_2382440f_c092_447e_9e89_ab17de4a6c4f]").change(function(evt) {
+			evt.preventDefault();
+			const $self = $(this);
+			const value = $self.val();
+			if ($self.prop("checked")) {
+				$app.find("[searchDeviceType_2382440f_c092_447e_9e89_ab17de4a6c4f]").prop("checked", false);
+			}
+			$app.find("[searchDeviceType_2382440f_c092_447e_9e89_ab17de4a6c4f][value=" + value + "]").prop("checked", true);
+			return false;
+		});
+		$app.find("[btnSortType_2382440f_c092_447e_9e89_ab17de4a6c4f]").click(function(evt) {
+			evt.preventDefault();
+			const $self = $(this);
+			fnSetSearchSortType($self.attr("btnSortType_2382440f_c092_447e_9e89_ab17de4a6c4f"));
+			fnSearch(1);
+			return false;
+		});
+		$app.find("[btnShowType_2382440f_c092_447e_9e89_ab17de4a6c4f]").click(function(evt) {
+			evt.preventDefault();
+			const $self = $(this);
+			fnSetSearchShowType($self.attr("btnShowType_2382440f_c092_447e_9e89_ab17de4a6c4f"));
+			return false;
+		});
+		$app.find("[btnLink_2382440f_c092_447e_9e89_ab17de4a6c4f]").click(function(evt) {
+			evt.preventDefault();
+
+			formData = getParams();
+			formData.append("mgmtType","kdc");
+			StepEkt.ajax({
+				url: "/getCrsListUrlAjax.do",
+				data: formData,
+				method: "POST",
+				async: true,
+				success: function(response) {
+					let data = response.data;
+					let urlResult = JSON.parse(data.urlResult);
+					if(urlResult.code == '200'){
+						var textarea = document.createElement("textarea");
+					    document.body.appendChild(textarea);
+						textarea.value = urlResult.result.url ;
+				        textarea.select();
+				        document.execCommand("copy");
+				        document.body.removeChild(textarea);
+				        alert("URL이 복사되었습니다.")  // 알림창
+					}else{
+						alert("실패하였습니다. 관리자에 문의해주세요.");
+					}
+				},
+				fail: function(result, data) {
+					if (result == -3) {
+						alert(data);
+					} else if (result == 1) {
+						alert('실패하였습니다.');
+					} else {
+						alert(data);
+					}
+				}
+			});
+ 			return false;
+		});
+		$app.find("[btnExcel_2382440f_c092_447e_9e89_ab17de4a6c4f]").click(function(evt) {
+			evt.preventDefault();
+			const $self = $(this);
+			const $form = $("<form/>");
+			for ([key, value] of formData.entries()) {
+				if (value != '') {
+					$form.append(`<input type="hidden" name="` + key + `" value="` + value + `"/>`);
+				}
+			}
+			$("body").append($form);
+			$form.attr("method", "get").attr("action", "/kdcCrsExcelList.do").attr("target", "_blank");
+			$form.submit();
+			$form.remove();
+			return false;
+		});
+		$app.on("keydown", "[searchValue_2382440f_c092_447e_9e89_ab17de4a6c4f]", function(evt) {
+			if (evt.keyCode == 13) {
+				evt.preventDefault();
+				fnSearch(1);
+				return false;
+			}
+		});
+
+		var tmpNum = 0;
+		function fnSetNcsCd(value) {
+			var $btn_lv_1, $btn_lv_2 , $li;
+			try {
+
+			$app.find("[leftMenu_2382440f_c092_447e_9e89_ab17de4a6c4f] li").removeClass("active");
+			$app.find("[leftMenu_2382440f_c092_447e_9e89_ab17de4a6c4f] [btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f]").removeClass("active");
+
+			$btn_lv_1 = $app.find("[btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f=" + value + "]");
+
+			if($btn_lv_1.attr("ncslvl_2382440f_c092_447e_9e89_ab17de4a6c4f") == "4" ){ //공통과정 submenu 처리
+				value = value.substring(0, value.length - 2);
+				$btn_lv_2 = $btn_lv_1 ;
+				$btn_lv_1 = $app.find("[btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f=" + value + "]");
+				$btn_lv_2.addClass("active");
+			}else if($btn_lv_1.attr("subYn_2382440f_c092_447e_9e89_ab17de4a6c4f") == "Y"){ //직무과정 기타 처리
+				value="etc";
+				$btn_lv_2 = $btn_lv_1 ;
+				$btn_lv_1 = $app.find("[btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f=" + value + "]");
+				$btn_lv_2.addClass("active");
+			}
+			$li = $btn_lv_1.closest("li");
+
+			$btn_lv_1.addClass("active");
+			$li.addClass("active");
+
+			if(tmpNum != value){
+				$(".sub_in_nav").css("display", "none");
+				$btn_lv_1.next("ul").slideToggle("400");
+				tmpNum = value ;
+			}
+
+			} catch (e) {}
+		}
+		function fnSetSearchType(value) {
+			value = isEmpty(value) ? "" : value;
+			$app.find("[searchType_2382440f_c092_447e_9e89_ab17de4a6c4f]").val(value);
+		}
+		function fnSetSearchValue(value) {
+			value = isEmpty(value) ? "" : value;
+			$app.find("[searchValue_2382440f_c092_447e_9e89_ab17de4a6c4f]").val(unescape(value));
+		}
+		function fnSetSearchStartDt(value) {
+			value = isEmpty(value) ? "" : value;
+			$app.find("[searchStartDt_2382440f_c092_447e_9e89_ab17de4a6c4f]").val(value);
+		}
+		function fnSetSearchEndDt(value) {
+			value = isEmpty(value) ? "" : value;
+			$app.find("[searchEndDt_2382440f_c092_447e_9e89_ab17de4a6c4f]").val(value);
+		}
+		function fnSetSearchPeriodDt(value) {
+			if(isEmpty(value)) {
+				$('input[name="searchPeriodDt"]').prop('checked', false);
+			} else {
+				$app.find("[searchPeriodDt_2382440f_c092_447e_9e89_ab17de4a6c4f=" + value + "]").prop("checked", true);
+			}
+		}
+		function fnSetSearchCategory(value) {
+			value = isEmpty(value) ? "" : value;
+			$app.find("[searchCategory_2382440f_c092_447e_9e89_ab17de4a6c4f]").val(value);
+		}
+		function fnSetSearchFeeType(value) {
+			if (isEmpty(value)) {
+				$('input[name="searchFeeType"]').prop('checked', false);
+				value = "A";
+			}
+
+			if (value != "") {
+				$app.find("[searchFeeType_2382440f_c092_447e_9e89_ab17de4a6c4f=" + value + "]").prop("checked", true);
+			}
+		}
+		function fnSetSearchAlwsCrsseqYn(value) {
+			if (isEmpty(value)) {
+				$('input[name="searchAlwsCrsseqYn"]').prop('checked', false);
+				value = "A";
+			}
+			if (value != "") {
+				$app.find("[searchAlwsCrsseqYn_2382440f_c092_447e_9e89_ab17de4a6c4f=" + value + "]").prop("checked", true);
+			}
+		}
+		function fnSetSearchDeviceType(value) {
+			if (isEmpty(value)) {
+				$('input[name="searchDeviceType"]').prop('checked', false);
+				value = "A";
+			}
+			
+			if (value != "") {
+				$app.find("[searchDeviceType_2382440f_c092_447e_9e89_ab17de4a6c4f=" + value + "]").prop("checked", true);
+			}
+		}
+		function fnSetSearchSortType(value) {
+			value = isEmpty(value) ? "latest" : value;
+			$app.find("[btnSortType_2382440f_c092_447e_9e89_ab17de4a6c4f]").attr("selectYn", "N");
+			$app.find("[btnSortType_2382440f_c092_447e_9e89_ab17de4a6c4f=" + value + "]").attr("selectYn", "Y");
+			$app.find("[btnSortType_2382440f_c092_447e_9e89_ab17de4a6c4f]").closest("li").removeClass("active");
+			$app.find("[btnSortType_2382440f_c092_447e_9e89_ab17de4a6c4f=" + value + "]").closest("li").addClass("active");
+		}
+		function fnSetSearchShowType(value) {
+			value = isEmpty(value) ? "album" : value;
+			$app.find("[btnShowType_2382440f_c092_447e_9e89_ab17de4a6c4f]").removeClass("on").attr("selectYn", "N");
+			$app.find("[btnShowType_2382440f_c092_447e_9e89_ab17de4a6c4f=" + value + "]").addClass("on").attr("selectYn", "Y");
+			$app.find("[btnShowType_2382440f_c092_447e_9e89_ab17de4a6c4f]").each(function(idx, obj) {
+				const $btn = $(obj);
+				$btn.find("img").attr("src", $btn.attr("imgOff"));
+			});
+			$app.find("[btnShowType_2382440f_c092_447e_9e89_ab17de4a6c4f=" + value + "]").each(function(idx, obj) {
+				const $btn = $(obj);
+				$btn.find("img").attr("src", $btn.attr("imgOn"));
+			});
+			$app.find("[areaList_2382440f_c092_447e_9e89_ab17de4a6c4f]").hide();
+			$app.find("[areaList_2382440f_c092_447e_9e89_ab17de4a6c4f=" + value + "]").show();
+		}
+
+		function getParams() {
+			const $form = $app.find("[areaSearchCondition_2382440f_c092_447e_9e89_ab17de4a6c4f]");
+			const formData = StepEkt.createFormDataByAppId("2382440f_c092_447e_9e89_ab17de4a6c4f", $form);
+			{
+
+				// 2023.12.04 jmryou 2depth 메뉴 클릭 시 getParams 수정 start
+				const btnNcsCdRoot = $app.find("[btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f].active");
+				var btnNcsCd;
+				if(btnNcsCdRoot.length > 1){
+					btnNcsCd = $app.find("a[btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f].active");
+				} else if(btnNcsCdRoot.length == 1 && btnNcsCdRoot.attr("subYn_2382440f_c092_447e_9e89_ab17de4a6c4f") == 'Y') {
+					// 2023.12.18 sblee 기타과정인 경우 조건 처리 추가
+					btnNcsCd = $app.find("a[btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f].active");
+				} else {
+					btnNcsCd = $app.find("button[btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f].active");
+				}
+				// 2023.12.04 jmryou 2depth 메뉴 클릭 시 getParams 수정 end
+
+				const ncsCd = btnNcsCd.attr("btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f");
+				const ncsLvl = btnNcsCd.attr("ncsLvl_2382440f_c092_447e_9e89_ab17de4a6c4f") == undefined ? '0' : btnNcsCd.attr("ncsLvl_2382440f_c092_447e_9e89_ab17de4a6c4f") ;
+
+				if (ncsCd == "all") {
+					formData.set("searchNcsSelType", "all");
+					formData.set("searchNcsCd", "");
+					formData.set("searchNcsLvl", "");
+				} else if(ncsCd == "etc"){
+					formData.set("searchNcsSelType", "select");
+					let searchLrgClssCdList = [];
+					let subMenu = $(".sub_in_nav > li");
+					for(let sub of subMenu){
+						let temp = $(sub).find("a").attr("btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f");
+						searchLrgClssCdList.push(temp);
+					}
+					formData.set("searchNcsCd", searchLrgClssCdList);
+					formData.set("searchNcsLvl", '100');
+				} else {
+					formData.set("searchNcsSelType", "select");
+					formData.set("searchNcsCd", ncsCd);
+					formData.set("searchNcsLvl", ncsLvl);
+				}
+			}
+			{
+				const searchSortType = $app.find("[btnSortType_2382440f_c092_447e_9e89_ab17de4a6c4f][selectYn=Y]").attr("btnSortType_2382440f_c092_447e_9e89_ab17de4a6c4f");
+				formData.set("searchSortType", searchSortType);
+			}
+			{
+				const searchShowType = $app.find("[btnShowType_2382440f_c092_447e_9e89_ab17de4a6c4f][selectYn=Y]").attr("btnShowType_2382440f_c092_447e_9e89_ab17de4a6c4f");
+				formData.set("searchShowType", searchShowType);
+			}
+			{
+				const orgnYn = "";
+				formData.set("orgnYn", (orgnYn == "Y") ? "Y" : "N");
+			}
+			{
+				const orgnId = "";
+				formData.set("orgnId", orgnId);
+			}
+			return formData;
+		}
+		function fnSearch(page, first) {
+			if ((page == 1) || (first == "Y")) {
+				formData = getParams();
+			}
+			
+			formData.set("pPageno", page);
+			// /dtyCrsListAjax.do
+			StepEkt.ajax({
+				url: "/kdcCrsListAjax.do",
+				data: formData,
+				method: "POST",
+				async: true,
+				success: function(response) {
+					const data = response.data;
+
+					currPage = page;
+					totalPage = data.totalPage;
+					totalCount = data.totalCount;
+					totalList = JSON.parse(data.list);
+
+					fnCreateList();
+				},
+				fail: function(result, data) {
+					if (result == -3) {
+						alert(data);
+					} else if (result == 1) {
+						alert('실패하였습니다.');
+					} else {
+						alert(data);
+					}
+				}
+			});
+		}
+		function fnCreateList() {
+			$app.find("[areaTotalCount_2382440f_c092_447e_9e89_ab17de4a6c4f]").text(totalCount);
+			$app.find("[areaList_2382440f_c092_447e_9e89_ab17de4a6c4f=album]").empty();
+			$app.find("[areaList_2382440f_c092_447e_9e89_ab17de4a6c4f=thum]").empty();
+			$app.find("[areaList_2382440f_c092_447e_9e89_ab17de4a6c4f=table] tbody").empty();
+
+			$.each(totalList, function(idx, obj) { // album
+				const $component = $(`
+					<li style="cursor:pointer;">
+						<a href="">
+							<div class="imgbox">
+								<img alt=""
+									onerror="this.onerror=null; this.src='/asset/img/head_bg_ico.png'"crsImg src="">
+							</div>
+							<p class="grey_text flex jc-sb ai-c add-title"><span orgnztNm></span>
+							</p>
+							<p class="title" crsNm></p>
+							<div class="detail">
+								<span class="tag regular" style="display:none;" alwsCrsseqYn="N">정규</span>
+								<span class="tag always" style="display:none;" alwsCrsseqYn="Y">상시</span>
+								<span class="tag" style="display:none; background-color: rgb(102 38 106);" alwsCrsseqYn="pkgY">패키지</span>
+								<span class="grey_text time" stdyDate></span>
+							</div>
+							<div class="album-bottom">
+								<p class="grey_text" educst></p>
+								<div class="btn-list flex">
+									<span class="icon_phone mr-5" style="display:none;" mobileYn></span>
+									<button type="button" class="video_icon_btn mr-5" btnPreview><img src="/common/usrs/img/ekt/video_icon.png" alt=""></button>
+									<button type="button" class="heart_btn mr-5" btnInterest><img src="/common/usrs/img/heart.png" alt="" imgInterest></button>
+									<button type="button" class="btn-basic blue_btn" btnEnrol>수강신청</button>
+								</div>
+							</div>
+						</a>
+					</li>`);
+				$app.find("[areaList_2382440f_c092_447e_9e89_ab17de4a6c4f=album]").append(fnSetComponentInfo($component, obj));
+			});
+			$.each(totalList, function(idx, obj) { // thum
+				const $component = $(`
+					<li>
+						<a href="">
+							<div class="imgbox">
+								<img alt=""
+									onerror="this.onerror=null; this.src='/asset/img/head_bg_ico.png'" src=""
+									crsImg
+									>
+							</div>
+							<div class="detail">
+								<p class="grey_text jc-sb ai-c add-title"><span orgnztNm></span> 
+								<p class="title" crsNm></p>
+								<p class="tag-wrap">
+									<span class="tag regular" style="display:none;" alwsCrsseqYn="N">정규</span>
+									<span class="tag always" style="display:none;" alwsCrsseqYn="Y">상시</span>
+									<span class="tag always" style="display:none;" alwsCrsseqYn="pkgY">패키지</span>
+								</p>
+								<span class="grey_text time" stdyDate></span>
+							</div>
+							<div class="album-bottom">
+								<p class="grey_text pay" educst></p>
+								<div class="btn-list flex">
+									<button type="button" class="video_icon_btn mr-5" btnPreview><img src="/common/usrs/img/ekt/video_icon.png" alt=""></button>
+									<button type="button" class="heart_btn mr-5" btnInterest><img src="/common/usrs/img/heart.png" alt="" imgInterest></button>
+									<button type="button" class="btn-basic blue_btn" btnEnrol>수강신청</button>
+								</div>
+							</div>
+						</a>
+					</li>`);
+				$app.find("[areaList_2382440f_c092_447e_9e89_ab17de4a6c4f=thum]").append(fnSetComponentInfo($component, obj));
+			});
+			$.each(totalList, function(idx, obj) { // table
+				const $component = $(`
+					<tr>
+						<td crsNm_orgnztNm></td>
+						<td crsrgDate></td>
+						<td stdyDate></td>
+						<td educst></td>
+						<td><button type="button" class="video_icon_btn" btnPreview><img src="/common/usrs/img/ekt/video_icon.png" alt=""></button></td>
+						<td><button type="button" class="heart_btn" btnInterest><img src="/common/usrs/img/heart.png" alt="" imgInterest></button></td>
+						<td class="board_td_btn board_td_btn_type2" btnEnrol><button type="button" class="blue_btn" btnEnrol>수강신청</button></td>
+					</tr>`);
+				$app.find("[areaList_2382440f_c092_447e_9e89_ab17de4a6c4f=table] tbody").append(fnSetComponentInfo($component, obj));
+			});
+
+			function fnSetComponentInfo($component, obj) {
+				const crscd = obj.crscd;
+				const crsseqId = obj.crsseqId;
+				const dgrId = obj.dgrId;
+				const contsid = obj.contsid;
+				const trmsId = obj.trmsId;
+				const loginMsg = '로그인이 필요한 기능 입니다.';
+				const trmsCn =  obj.trmsCn;
+				const dgrSeCd =  obj.dgrSeCd;
+
+				const popupStr = `
+					<div class="pop-wrap pop-up"  popSrvy>
+						<div class="pop-in middle">
+							<div class="pop-cont" id="popDiv">
+								<div class="pop-header flex2">
+									<span>수강신청약관</span>
+									<img class="close" src="` + CP + `/asset/popup/img/pop-up-close.png" alt="닫기" btnClose>
+								</div>
+								<div class="pop-body" style="overflow-y:scroll; height:400px;">
+`
+							    +trmsCn+
+								`
+								</div>
+								 <div class="btnArea tx-right mt-10 mb-5" style="text-align: center;">
+			                        <button class="heart_btn_tmp mt-20 blue_btn" popupbtn>확인</button>
+									<button class="heart_btn_tmp mt-20 grey_btn" btnClose>취소</button>
+			                    </div>
+							</div>
+						</div>
+					</div>
+				`;
+				let str;
+
+				function getSearchPopup(){
+					var $popup = $(popupStr);
+					var bodyOverflow = $("body").css("overflow");
+					$("body").append($popup).css("overflow", "hidden");
+					$popup.show();
+
+					//반응형 팝업 체크 및 크기 조절  show 전에
+					let ww2 = $(window).width();
+					if(ww2 < 625){
+						$("#popDiv").addClass("popWidth");
+					}
+					$popup.find("[btnClose]").click(function(evt) {
+						evt.preventDefault();
+						try { $("body").css("overflow", bodyOverflow); } catch (e) {}
+						$popup.remove();
+						return false;
+						});
+					$popup.find("[popupbtn]").click(function(evt) {
+						evt.preventDefault();
+						var regBtn = $(this);
+
+
+						try { StepEkt.blockUI();
+						} catch (e) {
+						}
+
+						 jQuery.ajax({
+								url : "/mngs/ekt/insertCrsReg.do",
+								cache : false,
+								dataType : 'json',
+								data : {
+									crsseq_id : obj.crsseqId
+								  , alwsCrsseqYn : obj.alwsCrsseqYn
+								},
+								success : function(result) {
+									try { StepEkt.unblockUI(); } catch (e) {}
+									if (result.data.loginYn == 'N') {
+										alert(loginMsg);
+										window.parent.postMessage({
+											method : 'login',
+											redirect_url : window.document.location.href
+										},'*');
+									} else {
+										alert(result.data.msg);
+										/*if (result.data.code == 'S') {
+											$self.removeClass("blue_btn").addClass("gray_btn");
+										}*/
+
+										if(result.data.code == "P"){
+											return false;
+										} else if(result.data.code == "S"){
+											var myPage =  "/usrs/mypage/myCrsing.do" ;
+											location.href = myPage;
+										}
+									}
+								}
+							});
+						 	try { $("body").css("overflow", bodyOverflow); } catch (e) {}
+							$popup.remove();
+							return false;
+					});
+					}//getSearchPopup END
+				$component.click(function(evt) {
+					evt.preventDefault();
+					var pgWrap = $(".pg_wrap span.active").html();
+                    if(trmsId == undefined || trmsId == '' || trmsId == null){
+					 str = `crscd=` + crscd + `&crsseqId=` + crsseqId + `&dgrId=` + dgrId + `&pgWrap=` + pgWrap + `&btnNcsCd=` + btnNcsCd + `&dgrSeCd=` + dgrSeCd;
+                    }
+                    else if(trmsId != null){
+    				 str = `crscd=` + crscd + `&crsseqId=` + crsseqId + `&dgrId=` + dgrId + `&pgWrap=` + pgWrap + `&btnNcsCd=` + btnNcsCd + `&trmsId=`+ trmsId + `&dgrSeCd=` + dgrSeCd;
+                    }
+					for (const [key, value] of formData.entries()) {
+						if (value != '') {
+							str += `&` + key + `=` + value;
+						}
+					}
+					sessionStorage.clear();
+					writeHistory();
+					location.href = `/kdcCrsDetailForm.do?` + str;
+					return false;
+				});
+
+				$component.find("[crsNm]").text(obj.crsseqNm); // 과정명/*  ('02' == obj.dgrSeCd?'[묶음과정]':'') */
+				$component.find("[orgnztNm]").text(obj.orgnztNm); // 기관
+				$component.find("[viewCnt]").text("조회 수 : " + formatViewCount(obj.viewCnt)); 
+				$component.find("[crsNm_orgnztNm]").prepend("[" + obj.orgnztNm + "]"+ obj.crsseqNm); // 과정명_기관
+				$component.find("[btnPreview]").click(function(evt) { // 맛보기
+					evt.preventDefault();
+					if(dgrSeCd == '02') {
+						fnCntntPrvw(obj.pkgCrsseqId, "N");
+					} else if(obj.bizGubun == '05'){
+						fnCntntPrvw(crsseqId, "Y");
+					} else if (obj.previewSampleUseYn == 'Y' && crsseqId != null && crsseqId != undefined && crsseqId != '') {
+						fnCntntPrvw(crsseqId, "N");
+					} else {
+						alert("선택된 목차가 없습니다.");
+					}
+					return false;
+				});
+				$component.find("[btnInterest]").click(function(evt) { // 관심과정
+					evt.preventDefault();
+					const $self = $(this);
+					const $img = $self.find("img"); // /common/usrs/img/heart.png
+					StepEkt.blockUI();
+					jQuery.ajax({
+						url : "/usrs/mypage/checkFavor.do",
+						cache : false,
+						dataType : 'json',
+						data : {
+							crscd : obj.crscd,
+							crsseqid : obj.crsseqId
+						},
+						success : function(result) {
+							StepEkt.unblockUI();
+							if (result.loginYn == 'N') {
+								alert(loginMsg);
+							} else {
+								if (result.check == 'D') {
+									alert('관심 과정이 해제됐습니다.');
+									$self.removeClass('active');
+									$img.attr("src", "/common/usrs/img/heart.png");
+								} else {
+									alert('관심 과정으로 등록됐습니다.');
+									$self.addClass('active');
+									$img.attr("src", "/common/usrs/img/heart_on.png");
+								}
+								/* var myPage =  "/usrs/mypage/myCrsSelected.do" ;
+								location.href = myPage; */
+							}
+						}
+					});
+					return false;
+				});
+				$component.find("[btnEnrol]").click(function(evt) { // 수강신청
+					evt.preventDefault();
+ 					const $self = $(this);
+					try { StepEkt.blockUI(); } catch (e) {}
+					 if(obj.educertiUseYn == 'N' && obj.regCnt == 0){
+						if(!confirm('수료증이 발급되지 않는 과정입니다. 수강신청 하시겠습니까?')){
+							try { StepEkt.unblockUI(); } catch (e) {}
+							return false;
+						}
+					}
+				const trmsId = obj.trmsId;
+				const trmsCn = obj.trmsCn;
+
+				if(!isEmpty(trmsCn) && obj.regCnt == 0){
+					getSearchPopup();
+					StepEkt.unblockUI();
+				} else if(dgrSeCd == '02' && obj.fnshChcCrsCnt > 0 && obj.regCnt == 0) {
+					alert('수강신청에 필요한 과정이 선택되지 않았습니다.');
+					var pgWrap = $(".pg_wrap span.active").html();
+                    if(trmsId == undefined || trmsId == '' || trmsId == null){
+					 str = `crscd=` + crscd + `&crsseqId=` + crsseqId + `&dgrId=` + dgrId + `&pgWrap=` + pgWrap + `&btnNcsCd=` + btnNcsCd + `&dgrSeCd=` + dgrSeCd + `&pkgRegYn=` + 'Y';
+                    }
+                    else if(trmsId != null){
+    				 str = `crscd=` + crscd + `&crsseqId=` + crsseqId + `&dgrId=` + dgrId + `&pgWrap=` + pgWrap + `&btnNcsCd=` + btnNcsCd + `&trmsId=`+ trmsId + `&dgrSeCd=` + dgrSeCd + `&pkgRegYn=` + 'Y';
+                    }
+					for (const [key, value] of formData.entries()) {
+						if (value != '') {
+							str += `&` + key + `=` + value;
+						}
+					}
+					sessionStorage.clear();
+					writeHistory();
+					location.href = `/kdcCrsDetailForm.do?` + str;
+					return false;
+				}
+				else{
+				 jQuery.ajax({
+					url : "/mngs/ekt/insertCrsReg.do",
+					cache : false,
+					dataType : 'json',
+					data : {
+						crsseq_id : obj.crsseqId
+					  , alwsCrsseqYn : obj.alwsCrsseqYn
+					},
+					success : function(result) {
+						try { StepEkt.unblockUI(); } catch (e) {}
+						if (result.data.loginYn == 'N') {
+							alert(loginMsg);
+							window.parent.postMessage({
+								method : 'login',
+								redirect_url : window.document.location.href
+							},'*');
+						} else {
+							alert(result.data.msg);
+							/*if (result.data.code == 'S') {
+								$self.removeClass("blue_btn").addClass("gray_btn");
+							}*/
+
+							if(result.data.code == "P"){
+								return false;
+							} else if(result.data.code == "S"){
+								var myPage =  "/usrs/mypage/myCrsing.do" ;
+								location.href = myPage;
+							}
+						}
+					}
+				});
+				return false;
+				}
+					return false;
+					StepEkt.unblockUI();
+				});
+				if (obj.alwsCrsseqYn == "N") { // 정규
+					if (obj.stdyBgngYmd != null) { // 교육일자
+						$component.find("[stdyDate]").prepend(fnDateFormat(obj.stdyBgngYmd) + " ~ " + fnDateFormat(obj.stdyEndYmd));
+					} else if (obj.stdyDys != null) {
+						$component.find("[stdyDate]").prepend(obj.stdyDys + " 일");
+					}
+					if (obj.crsrgBgngYmd != null) { // 수강신청일자
+						$component.find("[crsrgDate]").prepend(fnDateFormat(obj.crsrgBgngYmd) + " ~ " + fnDateFormat(obj.crsrgEndYmd));
+					}
+					$component.find("[alwsCrsseqYn=N]").show();
+				} else if (obj.alwsCrsseqYn == "Y") { // 상시
+					//2024-02-22 eychoi 추가
+					$component.find("[crsrgDate]").prepend("상시");
+					var alwsTxt = "상시";
+
+					if(obj.bizGubun == "02" || obj.bizGubun == "04") {
+						alwsTxt = "K-디지털";
+						$component.find("[alwsCrsseqYn=Y]").css("background-color", "#f89201");
+					}else if(obj.bizGubun == "03" ) {
+						alwsTxt = "마켓";
+						$component.find("[alwsCrsseqYn=Y]").css("background-color", "#f89201");
+					}//2024-02-22 eychoi 추가 끝
+
+					$component.find("[alwsCrsseqYn=Y]").text(alwsTxt);
+					$component.find("[alwsCrsseqYn=Y]").show();
+				} else if (obj.alwsCrsseqYn == "pkgY") { // 패키지
+					//2024-03-26 김근원 추가
+					if (obj.stdyBgngYmd != null) { // 교육일자
+						$component.find("[stdyDate]").prepend(fnDateFormat(obj.stdyBgngYmd) + " ~ " + fnDateFormat(obj.stdyEndYmd));
+					} else if (obj.stdyDys != null) {
+						$component.find("[stdyDate]").prepend(obj.stdyDys + " 일");
+					}
+					if (obj.crsrgBgngYmd != null) { // 수강신청일자
+						$component.find("[crsrgDate]").prepend(fnDateFormat(obj.crsrgBgngYmd) + " ~ " + fnDateFormat(obj.crsrgEndYmd));
+					}
+					$component.find("[crsrgDate]").prepend("패키지");
+					var alwsTxt = "패키지";
+					//console.log("crsseqId.",obj.crsseqId)
+					//console.log("biz.",obj.bizGubun)
+
+					$component.find("[alwsCrsseqYn=pkgY]").text(alwsTxt);
+					$component.find("[alwsCrsseqYn=pkgY]").show();
+				}/* else{
+					$component.find("[stdyDate]").prepend(fnDateFormat(obj.stdyBgngYmd) + " ~ " + fnDateFormat(obj.stdyEndYmd));
+					$component.find("[stdyDate]").prepend(obj.stdyDys + " 일");
+				} */
+				/*
+				if (obj.educstFreeYn == "Y") { // 교육비
+					$component.find("[educst]").text("무료");
+				} else {
+					$component.find("[educst]").text(obj.educst + " 원");
+				}
+				*/
+				if(obj.vdFileUrl == null && obj.bizGubun == "05"){
+					$component.find("[btnpreview]").hide();
+				}
+				if (obj.educst == null || obj.educst == "" || obj.educst == "0") {
+					$component.find("[educst]").text("무료");
+				} else {
+					$component.find("[educst]").text(StepEkt.currenty(obj.educst) + " 원");
+				}
+				if (obj.mobileYn == "Y") { // 모바일
+					$component.find("[mobileYn]").show();
+				}
+				if (obj.favorCnt > 0) {
+					$component.find("[imgInterest]").attr("src", "/common/usrs/img/heart_on.png");
+				}
+				if (obj.regCnt > 0) {
+					$component.find("button[btnEnrol]").removeClass("blue_btn").addClass("gray_btn");
+				}
+
+
+				// 2023.12.13 jmryou 과정이미지 조회 수정 start
+				var o_crsImgFileUrl = obj.crsImgFileUrl;
+
+				if(o_crsImgFileUrl != undefined){
+					if(o_crsImgFileUrl.includes('ekt')){
+						// 이미지 직접등록
+						var filePath = encodeURI(o_crsImgFileUrl);
+// 						$component.find("[crsImg]").attr('src', "/imgView.do?filePath=" + filePath + "");
+						$component.find("[crsImg]").attr('src', filePath.replace("/data/files/ekt/upload","/upload"));
+					} else {
+						// cms url
+						$component.find("[crsImg]").attr('src', StepEkt.logoUrl(o_crsImgFileUrl));
+					}
+
+				} // 2023.12.13 jmryou 과정이미지 조회 수정 end
+
+				return $component;
+			}
+			function formatViewCount(viewCount) {
+				if (viewCount >= 1000000000){
+					return (viewCount / 1000000000).toFixed(1) + 'B';
+				}else if (viewCount >= 1000000) {
+			        return (viewCount / 1000000).toFixed(1) + 'M';
+			    } else if (viewCount >= 1000) {
+			        return (viewCount / 1000).toFixed(1) + 'k';
+			    } else {
+			        return viewCount.toString();
+			    }
+			}
+			function fnDateFormat(ymd) {
+				if (ymd.length > 8) {
+					return ymd.substring(0, 4) + "." + ymd.substring(4, 6) + "." + ymd.substring(6, 8);
+				}
+				return ymd
+			}
+			function fnCntntPrvw(crsseqId, prveYn) {
+				const ls_pri = "toolbar=no, location=no, directories=no, menubar=no, resizable=yes, scrollbars=yes, status=yes, fullscreen=yes,top=0,left=0 width=1280, height=768";
+				var wd_pop = window.open("", "contentsPreviewPopUp", ls_pri);
+				const version = navigator.appVersion;
+				if (version.indexOf("MSIE 7.0") > -1) {
+					addHeight = 50;
+				}
+				wd_pop.blur();
+				wd_pop.focus();
+				StepEkt.ajax({
+					url: CP+ "/cntntPrvw.do",
+					data: {p_crsseq_id : crsseqId, p_prvd_yn : prveYn},
+					method: "GET",
+					success: function(response) {
+						let x = 1280;
+						let y = 768;
+						if(response.result == '0') {
+							if(response.prvdYnResult == '-1'){
+								wd_pop.alert("홍보영상이 없습니다.");
+								wd_pop.close();
+								return false;
+							}
+							let browser = browserReturn();
+							if(response.fulscrnUseyn == 'Y') {
+								x = window.screen.width;
+								y = browserScreenHeight();
+
+								if (browser.safari) {
+									x = parseInt(x * 0.99);
+									y = parseInt(y * 0.99);
+								}
+							} else {
+								x = parseInt(response.width);
+								y = parseInt(response.height)
+								if(response.istopframe == 'Y') {
+									y += 60;
+								}
+							}
+							if (navigator.userAgent.indexOf("APP_Running") > -1) {
+								const $form = $("<form>").appendTo($("body"));
+				 				$form.attr("action", "/usrs/cms/contentsSamplePopUp2.do");
+				 				$form.append("<input type='hidden' name='p_crscd' value='" + response.crscd + "'/>");
+				 				$form.append("<input type='hidden' name='p_crs_cd' value='" + response.crscd + "'/>");
+				 				$form.append("<input type='hidden' name='p_crsseq_id' value='" + response.crsseqId + "'/>");
+				 				$form.append("<input type='hidden' name='p_contsid' value='" + response.contsid + "'/>");
+				 				$form.append("<input type='hidden' name='p_prvd_yn' value='" + prveYn + "'/>");
+				 				$form.append("<textarea name='p_tree_data' style='display:none;'>'" + response.treeData + "'</textarea>");
+				 				$form.submit();
+				 				$form.remove();
+							} else {
+								$("#frm").attr("target", "contentsPreviewPopUp").submit();
+								const $form = $("<form>").appendTo($("body"));
+								$form.attr("action", "/usrs/cms/contentsSamplePopUp2.do");
+				 				$form.append("<input type='hidden' name='p_crscd' value='" + response.crscd + "'/>");
+				 				$form.append("<input type='hidden' name='p_crs_cd' value='" + response.crscd + "'/>");
+				 				$form.append("<input type='hidden' name='p_crsseq_id' value='" + response.crsseqId + "'/>");
+				 				$form.append("<input type='hidden' name='p_contsid' value='" + response.contsid + "'/>");
+				 				$form.append("<input type='hidden' name='p_prvd_yn' value='" + prveYn + "'/>");
+				 				$form.append("<textarea name='p_tree_data' style='display:none;'>'" + response.treeData + "'</textarea>");
+				 				$form.attr("target", "contentsPreviewPopUp").submit();
+				 				$form.remove();
+							}
+						} else {
+							alert("선택된 목차가 없습니다. ()");
+						}
+
+						function browserReturn() {
+							var userAgent = navigator.userAgent.toLowerCase();
+							var browser = {
+								msie    : (/msie/.test(userAgent) && !/opera/.test(userAgent)) || (navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1),
+								safari  : /webkit/.test(userAgent),
+								firefox : /mozilla/.test(userAgent) && !/(compatible|webkit)/.test(userAgent) && !(navigator.appName == 'Netscape' && navigator.userAgent.search('Trident') != -1),
+								opera   : /opera/.test(userAgent)
+							};
+							return browser;
+						}
+						//wd_pop.resizeTo(x,y)
+						
+						function browserScreenHeight() {
+							var browser = browserReturn();
+							var totalHeight = 0;
+							if (browser.msie) {
+								totalHeight = window.screen.height;
+							} else if (browser.safari) {
+								totalHeight = parseInt(window.screen.height * 0.88);
+							} else if (browser.firefox) {
+								totalHeight = window.screen.height;
+							} else if (browser.opera) {
+								totalHeight = window.screen.height;
+							} else {
+								totalHeight = 0;
+							}
+							return totalHeight;
+						}
+					},
+					fail: function(result, data) {
+						if (result == -3) {
+							alert(data);
+						} else if (result == 1) {
+							alert(MSG_SAVE_ERROR);
+						} else {
+							alert(data);
+						}
+					}
+				});
+			}
+
+			fnPaging();
+
+			fnSendAppMessage();
+		}
+
+		// 앱에서 호출할 함수: 특정 페이지로 이동
+        function navigateToPage(pageUrl) {
+            window.location.href = pageUrl; // 페이지 이동
+        }
+
+		function fnSendAppMessage() {
+			window.webkit.messageHandlers.notifyApp.postMessage('Page Loaded');
+		}
+
+		function fnPaging() {
+			let listCnt = 10;
+			let naviCnt = 10;
+			if($(window).width() < 510){
+				listCnt = 10;
+				naviCnt = 5;
+			}
+			const currGroup = Math.floor(currPage / naviCnt) + ((currPage % naviCnt == 0) ? 0 : 1);
+			const startPage = currGroup * naviCnt - naviCnt + 1;
+			const endPage = currGroup * naviCnt;
+			const firstPage = 1;
+			const prevPage = startPage - 1;
+			const nextPage = endPage + 1;
+			const lastPage = totalPage;
+			const $area = $app.find("[areaPage_2382440f_c092_447e_9e89_ab17de4a6c4f]").empty();
+
+			(function() {
+				let $component = $(`<button type="button" name="button" class="first_btn"><img src="/common/usrs/img/first_arrow.png" alt=""></button>`).appendTo($area);
+				$component.click(function() { if (totalCount > 0) { fnSearch(firstPage); } return false; });
+			})(); // firstPage
+
+			(function() {
+				let $component = $(`<button type="button" name="button" class="prev_btn"><img src="/common/usrs/img/prev_arrow.png" alt=""></button>`).appendTo($area);
+				$component.click(function() { if (firstPage <= prevPage) { fnSearch(prevPage); } return false; });
+			})(); // prevPage
+
+			for (var i = startPage; i <= endPage && i <= lastPage; i++) {
+				(function(j) {
+					let $component = $(`<span class="` + (j == currPage ? 'active' : '') + `">` + j + `</span>`).appendTo($area);
+					$component.click(function() { fnSearch(j); return false; });
+				})(i); // page
+			}
+
+			(function() {
+				let $component = $(`<button type="button" name="button" class="next_btn"><img src="/common/usrs/img/next_arrow.png" alt=""></button>`).appendTo($area);
+				$component.click(function() { if (lastPage >= nextPage) { fnSearch(nextPage); } return false; });
+			})(); // nextPage
+
+			(function() {
+				let $component = $(`<button type="button" name="button" class="last_btn"><img src="/common/usrs/img/last_arrow.png" alt=""></button>`).appendTo($area);
+				$component.click(function() { if (totalCount > 0) { fnSearch(lastPage); } return false; });
+			})(); // lastPage
+		}
+		
+		//뒤로가기 세팅
+		window.onpageshow = function(ev) {
+			// Navigation Timing API를 사용하여 navigation type 확인
+		    var navigationType = window.performance.getEntriesByType("navigation")[0].type;
+			
+			if (ev.persisted || navigationType === 'back_forward' || sessionStorage.getItem("isBackList") == 'Y') {
+				sessionStorage.setItem("isBackList","N"); //목록 복귀 후 값 초기화
+				
+				fnSetSearchValue(sessionStorage.getItem("searchValue"));
+				fnSetSearchStartDt(sessionStorage.getItem("searchStartDt"));
+				fnSetSearchEndDt(sessionStorage.getItem("searchEndDt"));
+				fnSetSearchPeriodDt(sessionStorage.getItem("searchPeriodDt"));
+				fnSetSearchFeeType(sessionStorage.getItem("searchFeeType"));
+				fnSetSearchAlwsCrsseqYn(sessionStorage.getItem("searchAlwsCrsseqYn"));
+				fnSetSearchDeviceType(sessionStorage.getItem("searchDeviceType"));
+				fnSetSearchSortType(sessionStorage.getItem("searchSortType"));
+				fnSetSearchShowType(sessionStorage.getItem("searchShowType"));
+				
+				leftMenuActivation();
+				
+				let page = isEmpty(sessionStorage.getItem("pgWrap")) ? 1 : sessionStorage.getItem("pgWrap");
+				
+				fnSearch(page, "Y");
+			} else {
+				//뒤로가기가 아닌 최초 접근일경우 세션 스토리지 초기화
+				sessionStorage.clear();
+				
+				fnSetSearchValue("");
+				fnSetSearchStartDt("");
+				fnSetSearchEndDt("");
+				fnSetSearchPeriodDt("");
+				fnSetSearchFeeType("A");
+				fnSetSearchAlwsCrsseqYn("A");
+				fnSetSearchDeviceType("A");
+				fnSetSearchSortType("latest");
+				fnSetSearchShowType("album");
+				
+				// 페이지 선택항목 기억하기
+				fnSetNcsCd("all");
+				fnSearch("1", "Y");
+			}
+		}
+		
+		function writeHistory() {
+			
+			let menuData = $('.menu_btn.active').attr('btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f');
+			sessionStorage.setItem("btnMenu",menuData);
+			let hasSubInNav = $('li.active').children('ul.sub_in_nav').length > 0;
+
+			if(hasSubInNav) {
+				sessionStorage.setItem("subBtnNcs",$app.find("a[btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f].active").data('url'));
+			}
+			sessionStorage.setItem("searchValue",$app.find("[searchValue_2382440f_c092_447e_9e89_ab17de4a6c4f]").val());
+			sessionStorage.setItem("searchStartDt",$app.find("[searchStartDt_2382440f_c092_447e_9e89_ab17de4a6c4f]").val());
+			sessionStorage.setItem("searchEndDt",$app.find("[searchEndDt_2382440f_c092_447e_9e89_ab17de4a6c4f]").val());
+			sessionStorage.setItem("hiddenSearchPeriodDt",$app.find("[hiddenSearchPeriodDt_2382440f_c092_447e_9e89_ab17de4a6c4f]").val());
+			sessionStorage.setItem("searchPeriodDt",$('input[name="searchPeriodDt"]:checked').val());
+			sessionStorage.setItem("searchFeeType",$('input[name="searchFeeType"]:checked').val());
+			sessionStorage.setItem("searchAlwsCrsseqYn",$('input[name="searchAlwsCrsseqYn"]:checked').val());
+			sessionStorage.setItem("searchDeviceType",$('input[name="searchDeviceType"]:checked').val());
+			sessionStorage.setItem("searchSortType",$app.find("[btnSortType_2382440f_c092_447e_9e89_ab17de4a6c4f][selectYn=Y]").attr("btnSortType_2382440f_c092_447e_9e89_ab17de4a6c4f"));
+			sessionStorage.setItem("searchShowType",$app.find("[btnShowType_2382440f_c092_447e_9e89_ab17de4a6c4f][selectYn=Y]").attr("btnShowType_2382440f_c092_447e_9e89_ab17de4a6c4f"));
+			sessionStorage.setItem("pPageno",$(".pg_wrap span.active").html());
+			sessionStorage.setItem("pgWrap",$(".pg_wrap span.active").html());
+			
+		}
+		
+		function leftMenuActivation() {
+			if (isEmpty(sessionStorage.getItem("btnMenu"))) {
+				//값이 없다면 기본값이 전체과정 조회 활성화
+				$('.menu_btn').each(function() {
+					if ($(this).attr('btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f') == "all") {
+						// 조건을 만족하는 요소에 'active' 클래스 추가
+						$(this).addClass('active');
+						$(this).parent('li').addClass('active');
+					} else {
+						$(this).removeClass('active');
+						$(this).parent('li').removeClass('active');
+					}
+				});
+			} else {
+				//값에 해당하는 메뉴 활성화 하위메뉴가 있다면 같이 활성화
+				$('.menu_btn').each(function() {
+					if ($(this).attr('btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f') == sessionStorage.getItem("btnMenu")) {
+						// 조건을 만족하는 요소에 'active' 클래스 추가
+						$(this).addClass('active');
+						$(this).parent('li').addClass('active');
+
+						if($(this).parent('li').children('ul.sub_in_nav').length > 0) {
+							$(this).parent('li').children('ul.sub_in_nav').css('display', 'block');
+						}
+					}
+				});
+
+				if(!isEmpty(sessionStorage.getItem("subBtnNcs"))) {
+					$app.find("a[btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f]").each(function() {
+						if ($(this).attr('btnNcsCd_2382440f_c092_447e_9e89_ab17de4a6c4f') == sessionStorage.getItem("subBtnNcs")) {
+							// 조건을 만족하는 요소에 'active' 클래스 추가
+							$(this).addClass('active');
+						}
+					});
+					//디테일로 ncs코드를 넘겨주면 알아서 레프트 메뉴 세팅해줌.
+					btnNcsCd = sessionStorage.getItem("subBtnNcs")
+				} else {
+					btnNcsCd = sessionStorage.getItem("btnMenu")
+				}
+			}
+		}
+
+	 	// 240125 레프트 메뉴 모바일 버전 스크립트
+	    $(window).resize(function () {
+	    	let ww = $(window).width();
+	      	if (ww > 1200) {
+		        $(".left_menu_wrapper .left_menu").css('display', "table-cell");
+		        $("#btnLink, #btnExcel").hasClass("marginChange");
+				$("#dateCheckDiv").show();
+     			$("[name='btnList']").removeClass("btnSize28");
+		    } else {
+	        	if (!$(".hd_cate_btn").hasClass("open")) {
+	          		$(".left_menu_wrapper .left_menu").css('display', "none");
+	          		$(".hd_cate_btn").removeClass("open");
+	          		$("#btnLink, #btnExcel").removeClass("marginChange");
+	          		$("#dateCheckDiv").hide();
+	          		$("[name='btnList']").addClass("btnSize28");
+	        	}
+        	}
+
+	      	/* 2024-02-25 hwson 검색 글씨 모바일용 처리  */
+	      	if(ww < 801){
+	      		$("#nameValue").html("과정/<br/>운영사");
+	      		$(".icon_phone").width('25px');
+	      		$(".icon_phone").height('25px');
+	      	}else{
+	      		$("#nameValue").text("과정/운영사");
+	      		$(".icon_phone").width('30px');
+	      		$(".icon_phone").height('30px');
+	      	}
+	      	/*hwson 끝 */
+
+	    });
+
+		function moLeftMenuOpen() {
+			const ww = $(window).width();
+	      	if (ww <= 1200) {
+	      		if ($(".hd_cate_btn").hasClass("open")) {
+	      			$(".hd_cate_btn").removeClass("open");
+	          		$(".left_menu_wrapper .left_menu").fadeOut();
+	          		$(".left_menu_wrapper .left_menu ul").animate({ "left": "-60%" });
+	        	} else {
+	        		$(".hd_cate_btn").addClass("open");
+	          		$(".left_menu_wrapper .left_menu").fadeIn();
+	          		$(".left_menu_wrapper .left_menu ul").animate({ "left": 0 });
+	        	}
+       		}
+      	}
+
+	    $('.left_menu').click(function (e) {
+	    	const ww = $(window).width();
+	      	if (ww <= 1200) {
+	      		if ($(e.target).hasClass("left_menu")) {
+	      			$(".hd_cate_btn").removeClass("open");
+	          		$(".left_menu_wrapper .left_menu").fadeOut();
+	          		$(".left_menu_wrapper .left_menu ul").animate({ "left": "-60%" });
+	       		}
+	      	}
+	    });
+
+		function resize_chk_mobile_menu(e) {
+			const link = e.dataset.url;
+      		const ww = $(window).width();
+      		if (ww > 1200) {
+      			//$(".hd_cate_btn").removeClass("open");
+          		//$(".left_menu_wrapper .left_menu").fadeOut();
+          		//$(".left_menu_wrapper .left_menu ul").animate({ "left": "-60%" });
+      		} else {
+      			if ($(e).parents("li").hasClass("no_sub")) {
+      				$(".hd_cate_btn").removeClass("open");
+	          		$(".left_menu_wrapper .left_menu").fadeOut();
+	          		$(".left_menu_wrapper .left_menu ul").animate({ "left": "-60%" });
+       			 } else {
+       					 //$(".sub_in_nav").hide();
+				       $('.left_menu>ul>li').removeClass("active");
+				       $('.sub_nav>li>button').removeClass("active");
+				       $(".chk_mboile_sub_menu").removeClass("active");
+				       $(e).parents('li').addClass("active");
+				       $(e).parents('li').find('ul').slideDown('400');
+				       $(e).addClass("active");
+				       $(".hd_cate_btn").removeClass("open");
+				     	$(".hd_cate_btn").removeClass("open");
+		          		$(".left_menu_wrapper .left_menu").fadeOut();
+		          		$(".left_menu_wrapper .left_menu ul").animate({ "left": "-60%" });
+        		}
+		}
+    }
+	
+    // 240125 레프트 메뉴 모바일 버전 스크립트 끝
+</script></div>
+		<script type="text/javascript" src="/js/iframeJs.js?ver=20240614"></script>
+		<script type="text/javascript" src="/js/common.js?ver=20240614"></script>
+	</body>
+</html>

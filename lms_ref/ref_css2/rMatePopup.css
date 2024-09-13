@@ -1,0 +1,31 @@
+/*마스터 타이틀*/
+.master_title{position: absolute; top: 40px; z-index: 9;left: 100; width: 280px; display: none;}
+.filter_layer{background-color: #fff; border-radius: 5px; box-shadow: 1px 5px 10px rgba(0,0,0,0.2); padding: 15px; z-index: 9}
+.filter_layer ul{padding: 0 0 15px; border-bottom: 1px solid #ddd;}
+.filter_layer ul li span{margin-right: 10px; }
+.filter_layer ul li .normal_input{min-width: 100px; width: 100px;}
+.filter_layer>div{padding: 15px 0;}
+.filter_layer>div:last-child{padding-bottom: 0;}
+.filter_layer ul li{width: 100%; margin-bottom: 10px;   }
+.filter_layer ul li:last-child{margin-bottom: 0;}
+.filter_layer .filter_btns{font-size: 0; }
+.filter_layer .filter_btns button{display: inline-block; vertical-align: top; background-color: transparent; border:0; width: 50%; text-align: left; margin-bottom: 10px;}
+.filter_layer .filter_btns button:nth-last-child(-n+2){margin-bottom: 0;}
+.filter_layer .filter_colums{font-size: 0; border-top:1px solid #ddd;  display: none;}
+.filter_layer .filter_colums label{display: inline-block; vertical-align: top; background-color: transparent; border:0; width: 33.3333%; text-align: left; margin-bottom: 10px; font-size: 15px;}
+.filter_layer .filter_colums label:nth-last-child(-n+3){margin-bottom: 0;}
+
+/* 그리드 필터 메시지박스 처리  - 메시지박스에 margin-top 36px를 준다. 없다면 컬럼의 필터영역 클릭이 안된다. */
+div.rMateH5__Box {
+    height: calc(100% - 36px) !important;
+    margin-top: 36px;
+}
+div.rMateH5__Box div.rMateH5__ContentPane {
+    height: 100% !important;
+}
+div.rMateH5__Box div.rMateH5__ContentPane div.rMateH5__Label {
+    top: calc(50% - 29px) !important;
+}
+div.rMateH5__rMateGrid div.rMateH5__DataGrid div.rMateH5__DataGridFilterList {
+	z-index: 9999;
+}

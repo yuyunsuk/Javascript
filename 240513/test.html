@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html 공부중</title>
+</head>
+<body>
+
+    <!-- [br Tag] : 엔터 효과 -->
+    html 을 <br>
+    시작해 볼까요? <br>
+    ctrl + s
+    
+    <!-- [p Tag: 글자에 주로 사용] -->
+    <p>오늘 점심은</p>
+    <p>머 먹지?</p>
+
+    <!-- [div Tag: 분할 등에 사용] -->
+    <div>짬뽕?</div> <div>짜장면?</div> <div>부대찌개?</div>
+
+    <!-- [h Tag: 헤드라인 글자 강조에 사용] -->
+    <h1>헤드라인</h1>
+    <h2>헤드라인</h2>
+    <h3>헤드라인</h3>
+    <h4>헤드라인</h4>
+    <h5>헤드라인</h5>
+    <h6>헤드라인</h6>
+
+    <!-- html 주석
+        block 태그 - 블럭 단위 영역으로 화면 표시 하고자할때 사용
+        inline 태그 - 태그내부의 크기만큼만 영역 표시 <span></span>
+    -->
+
+    <span>나는 inline태그입니다.</span> <span>엽떡? 먹을까?</span>
+
+    <!-- [b Tag : 문장 전체 등 글씨 굵게 표시] -->
+    <b>나좀 다르지?</b>
+
+    <!-- [strong Tag : 글씨(문단 또는 단락) 굵게 표시] -->
+    <strong>문단 또는 단락에서 강조효과를 위해</strong>
+
+    <!-- [img Tag : 이미지 표시, src 는 source 줄여서 사용되는 img 의 속성이다. 경로를 정하는 방법은 폴더 기준[./: 현재 폴더, ../: 상위폴더]] -->
+    <img src="./test.jpg">
+
+    <!-- [범위 이미지 사이트에서 이미지를 랜덤으로 가져옴(가로/세로)] -->
+    <img src="https://picsum.photos/250/50">
+    <img src="https://fpoimg.com/200x200">
+    <img src="https://dummyimage.com/200x200/000/fff&text=Water_is_Life">
+    
+    <!-- [table>tr*2>td*3{$}] 이렇게 하고 엔터시 Emmet 약어로 자동생성 됨 -->
+
+    <!-- [table Tag 는 표를 그릴때 사용한다, border 는 테두리를 의미] -->
+    <table border="1">
+        <!-- [tr(Table row) Tag 는 행 의미] -->
+        <!-- [td(Table data) Tag 는 열 의미, 보통 첫번재 줄에 너비, 높이를 줌(픽셀 단위)] -->
+        <!-- [2행, 3열] -->
+        <tr>
+            <td width="100" height="50">1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td width="50">6</td>
+        </tr>
+    </table>
+    <div>
+        <!-- 전송 방법 => 1. a Tag: 보통 단순 Page 이동, 2. form Tag: 보통 데이터를 가지고 이동 -->
+        <!-- [form Tag : 전송 기능], 폼은 입력된 데이터를 한 번에 서버로 전송 -->
+        <!-- [method get 방식: 보통 검색어 입력시[주소에 물음표, query 에 검색 단어가 보이면 get, 외부에 노출됨, 전송 빠름],
+                     post 방식: 화면에 노출되지 않음, 암호화 형태로 가공후 전송, 전송 Encoding, 받는 쪽 Decoding, 전송 조금 느림] -->
+        <!-- [action: 전달할 곳 주소 표시] -->
+        <form method="get" action="./signup.html">
+            <div>
+                <!-- [label Tag : 글씨 표시, input Tag 같이 사용,
+                    라벨의 경우 input 또는 체크를 사용시 글자를 클릭해도 input 안에 커서 또는 체크 처리가 됨] -->
+                <label>아이디</label>
+                <!-- [input Tag : 입력할 수 있는 공간 확보] -->
+                <input>
+            </div>
+            <div>
+                <label>비밀번호</label>
+                <input>
+            </div>
+            <!-- [button Tag : 버튼 사용, input Tag 로 버튼을 사용 할 수 있지만 설정이 많음] -->
+            <button>로그인</button>
+        </form>
+        <!-- [a 태그는 한 페이지에서 다른 페이지를 연결할 때 사용하는 하이퍼링크를 말할 때 사용하며, 앵커 태그라고 부르기도 합니다.] -->
+        <a href="./signup.html">회원가입</a>
+    </div>
+
+</body>
+</html>

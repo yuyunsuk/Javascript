@@ -1,0 +1,52 @@
+/*.hd_con {
+  overflow:hidden;
+}*/
+/*
+.hd_pop {
+  height:58px;
+}
+.hd_pop_right {
+  right:19px;
+  z-index:999;
+}
+*/
+
+.bootstrap-select > .dropdown-toggle:after {
+  border-top: initial;
+  border-right: initial;
+  border-bottom: initial;
+  border-left: initial;
+}
+.bootstrap-select .dropdown-menu {
+  display: initial;
+  min-width: 100% !important;
+  padding: initial;
+}
+.bootstrap-select .btn {
+  padding: initial;
+}
+.bootstrap-select .btn:focus {
+  color: #999;
+}
+.bootstrap-select  .btn,
+.bootstrap-select  .btn:hover,
+.bootstrap-select  .btn:focus,
+.bootstrap-select  .btn:active {
+  box-shadow : none;
+}
+
+.column .add-text .btn-box .black-btn{
+  padding:initial;
+}
+
+.column .list-btn .btn{
+  padding:initial;
+  border:initial;
+}
+
+b{
+  font-weight:bold;
+}
+i {
+  font-style:italic
+}

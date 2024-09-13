@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <!-- <link rel="icon" href="./favicon.ico" /> -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <meta name="theme-color" content="#227df9" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <!-- <link rel="apple-touch-icon" href="./logo192.png" /> -->
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="./manifest.json" />
+    <title>학습창</title>
+  <!-- <script defer src="./static/js/main.cc5e2426.js?ca2eb83c14d2620ba866"></script><link href="./static/css/main.bdc4f338.css?ca2eb83c14d2620ba866" rel="stylesheet"></head> -->
+  <script defer src="./ref_js5/main.cc5e2426.js"></script><link href="./ref_css5/main.bdc4f338.css" rel="stylesheet"></head>
+  <body oncontextmenu="return false" ondragstart="return false">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <script>
+      async function save_html_progress(param) {
+        console.log("save_html_progress", param);
+        const message = {
+          type: "save_html_progress",
+          data: param,
+        };
+        window.parent.postMessage(message, "*");
+      }
+
+      async function save_video_progress(param) {
+        console.log("save_video_progress", param);
+        const message = {
+          type: "save_video_progress",
+          data: param,
+        };
+        window.parent.postMessage(message, "*");
+      }
+
+      async function save_quiz_progress(param) {
+        console.log("save_quiz_progress", param);
+        const message = {
+          type: "save_quiz_progress",
+          data: param,
+        };
+        window.parent.postMessage(message, "*");
+      }
+
+      async function post_memo(param) {
+        console.log("post_memo", param);
+        const message = {
+          type: "post_memo",
+          data: param,
+        };
+        window.parent.postMessage(message, "*");
+      }
+
+      async function post_question_with_files(param) {
+        console.log("post_question_with_files", param);
+        const message = {
+          type: "post_question_with_files",
+          data: param,
+        };
+        window.parent.postMessage(message, "*");
+      }
+
+      async function save_last_entry_data(param) {
+        console.log("save_last_entry_data", param);
+        const message = {
+          type: "save_last_entry_data",
+          data: param,
+        };
+        window.parent.postMessage(message, "*");
+      }
+
+      async function exit_player() {
+        console.log("exit_player");
+        const message = {
+          type: "exit_player",
+        };
+        window.parent.postMessage(message, "*");
+      }
+
+      async function save_video_book_marks_data(param) {
+        console.log("save_video_book_marks_data", param);
+        const message = {
+          type: "save_video_book_marks_data",
+          data: param,
+        };
+        window.parent.postMessage(message, "*");
+      }
+
+      function report_error(param) {
+        console.log("report_error", param);
+        const message = {
+          type: "report_error",
+          data: param,
+        };
+        window.parent.postMessage(message, "*");
+      }
+
+      function save_el_progress(param) {
+        console.log("save_el_progress", param);
+        const message = {
+          type: "save_el_progress",
+          data: param,
+        };
+        window.parent.postMessage(message, "*");
+      }
+
+      const DATA_OBJECT = {
+        callbacks: {
+          save_html_progress,
+          save_video_progress,
+          save_quiz_progress,
+          post_memo,
+          post_question_with_files,
+          report_error,
+          save_last_entry_data,
+          exit_player,
+          save_video_book_marks_data,
+        },
+      };
+
+      window.DATA_OBJECT = DATA_OBJECT;
+
+      // F12 차단
+      // var keydownCtrl = 0;
+      // var keydownShift = 0;
+
+      // document.onkeydown = keycheck;
+      // document.onkeyup = uncheckCtrlShift;
+
+      // function keycheck() {
+      //   switch (event.keyCode) {
+      //     case 123:
+      //       event.keyCode = "";
+      //       return false;
+      //       break; //F12
+      //     case 17:
+      //       event.keyCode = "";
+      //       keydownCtrl = 1;
+      //       return false;
+      //       break; //컨트롤키
+      //   }
+      //   if (keydownCtrl) return false;
+      // }
+
+      // function uncheckCtrlShift() {
+      //   if (event.keyCode == 17) keydownCtrl = 0;
+      //   if (event.keyCode == 16) keydownShift = 0;
+      // }
+    </script>
+  </body>
+</html>

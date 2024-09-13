@@ -1,0 +1,107 @@
+/* 한글폰트 */
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 전체적용 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, GmarketSansMedium;
+  text-decoration: none;
+  color: inherit;
+}
+
+.root {
+  width: 80%;
+  margin: 0 auto;
+}
+
+:root {
+  --skin01: #317abe;
+  --skin02: #30619c;
+  --skin03: #317abe; /* ������ ���� */
+  --skin-bg: #f5f9fd;
+  --skin-bg2: #d6dee9;
+  --ft-color: #00cccc;
+}
+
+ul, ol, li, dl, dd {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+  word-break: break-all
+}
+a:hover {
+  text-decoration: none;
+}
+
+/* Layout */
+.content_wrap { /* �׺���̼� ��ũ �ڽ� ���� ������ �� */
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* ���� �׺�ڽ� css */
+
+.sub_navBox { /* �׺���̼� ��ũ �ڽ� */
+  width: 330px;
+  float: left;
+}
+
+.nav_tit { /* �׺���̼� Ÿ��Ʋ */
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  color: #000;
+}
+
+.sub_navBoxIn { /* �׺���̼� ��ũ �ڽ� ���� */
+  border-radius: 15px;
+  border: 1px solid #dcdcdc;
+  padding: 20px;
+}
+
+/* <ul> �±�: ������ ���� HTML ����Ʈ(list) ���� */
+.sub_nav {}
+
+/* :not(:last-of-type): �� �߿��� ������ �ڽ��� �ƴ� ��ҵ� ���� */
+.sub_nav>li:not(:last-of-type) {
+  margin-bottom: 5px;
+}
+
+.sub_nav>li>a { /* ��Ŀ �ױ�[�����۸�ũ�� �ɾ��ִ� �±�] */
+  /* display: inline-block; */
+  width: 100%;
+  height: 100%;
+  padding-left: 29px;
+  line-height: 49px;
+  border-radius: 5px;
+  background-color: #e6e7eb;
+  font-size: 20px;
+  
+  display: flex;
+  justify-content: space-between;
+  padding-right: 29px;
+}
+
+/* <a> �±׵� �߿���, ���콺�� ȣ��(hover)�� ���� */
+/* .active Ŭ������ ������ ��ҵ��� ������ �ִ� ��� <a> �±׵� */
+.sub_nav>li>a:hover, .sub_nav>li.active a {
+  background-color: var(--skin03);
+  color: #fff;
+}
+
+/* EOD : sub_Layout */

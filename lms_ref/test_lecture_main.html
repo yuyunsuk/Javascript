@@ -1,0 +1,2318 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<title>
+		
+		훈련과정
+
+		
+		&gt;
+		
+		전체훈련과정
+					
+						DW아카데미학원-스마트 직업훈련 플랫폼 STEP
+
+	</title>
+
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+	<meta property="og:title" content="대우정보처리회계학원 ">
+	
+		<meta name="description" content="국민 평생직업능력개발 STEP, 스마트 직업훈련 플랫폼, STEP, 온라인과정" />
+		<meta property="og:description" content="국민 평생직업능력개발 STEP, 스마트 직업훈련 플랫폼, STEP, 온라인과정">
+
+	<script>
+		sessionStorage.setItem("ctx", "");
+	</script>
+	<link rel="stylesheet" href="/css/tab_arrowBox.css" />
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="/step20UserCss/css/app.css" />
+  <link rel="stylesheet" href="/step20UserCss/css/wbCommon.css" />
+  <link rel="stylesheet" href="/step20UserCss/css/wbUser.css" />
+  <link rel="stylesheet" href="/step20UserCss/css/slick.css" />
+  <link rel="stylesheet" href="/step20UserCss/css/jquery.mCustomScrollbar.css" />
+  <link rel="stylesheet" href="/step20UserCss/css/jquery.scrolling-tabs.css" />
+  <link rel="stylesheet" href="/step20UserCss/css/bootstrap-select.min.css" />
+  <link rel="stylesheet" href="/step20UserCss/css/skin/skin_blue.css" />
+  <link rel="stylesheet" href="/js/common/toastr/toastr.css" />
+
+	<script>
+var jslang = "ko";
+</script>
+<script src="/js/common/multiLangSet.js"></script>
+<script src="/js/common/jquery/jquery-1.11.0.min.js"></script>
+<script src="/js/iframeJs.js"></script>
+<script src="/js/common/jquery/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="/js/common/jquery/jquery.form.js"></script>
+<script src="/js/placeholders.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/common/json/json2.js"></script>
+<script src="/js/common/step.asp.grid.popup.js"></script>
+<script src="/js/template9/wbCommon.js"></script>
+<script src="/js/template9/jquery.mCustomScrollbar.js"></script>
+<script src="/js/template9/jquery.scrolling-tabs.js"></script>
+<script src="/js/template9/slick.js"></script>
+<script src="/js/renewal/usrs/bootstrap/bootstrap.min.js"></script>
+<script src="/js/renewal/usrs/bootstrap/bootstrap-select.min.js"></script>
+<script src="/js/common/toastr/toastr.js"></script>
+<!-- ## IE9이하 버전에서 html5 적용 스크립트 ## -->
+<!--[if lt IE 9]>
+   <script src='/js/html5.js'></script>
+   <script src="/js/respond.min.js"></script>
+<![endif]-->
+<script src="/se2/js/HuskyEZCreator.js"></script>
+<script  src="/js/common/common.js"></script>
+<script  src="/js/common/common_util.js"></script>
+<script >
+jQuery(function(){
+	jQuery('form').each(function(){
+		if(!jQuery(this).children('*').is('#mkey')){
+			jQuery("<input>",{type:'hidden',name:'mkey',id:'mkey',value:'121810'}).appendTo(this);
+		}
+		jQuery("<button>",{style:'display:none'}).prependTo(this);
+	});
+});
+</script>
+
+	<script src="/js/common/sessionTimeCheck.js"></script>
+	<script>
+
+		jQuery(document).ready(function(){
+			/*if(navigator.userAgent.indexOf("IOS APP_Running")>-1){
+				try{
+					window.webkit.messageHandlers.wbviewer.postMessage('btnShow');
+				}catch(e){}
+			}else if(navigator.userAgent.indexOf("APP_Running")>-1){
+				console.log("wbviewer://btnShow");
+			}*/
+			
+				initSessionTime('130');
+				jsGetToastrNotification();
+			
+
+			if($('.sub_nav li.active').length == 0){
+				$('.sub_nav li').first().addClass('active');
+			}
+
+			var sub_menu = $('.sub_nav li.active a').html();
+			sub_menu = sub_menu.replace("\n","");
+
+			$(".sub_content_title strong").text(sub_menu);
+			$(".sub_content_page_info .on").text(sub_menu);
+
+			/* 상시 과정 id=dext_body 값으로 인한 css 충돌*/
+			$('.sub_layer').parent('body').attr('id','');
+		});
+
+	</script>
+</head>
+<body>
+<iframe id='hiddenFrame' name='hiddenFrame' style='display:none' width='0' height='0'  title='ifrm'></iframe>
+<form id='hiddenForm' name='hiddenForm' style='display:none' target='hiddenFrame'></form>
+  <!-- header -->
+	<section>
+<script>
+	/*1000_S_H_9*/
+	/* 언어선택을 위한 스크립트 */
+
+	customSelect();
+
+</script>
+<script>
+    var needToMemberRole = 'false';
+    var needToBusinessMasterRole = 'false';
+
+    if (needToMemberRole == 'true') {
+        alert('관리자 계정으로 로그인하셨습니다.\n관리자 계정은 학습자/교강사 페이지 기능을 사용할 수 없습니다.');
+        var adminDmn = '';
+        if (adminDmn != '') {
+            location.href = adminDmn;
+        }
+    }
+
+    var ssoJoinServiceParam = '';
+    if (ssoJoinServiceParam == 'TRUE') {
+        checkSSONeedToJoin('Y');
+    }
+
+    function checkSSONeedToJoin(requireLogin) {
+        var ssoLogin = 'true';
+        var needToJoin = 'false';
+        var needToBusinessMasterRole = 'false';
+        var sUsrId = '200752';
+//         var institutionName = '';
+        var institutionName = '';
+        var addSSOUserServiceUrl = '/sso/addSSOUserService.do';
+
+        if (requireLogin == 'Y') {
+            if (needToMemberRole == 'true') {
+                alert('관리자 계정으로 로그인하셨습니다.\n관리자 계정은 학습자/교강사 페이지 기능을 사용할 수 없습니다.');
+                return false;
+            } else if (needToBusinessMasterRole == 'true') {
+                alert('사업자 회원만 허브의 모든 기능을 사용할 수 있습니다.');
+                return false;
+            }
+
+            if (ssoLogin == 'false' && sUsrId == '') {
+                alert("로그인이 필요한 서비스입니다.");
+                var loginUrl = navigator.userAgent.indexOf("APP_Running")>-1? '/common/logout.do':'https://sso23.step.or.kr/login/login.do?redirect_url=https://daewoo.step.or.kr/sso/business.jsp?redirect_url=https://daewoo.step.or.kr';
+                location.href = loginUrl;
+                return false;
+            }
+
+            if (needToJoin == 'true') {
+                var result = confirm(institutionName +
+                    "(이)가 운영하는 서비스입니다.\n" +
+                    "서비스 이용에 동의하시겠습니까?");
+
+                if (result) {
+                    jQuery.ajax({
+                        type: 'POST',
+                        url: addSSOUserServiceUrl,
+                        dataType: 'json',
+                        data: {},
+                        success: function(data) {
+                            if (data.result =="success"){
+                                alert(institutionName +
+                                    "(이)가 운영하는 서비스에 등록되었습니다.");
+                                location.href = "/main.do";
+                            } else {
+                                alert(institutionName +
+                                    "(이)가 운영하는 서비스 등록이 실패하였습니다.");
+                            }
+                        }
+                    });
+                }
+
+                return false;
+            }
+        }
+
+        return true;
+    }
+</script>
+
+<script >
+
+
+	jQuery(document).ready(function(){
+
+		jQuery(".threeDepth").each(function(){
+			if(jQuery(this).find("li").length <= 0){
+				jQuery(this).remove();
+			}
+		});
+		if (navigator.userAgent.indexOf("APP_Running")>-1){
+			jQuery(".msBtnBox").append("<button type=\"button\" onclick=\"doAppSetting()\">설정</button>");
+		}
+	});
+
+	function goMenu(url, cmkey, requireLogin){
+		if (!checkSSONeedToJoin(requireLogin)) {
+			return;
+		}
+
+		if(jQuery("#form_menu")[0].method.toLowerCase() == "get"){
+			appendInputFromQueryString(url);
+		}
+
+		jQuery("#form_menu").attr("action",url);
+		jQuery("#form_menu input[id=cmkey]").val(cmkey);
+		jQuery("#form_menu")[0].submit();
+	}
+
+	function goMenuNewWin(url, cmkey, requireLogin){
+		if (!checkSSONeedToJoin(requireLogin)) {
+			return;
+		}
+
+		jQuery("#form_menu").attr("action",url);
+		jQuery("#form_menu").attr("target","_blank");
+		jQuery("#form_menu input[id=cmkey]").val(cmkey);
+		jQuery("#form_menu")[0].submit();
+		jQuery("#form_menu").attr("target","");
+	}
+
+	function goMenuPop(url, cmkey, width, height, requireLogin){
+		if (!checkSSONeedToJoin(requireLogin)) {
+			return;
+		}
+
+		Center_Fixed_Popup2("", cmkey, width, height, "no");
+		jQuery("#form_menu").attr("action",url);
+		jQuery("#form_menu").attr("target",cmkey);
+		jQuery("#form_menu input[id=cmkey]").val(cmkey);
+		jQuery("#form_menu")[0].submit();
+		jQuery("#form_menu").attr("target","");
+	}
+
+	function changeRole(role){
+		location.href = "/session/changeRole.do"+"?p_role="+role;
+	}
+
+	function doUnifiedSerach(){
+		var srchText = jQuery("#p_unified_srch_text").val();
+		var hangulCheck = isHangulChar(srchText);
+
+		if(srchText == null || srchText == ""){
+			alert("검색어를 입력해 주세요."); /* 검색어를 입력해 주세요. */
+			jQuery("#p_unified_srch_text").focus();
+			return;
+		}else{
+			if(hangulCheck){
+				if(jsByteLength(srchText) < 6){
+					alert("두글자 이상 입력해 주세요.");/* 두글자 이상 입력해 주세요. */
+					jQuery("#p_unified_srch_text").focus();
+					return;
+				}
+			}else{
+				if(jsByteLength(srchText) < 2){
+					alert("두글자 이상 입력해 주세요."); /* 두글자 이상 입력해 주세요. */
+					jQuery("#p_unified_srch_text").focus();
+					return;
+				}
+			}
+		}
+
+		/*if(!jsCheckSpecialCharacter(srchText)){
+			alert("(&, #, \', \", <, >, (, ), %, \[, \])"); /!* 특수문자(&, #, \', \", <, >, (, ), %, \[, \])를 포함한 검색어는 검색이 제한될 수 있습니다. *!/
+			jQuery("#p_unified_srch_text").focus();
+			return ;
+		}*/
+
+		jQuery("#unifiedSerachForm input[name=p_unified_srch_text]").val(jQuery("#p_unified_srch_text").val());
+		var f = document.unifiedSerachForm;
+		f.target = "_self";
+		f.mkey.value="";
+		f.action = "/usrs/unifiedSearch/unifiedSearchForm.do";
+		f.submit();
+		f.action = "";
+	}
+
+
+	function goMainMenuClick(obj){
+		var functionNm = jQuery(obj).closest('li').children('.twoDepth').eq(0).find('a').eq(0).attr('href');
+
+		if(functionNm != null && functionNm != ""){
+			eval(functionNm);
+		}
+	}
+
+	function changeLocale(locale){
+		location.href = '/common/changeLocale.do'+"?p_locale=" + locale;
+	}
+
+	function loginLayer(){
+		jQuery("#login_alert").toggle();
+	}
+
+	
+	function fnLoginForm(){
+		
+		var loginUrl = navigator.userAgent.indexOf("APP_Running")>-1? '/common/logout.do':'https://sso23.step.or.kr/login/login.do?redirect_url=https://daewoo.step.or.kr/sso/business.jsp?redirect_url=https://daewoo.step.or.kr';
+		location.href = loginUrl;
+	}
+
+	function fnJoinForm(){
+		
+		var joinUrl = 'https://sso23.step.or.kr/login/signUp/signUpMain.do?redirect_url=https://daewoo.step.or.kr/sso/business.jsp?redirect_url=https://daewoo.step.or.kr';
+		location.href = joinUrl;
+	}
+
+	function fnLogout(){
+		var logoutUrl  = '/common/logout.do';
+		location.href = logoutUrl;
+	}
+
+	function fnUsrInfo(){
+		
+		var usrUrl = 'https://www.step.or.kr/home/integrateMng/cmmSys?subRedirect_url=https://sso23.step.or.kr/mypage/myInfo/checkPassword.do?redirect_url=https://daewoo.step.or.kr/sso/business.jsp?redirect_url=https://daewoo.step.or.kr';
+		location.href = usrUrl;
+	}
+
+	function fnOpnSite(url){
+		if(url){
+			var win = window.open(url, '_blank');
+			win.focus();
+		}
+
+	}
+
+	function doAppSetting(){
+		location.href="wbviewer://appSetting";
+	}
+
+	//닫기 버튼 클릭시
+	function appPopcloseWin(key)
+	{
+		setAppClosePopup('appPopup'+key, 'Y' , -1 );
+		$("#app-download").hide();
+	}
+
+	//팝업 쿠키
+	function setAppClosePopup( name, value, expiredays ) {
+		document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + expiredays + ";";
+	}
+
+	//팝업 쿠키
+	function getAppClosePopup(name) {
+		var obj = name + "=";
+		var x = 0;
+		while ( x <= document.cookie.length )
+		{
+			var y = (x+obj.length);
+			if ( document.cookie.substring( x, y ) == obj )
+			{
+				if ((endOfCookie=document.cookie.indexOf( ";", y )) == -1 )
+					endOfCookie = document.cookie.length;
+				return unescape( document.cookie.substring( y, endOfCookie ) );
+			}
+			x = document.cookie.indexOf( " ", x ) + 1;
+
+			if ( x == 0 ) break;
+		}
+		return "";
+	}
+
+	function appendInputFromQueryString(url) {
+		var a = jQuery('<a>', {href: url});
+		var sPageURL = decodeURIComponent(a.prop('search').substring(1));
+        var sURLVariables = sPageURL.split('&');
+        var sParameterName;
+        var i;
+
+	    for (i = 0; i < sURLVariables.length; i++) {
+	        sParameterName = sURLVariables[i].split('=');
+	        jQuery("#form_menu").append(jQuery('<input/>', {type: 'hidden', name: sParameterName[0], value:sParameterName[1]}));
+	    }
+	}
+</script>
+<form name="form_menu" id="form_menu" action="/" method="post" onsubmit="return false;">
+	<input type="hidden" name="cmkey" id="cmkey" value="" />
+	<input type="hidden" name="p_page_info" value="" />
+	<input type="hidden" name="p_url_param" value="" />
+	<input type="hidden" name="p_cofcd" value="" />
+	<input type="hidden" name="p_crscd" value="p_crscd" />
+</form>
+
+<form name="unifiedSerachForm" id="unifiedSerachForm" action="/usrs/unifiedSearch/unifiedSearchForm.do" method="post" onsubmit="return false;">
+	<input type="hidden" name="p_unified_srch_text" value="" />
+	<input type="hidden" name="SRCHW" 				value="" />
+</form>
+
+<!-- skipnavigation -->
+<div id="skipnavigation" title="스킵내비게이션">
+	<a href="#content">본문내용 바로가기</a>
+	<a href="#nav">메인메뉴 가기</a>
+</div>
+<!-- EOD : skipnavigation -->
+
+<!-- headerLayout -->
+<header class="headerLayout">
+	<!-- 모바일에서만 보여지는 영역 / mob_topLayout -->
+	<div class="mob_topLayout">
+		<a href="https://daewoo.step.or.kr/main.do" title="대우정보처리회계학원 " class="logo">
+							<img src="/images/template9/resp/default/usr/logo_step.png" alt="step"/>
+
+		</a>
+		<!-- membershipBox -->
+		<div class="membershipBox">
+			<!-- service_membership -->
+			<ul class="service_membership">
+				
+					
+				<li><a href="javascript:void(0)">유윤석</a></li>
+				<li><a href="javascript:void(0)" onclick="fnLogout()">로그아웃</a></li>
+				<li><a href="javascript:void(0)" onclick="fnUsrInfo()">내 정보 수정</a></li>
+				
+			</ul>
+			<!-- EOD : service_membership -->
+		</div>
+		<!-- EOD : 모바일에서만 보여지는 영역 / membershipBox -->
+
+		<!-- mob_menu -->
+		<a href="javascript:void(0)" class="mob_menu menu_button" title="모바일 메뉴 보기">
+			<!-- <img src="/images/template9/resp/default/button/icon_hamburger.png" alt="모바일 메뉴 보기"> -->
+			<div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+		</a>
+		<!-- EOD : mob_menu -->
+	</div>
+	<!-- EOD : mob_topLayout -->
+
+	<!-- header -->
+	<div class="header">
+		<!-- topLayout -->
+		<div class="topLayout">
+
+			<!-- 모바일에서만 보여지는 버튼 -->
+			<a href="javascript:void(0)" class="mob_menu_close" title="모바일 메뉴 닫기">
+				<i class="icon_close"></i><span class="ir">모바일 메뉴 닫기</span>
+			</a>
+			<!-- EOD : 모바일에서만 보여지는 버튼 -->
+			<!-- topLayoutWrap -->
+			<div class="topLayoutWrap">
+				<!-- topLayoutIn -->
+				<div class="topLayoutIn">
+					<!-- 모바일에서만 보여지는 영역 / mob_select_lang -->
+					<!-- lang_select -->
+					
+					<div class="mob_select_lang">
+						<div class="selectBox">
+							<label for="p_locale_1"><span>한국어</span></label>
+							<select id="p_locale_1" class="selectpicker" name="p_locale_1" onChange="changeLocale(this.value)" title="locale" >
+								
+								<option value="ko" selected>한국어</option>
+								
+							</select>
+						</div>
+					</div>
+					
+					<!-- 모바일에서만 보여지는 영역 / EOD : mob_select_lang -->
+
+					<!-- 앱에서 보여지는 영역 -->
+					<div class="app_linkBox"  style="display: none">
+						<a href="https://daewoo.step.or.kr/usrs/mypage/alarmBox.do" class="bell_link">
+							<i class="icon_bell"></i><span class="ir">알림</span>
+						</a>
+
+						<a href="javascript:void(0)" class="cart_link">
+							<i class="icon_cart"></i><span class="ir">장바구니</span>
+							
+						</a>
+					</div>
+					<!-- EOD :  앱에서 보여지는 영역 -->
+
+					<!-- total_search 20230607 주석 -->
+<!-- 					<div class="total_search"> -->
+<!-- 						<div class="total_searchIn"> -->
+
+<!-- 						</div> -->
+
+
+<!-- 							<span class="ico"></span> -->
+<!-- 						</button> -->
+<!-- 					</div> -->
+					<!-- EOD : total_search -->
+					<div class="membershipBox">
+						<!-- service_membership -->
+						<ul class="service_membership flex ai-c jc-e">
+							
+							
+								<li><a href="javascript:void(0)">[ 유윤석 ]</a></li>
+								<li><a href="javascript:void(0)" onclick="fnLogout()">로그아웃</a></li>
+								<li><a href="javascript:void(0)" onclick="fnUsrInfo()">내 정보 수정</a></li>
+							
+							
+							<li>
+								<!-- select_lang --> <!-- lang_select --> 
+								<div class="select_lang">
+									<div class="selectBox">
+										<label for="p_locale_1"><span>한국어</span></label>
+										<select id="p_locale" name="p_locale"
+											onChange="changeLocale(this.value)" title="locale">
+											
+											<option value="ko"
+												selected>한국어</option>
+											
+										</select>
+									</div>
+								</div>  <!-- EOD : select_lang -->
+							</li>
+							<li>
+								<button class="search_btn"></button>
+								<!-- total_search -->
+								<div class="total_search flex">
+									<div class="total_searchIn">
+										<input type="text" id="p_unified_srch_text"
+											name="p_unified_srch_text"
+											title="검색"
+											placeholder="통합검색"
+											onkeydown="if(event.keyCode == '13'){doUnifiedSerach();}" />
+									</div>
+									<button type="button"
+										title="검색"
+										onclick="doUnifiedSerach()">
+										<span class="blind">검색</span> <span class="ico"></span>
+									</button>
+								</div>
+								<!-- EOD : total_search -->
+							</li>
+<!-- 							<li> -->
+<!-- 								<button class="siteMapBtn f-0">사이트맵</button> -->
+<!-- 							</li> -->
+						</ul>
+						<!-- EOD : service_membership -->
+					</div>
+					<!-- EOD : membershipBox -->
+				</div>
+				<!-- EOD : topLayoutIn -->
+			</div>
+			<!-- EOD : topLayoutWrap -->
+		</div>
+		<!-- EOD : topLayout -->
+			<!-- 헤더 검색버튼 스크립트 -->
+		<script>
+			$('.search_btn').on("click",function(){
+				if(!$('.total_search').is('visible')){
+					$('.total_search').css({display : 'flex'});
+					$(this).hide();
+				}
+			});
+		</script>
+		<div class="navLayout">
+
+			<!-- nav -->
+			<nav class="nav" id="nav">
+				<!-- navInner -->
+				<div class="navInner flex ai-c">
+				
+					<a href="https://daewoo.step.or.kr" title="대우정보처리회계학원 " class="logo">
+										<img src="/step20UserCss/img/head/logo.png" alt="step" />
+
+					</a>
+					<!-- gnb -->
+					<ul class="gnb flex jc-e">
+					    <li>
+				<a href="javascript:void(0);" >
+<span>교육원 소개</span><i class="icon_arrow"></i></a>
+		<ul class='twoDepth'>
+				<li>
+    <a href="javascript:goMenu('/usrs/ucntnt/ucntntForm.do?p_ucntnt_id=788','83597','N')">
+<span>교육기관 소개</span></a>
+		</li>
+				<li>
+    <a href="javascript:goMenu('/usrs/ucntnt/ucntntForm.do?p_ucntnt_id=789','83598','N')">
+<span>인사말</span></a>
+		</li>
+				<li>
+    <a href="javascript:goMenu('/usrs/ucntnt/ucntntForm.do?p_ucntnt_id=790','83599','N')">
+<span>연혁</span></a>
+		</li>
+				<li>
+    <a href="javascript:goMenu('/usrs/drctns/drctnsForm.do','83600','N')">
+<span>찾아오시는 길</span></a>
+		</li>
+		</ul>
+    </li>
+    <li>
+				<a href="javascript:void(0);" >
+<span>교육안내</span><i class="icon_arrow"></i></a>
+		<ul class='twoDepth'>
+				<li>
+    <a href="javascript:goMenu('/usrs/ucntnt/ucntntForm.do?p_ucntnt_id=5','83602','N')">
+<span>고용보험 환급제도</span></a>
+		</li>
+				<li>
+    <a href="javascript:goMenu('/usrs/ucntnt/ucntntForm.do?p_ucntnt_id=6','83603','N')">
+<span>국민내일배움카드</span></a>
+		</li>
+		</ul>
+    </li>
+    <li>
+				<a href="javascript:void(0);" >
+<span>훈련과정</span><i class="icon_arrow"></i></a>
+		<ul class='twoDepth'>
+				<li>
+    <a href="javascript:goMenu('/usrs/eduRegMgnt/crsRegListForm.do?p_crstype=ALL','121810','N')">
+<span>전체훈련과정</span></a>
+		<ul class='threeDepth'>
+		</ul>
+		</li>
+				<li>
+    <a href="javascript:goMenu('/usrs/eduRegMgnt/crsRegListForm.do?p_crstype=ON','83608','N')">
+<span>원격훈련과정</span></a>
+		<ul class='threeDepth'>
+		</ul>
+		</li>
+				<li>
+    <a href="javascript:goMenu('/usrs/eduRegMgnt/crsRegListForm.do?p_crstype=OFF','83625','N')">
+<span>집체훈련과정</span></a>
+		<ul class='threeDepth'>
+		</ul>
+		</li>
+				<li>
+    <a href="javascript:goMenu('/usrs/eduRegMgnt/crsRegListForm.do?p_crstype=PK','83640','N')">
+<span>혼합훈련과정</span></a>
+		<ul class='threeDepth'>
+		</ul>
+		</li>
+				<li>
+    <a href="javascript:goMenu('/usrs/eduRegMgnt/coursePlanCalendar.do','83605','N')">
+<span>훈련일정</span></a>
+		</li>
+		</ul>
+    </li>
+    <li>
+				<a href="javascript:void(0);" >
+<span>고객지원센터</span><i class="icon_arrow"></i></a>
+		<ul class='twoDepth'>
+				<li>
+    <a href="javascript:goMenu('/usrs/bbs/usrsBbsPstForm.do?p_bbs_id=1','83661','N')">
+<span>공지사항</span></a>
+		<ul class='threeDepth'>
+		</ul>
+		</li>
+				<li>
+    <a href="javascript:goMenu('/usrs/bbs/usrsBbsPstForm.do?p_bbs_id=39','83666','N')">
+<span>자료실</span></a>
+		<ul class='threeDepth'>
+		</ul>
+		</li>
+				<li>
+    <a href="javascript:goMenu('/usrs/faq/UsrsFaqListForm.do','83689','N')">
+<span>FAQ</span></a>
+		<ul class='threeDepth'>
+		</ul>
+		</li>
+				<li>
+    <a href="javascript:goMenu('/usrs/inqry/inqryListForm.do?inqry_type_cd=01','83692','Y')">
+<span>1:1문의</span></a>
+		<ul class='threeDepth'>
+		</ul>
+		</li>
+				<li>
+    <a href="javascript:goMenu('/usrs/inqry/inqryListForm.do?inqry_type_cd=02','83702','Y')">
+<span>취업상담 신청</span></a>
+		<ul class='threeDepth'>
+		</ul>
+		</li>
+				<li>
+    <a href="javascript:goMenu('/usrs/portal/customer/remote.do','83712','N')">
+<span>원격지원서비스</span></a>
+		</li>
+		</ul>
+    </li>
+    <li>
+				<a href="javascript:void(0);" >
+<span>마이페이지</span><i class="icon_arrow"></i></a>
+		<ul class='twoDepth'>
+				<li>
+    <a href="javascript:goMenu('/usrs/mypage/myHomeTab.do','83728','Y')">
+<span>나의 학습</span></a>
+		<ul class='threeDepth'>
+				<li>
+    <a href="javascript:goMenu('/usrs/mypage/myHomeTab.do','1000543','Y')">
+<span>요약정보</span></a>
+				</li>
+		</ul>
+		</li>
+				<li>
+    <a href="javascript:goMenu('/usrs/mypage/myCrsSelected.do','83756','Y')">
+<span>관심과정</span></a>
+		<ul class='threeDepth'>
+		</ul>
+		</li>
+				<li>
+    <a href="javascript:goMenu('/usrs/mypage/mySurveyListForm.do','83766','Y')">
+<span>나의 설문</span></a>
+		<ul class='threeDepth'>
+		</ul>
+		</li>
+				<li>
+    <a href="javascript:goMenu('/usrs/mypage/myInqryHistroyForm.do','83780','Y')">
+<span>나의 문의내역</span></a>
+		<ul class='threeDepth'>
+		</ul>
+		</li>
+				<li>
+    <a href="javascript:goMenu('/usrs/mypage/myPaymentHistroyForm.do','83793','Y')">
+<span>훈련비 결제내역</span></a>
+		<ul class='threeDepth'>
+		</ul>
+		</li>
+		</ul>
+    </li>
+
+					</ul>
+					<!-- OD : gnb -->
+					
+				</div>
+				<!-- EOD : navInner -->
+			</nav>
+			<!-- EOD : nav -->
+
+			<!-- 모바일에서만 보여지는 영역 / hd_infoBox -->
+			<div class="hd_infoBox">
+				<!-- msBtnBox -->
+				<div class="msBtnBox">
+					
+					
+						<button type="button" onclick="fnLogout()">로그아웃</button>
+						<button type="button" onclick="fnUsrInfo()">내 정보 수정</button>
+					
+				</div>
+				<!-- EOD : msBtnBox -->
+				<!-- customerInfo -->
+				<div class="customerInfo">
+					<p class="tit">고객센터</p>
+					<ul class="num">
+						<li>042-222-2402</li>
+						<li>042-257-8349</li>
+					</ul>
+					<p class="mail">okdaewo@naver.com</p>
+					<ul class="time">
+						<li>평일 09:00 - 18:00</li>
+ <!-- 2022.11 안주현 점심시간 주석처리 -->
+					</ul>
+				</div>
+				<!-- EOD : customerInfo -->
+			</div>
+			<!-- EOD : 모바일에서만 보여지는 영역 / hd_infoBox -->
+		</div>
+	</div>
+	<!-- EOD : header -->
+
+	<!-- trans_bg -->
+	<div class="trans_bg"></div>
+	<!-- EOD : trans_bg -->
+
+	<!-- 앱 다운로드 -->
+	<div class="app-download" id="app-download" style="display: none;">
+		<div class="app-downloadWrap">
+			<div class="app-downloadImg">
+				
+					
+					
+						<a href="https://play.google.com/store/apps/details?id=com.koreatech.steplms" class="goAppBanner">
+							<img src="/images/template9/resp/default/usr/app_download.png" alt="학습하기 편하고, 학습 관련 알림을 제공 받을 수 있어요! STEP 앱으로 보기">
+						</a>
+					
+				
+				<a href="javascript:void(0)" class="closeBanner" onclick="appPopcloseWin(1,'Y',-1);">괜찮아요 모바일웹에서 볼게요.</a>
+			</div>
+		</div>
+		<div class="app-downloadBg"></div>
+	</div>
+	<!-- EOD : 앱 다운로드 -->
+
+	<script>
+		if(!(navigator.userAgent.indexOf("APP_Running")>-1) && navigator.userAgent.match(/Android|BlackBerry|Windows CE|Nokia|Webos|OperaMini|SonyEricsson|Opera Mobi|IEMobile/)){
+			if(getAppClosePopup("appPopup1") !="Y"){
+				jQuery("#app-download").show();
+			}else{
+				jQuery(".app-download").css('display','none;');
+			}
+
+			jQuery(document).on('click', ".app-download .closeBanner", function () {
+				jQuery(this).closest('.app-download').hide();
+			});
+		}
+	</script>
+</header>
+<!-- EOD : headerLayout -->
+	</section>
+	<!-- EOD : header -->
+
+
+
+	<!-- contentLayout -->
+	<div class="sub_contentLayout" id="content">
+	    <!-- sub_visual -->
+
+	
+	<nav class="sub_navBox">
+	  
+	  <p class="nav_tit">훈련과정</p>
+	  <div class="sub_navBoxIn">
+	 	<div class="content_wrap">
+			
+			<ul class="sub_nav">
+ 		<li class='active open '>
+				<a href="javascript:goMenu('/usrs/eduRegMgnt/crsRegListForm.do?p_crstype=ALL','121810')">
+전체훈련과정</a>
+   </li>
+	<li class=''>
+				<a href="javascript:goMenu('/usrs/eduRegMgnt/crsRegListForm.do?p_crstype=ON','83608')">
+원격훈련과정</a>
+   </li>
+	<li class=''>
+				<a href="javascript:goMenu('/usrs/eduRegMgnt/crsRegListForm.do?p_crstype=OFF','83625')">
+집체훈련과정</a>
+   </li>
+	<li class=''>
+				<a href="javascript:goMenu('/usrs/eduRegMgnt/crsRegListForm.do?p_crstype=PK','83640')">
+혼합훈련과정</a>
+   </li>
+	<li class=''>
+				<a href="javascript:goMenu('/usrs/eduRegMgnt/coursePlanCalendar.do','83605')">
+훈련일정</a>
+   </li>
+
+ 			</ul>
+			
+		</div>
+	  </div>
+	  
+	</nav>
+	
+	<script>
+	/* 2024-04-30 hwson 개인정보처리방침 링크 변경 */  
+	$("#personUrl2").on("click" , function(){
+		var url= "https://www.koreatech.ac.kr/menu.es?mid=a10903000000"
+		window.open(url, '_blank');
+	});	  
+	/* 2024-04-30 hwson 개인정보처리방침 링크 변경 */  
+	</script>
+
+		<!-- EOD : sub_navBox -->
+ 		<div class="sub_content_box">
+ 			<div class="sub_content_title"><strong></strong>
+ 				<div class="sub_content_page_info" style="float:right;">홈 <span class="arrow"> ▶ </span> 훈련과정 <span class="arrow"> ▶ </span><span class="on"></span></div>
+ 			</div>
+ 		</div>
+
+<script type="text/javascript">
+
+	var detailUrl = "/usrs/eduRegMgnt/selectEduRegInfoDetailForm.do"; //상세화면
+	var crslistUrl = "/usrs/eduRegMgnt/selectAllCrsListForm.do";	//전체과정 목록
+
+	var listlUrl = "/usrs/eduRegMgnt/eduRegMgntForm.do";
+	var reglistUrl = "/usrs/eduRegMgnt/crsRegListForm.do";
+	var crsFavorUrl = "/usrs/lms/crsFavor/usrCrsFavor.do";
+	var crsFavorDelUrl = "/usrs/lms/crsFavor/usrCrsFavorDel.do";
+	var crsLikeUrl = "/usrs/lms/crsLike/usrCrsLike.do";
+	var crsLikeDelUrl = "/usrs/lms/crsLike/usrCrsLikeDel.do";
+	var crsRegPopupUrl = "/usrs/lms/smpl/smplCrsRegStep1.do"; // 수강신청 팝업
+	var contentsPreviewInfoUrl = "/usrs/cms/contentsPreviewInfo.do"; // 콘텐츠 정보 조회
+	var previewContentsFrameUrl = "/usrs/cms/contentsSamplePopUp.do"; //미리보기 팝업
+
+	var selectEduSubjInfoFormUrl = "/usrs/eduRegMgnt/selectEduSubjInfoForm.do"; // 과목상세정보
+	var selectReviewUrl = "/usrs/eduRegMgnt/selectReviewList.do"; // 수강후기
+
+	var addSSOUserServiceUrl = '/sso/addSSOUserService.do';
+
+	var ssoLogin = 'true';
+	var needToJoin = 'false';
+// 	var institutionName = '';
+	var institutionName = '';
+
+	jQuery(document).ready(function(){
+		jQuery(".selectpicker").selectpicker("refresh");
+
+		jQuery("#p_detect_ie_version").val(detectIE());
+		jQuery(".contentsBox").addClass("courseView");
+
+		tabsClick('tabBox' , '#tab01', this);
+		doReviewList();/* 수강후기 */
+		window.scrollTo(0, 0);
+
+        /* id=dext_body 값으로 인한 css 충돌*/
+        $('.sub_contentLayout').parent('body').attr('id','');
+	});
+
+	function doDuplicationMove(){
+		window.location.href = "/usrs/mypage/myCrsreg.do";
+	}
+
+	//맛보기 동영상
+	function jsVideo(type, video_type_cd, data){
+		var deviceType = "P";
+
+		if (navigator.userAgent.match(/Mobile|iPhone|iPod|iPad|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || navigator.userAgent.match(/LG|SAMSUNG|Samsung/) != null) {
+			deviceType = "M";
+		}
+		if(video_type_cd != "03"){ //컨텐츠 보기가 아니면
+			if(deviceType == "M"){
+				var targetUrl = "";
+
+				if(video_type_cd == "01"){
+					targetUrl = data;
+				}else{
+					targetUrl = ""; //파일 올라간 데이터
+				}
+
+				window.open(targetUrl);
+			}else{
+				var form = document.formMove;
+
+				form.p_video_type.value = type;
+				form.p_video_type_cd.value = video_type_cd;
+				if(video_type_cd == "01"){
+					form.p_video_data.value = '';
+				}else{
+					form.p_video_data.value = '';
+				}
+				Center_Fixed_Popup2("", "videoPop", 665, 445, "no", "no");
+
+				form.target = "videoPop";
+				form.action = videoPreviewPopUrl;
+				form.submit();
+				form.target = "";
+			}
+		}else{
+			jsContentsPreView(); //컨텐츠 보기
+		}
+	}
+
+	//콘텐츠 미리보기
+	function jsContentsPreView(crscd,crsseq_id,contsid){
+
+		if(jsNvl(contsid) != ""){
+			displayWorkProgress();
+			jQuery.ajax({
+				url : contentsPreviewInfoUrl,
+				cache : false,
+				type:'POST',
+				dataType : 'JSON',
+				data : {
+					p_contsid : contsid
+					, p_crscd : crscd
+					, p_crs_cd : crscd
+					, p_crsseq_id : crsseq_id
+					, mkey : '121810'
+				},
+				success : function(data){
+					var f = document.formMove;
+					f.p_contsid.value = contsid;
+					f.p_crsseq_id.value = crsseq_id;
+					jsContentsPreViewInfo(data.preViewInfo, data.masterInfo);
+					closeWorkProgress();
+				}
+			});
+		}
+	}
+
+	function jsContentsPreViewInfo(preViewInfo, masterInfo){
+		var preViewMap = preViewInfo;
+		var masterMap = masterInfo;
+
+		if(preViewMap.PREVIEW_SAMPLE_USE_YN == 'Y'){
+			var f = document.formMove;
+			var x = 0;
+			var y = 0;
+
+			if(masterMap.FULSCRN_USEYN == "Y"){
+				x = window.screen.width;
+				y = browserScreenHeight();
+
+				var browser =  browserReturn();
+
+				if(browser.safari){
+					x = parseInt(x * 0.99);
+					y = parseInt(y * 0.99);
+				}
+			}else{
+				x = parseInt(masterMap.WIDTH);
+				y = parseInt(masterMap.HEIGHT);
+
+				if(masterMap.ISTOPFRAME == 'Y')
+				{
+					y += 60;
+				}
+			}
+
+			if(navigator.userAgent.indexOf("APP_Running")>-1){
+				f.action = previewContentsFrameUrl;
+				f.submit();
+			}else{
+				Full_Size_Popup("", "contentsPreviewPopUp", "yes");
+				f.target ="contentsPreviewPopUp";
+				f.mkey.value = "";
+				f.action = previewContentsFrameUrl;
+				f.submit();
+				f.target="";
+			}
+		}else{
+			alert("선택된 목차가 없습니다.");
+		}
+	}
+
+	//파일 다운로드
+	function fileDownload(filegrp, fileId){
+		var dataHtml = "";
+
+		dataHtml += "<input type='hidden' name='p_filegrp_id' value='" + filegrp + "'/>";
+		dataHtml += "<input type='hidden' name='p_file_id' value='" + fileId + "'/>";
+
+		jQuery("#hiddenForm").html(dataHtml);
+
+		var form = document.hiddenForm;
+		form.action = "/common/file/FileDown.do";
+		form.submit();
+	}
+
+	function crsFavor(favoryn,eduyn){
+		event.stopPropagation();
+		if(eduyn != 'Y'){
+			alert('교육일정이 종료되었습니다.');
+			return false;
+		}
+
+		if(false && ssoLogin == 'false') {
+			alert("로그인이 필요한 서비스입니다.");
+			return;
+		}
+
+		if (needToJoin == 'true') {
+			var result = confirm(institutionName +
+					"(이)가 운영하는 서비스입니다.\n" +
+					"서비스 이용에 동의하시겠습니까?");
+
+			if (result) {
+				jQuery.ajax({
+					type: 'POST',
+					url: addSSOUserServiceUrl,
+					dataType: 'json',
+					data: {},
+					success: function(data) {
+						if (data.result =="success"){
+							alert(institutionName +
+									"(이)가 운영하는 서비스에 등록되었습니다.");
+							location.href = "/main.do";
+						} else {
+							alert(institutionName +
+									"(이)가 운영하는 서비스 등록이 실패하였습니다.");
+						}
+					}
+				});
+			}
+
+			return false;
+		}
+
+		var msg1 = "관심과정으로 설정 하시겠습니까?";
+		var msg2 = "관심과정으로 설정되었습니다.";
+		var url = crsFavorUrl;
+
+		if(favoryn == "Y"){
+			msg1 = "관심과정을 취소하시겠습니까?";
+			msg2 = "관심과정이 취소되었습니다.";
+			url = crsFavorDelUrl;
+		}
+
+		if(!confirm(msg1)){
+			return;
+		}
+
+		var f = document.formDetail;
+
+		jQuery.ajax({
+			url : url,
+			cache : false,
+			dataType: 'json',
+			type:'POST',
+			async: false,
+			data : {
+				p_crscd : f.p_crscd.value,
+				p_crsseq_id : f.p_crsseq_id.value
+			},
+			success : function(result){
+				if(result.result =='success'){
+					alert(msg2);
+					if(favoryn == "Y"){
+						$('.favorsp').each((idx, item) => {
+							$(item).removeClass("active");
+							$(item).attr("onclick", "crsFavor('N', 'Y')");
+						});
+					}else{
+						$('.favorsp').each((idx, item) => {
+							$(item).addClass("active");
+							$(item).attr("onclick","crsFavor('Y','Y')");
+						});
+					}
+				}else{
+					alert("저장에 실패하였습니다.");
+				}
+			}
+		});
+	}
+
+	function fnGoStep1(tmplId){
+		if(false && ssoLogin == 'false') {
+			alert("로그인이 필요한 서비스입니다.");
+			return;
+		}
+
+		if (needToJoin == 'true') {
+			var result = confirm(institutionName +
+					"(이)가 운영하는 서비스입니다.\n" +
+					"서비스 이용에 동의하시겠습니까?");
+
+			if (result) {
+				jQuery.ajax({
+					type: 'POST',
+					url: addSSOUserServiceUrl,
+					dataType: 'json',
+					data: {
+						p_eduday: 289
+						, p_alws_crs_yn: N
+					},
+					success: function(data) {
+						if (data.result =="success"){
+							alert(institutionName +
+									"(이)가 운영하는 서비스에 등록되었습니다.");
+							location.href = "/main.do";
+						} else {
+							alert(institutionName +
+									"(이)가 운영하는 서비스 등록이 실패하였습니다.");
+						}
+					}
+				});
+			}
+
+			return false;
+		}
+
+		var f= document.formMove;
+		if(jQuery("#p_crsseqreg_id").val() == ""){
+			alert("신청기간을 선택해 주십시오.");
+			return;
+		}
+
+		if(true){
+			alert("수강신청한 과정 입니다.");
+			doDuplicationMove();
+			return ;
+		}
+
+		f.p_crsreg_tmpl_id.value = tmplId;
+		f.mkey.value='';
+		if(navigator.userAgent.indexOf("APP_Running")>-1){
+			f.action = crsRegPopupUrl;
+			f.submit();
+			f.target = "_self";
+		}else{
+			Center_Fixed_Popup2("", "crsRegPopup", 1000, 900, "yes");
+			f.target = "crsRegPopup";
+			f.action = crsRegPopupUrl;
+			f.submit();
+			f.target = "";
+		}
+
+	}
+
+	//브라우저 버전 체크
+	function detectIE() {
+		var ua = window.navigator.userAgent;
+
+		var msie = ua.indexOf('MSIE ');
+		if (msie > 0) {
+			// IE 10 or older => return version number
+			return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+		}
+
+		var trident = ua.indexOf('Trident/');
+		if (trident > 0) {
+			// IE 11 => return version number
+			var rv = ua.indexOf('rv:');
+			return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+		}
+
+		var edge = ua.indexOf('Edge/');
+		if (edge > 0) {
+			// Edge (IE 12+) => return version number
+			return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+		}
+
+		// other browser
+		return "other";
+	}
+
+	// 목록
+	function jsList(){
+		var f = document.formMove;
+		f.mkey.value = "";
+		if(f.method.toLowerCase() == "get"){
+			f = document.appForm;
+			f.removeChild(f.mkey);
+		}
+		f.action = "/usrs/eduRegMgnt/crsRegListForm.do?p_crstype=ALL";
+		f.submit();
+	}
+
+	// 과정 상세
+	function doMoveCrs(crscd, crsseqId){
+		if(jsNvl(crsseqId,"") == ""){
+			return false;
+		}
+
+		var f = document.formMove;
+		f.p_crscd.value = crscd;
+		f.p_crsseq_id.value = crsseqId;
+		f.purl.value = "/usrs/eduRegMgnt/crsRegListForm.do?p_crstype=ALL";
+		f.action = detailUrl+"?p_crstype=ALL";
+		f.submit();
+	}
+
+	// 과목 상세
+	function jsSubjDetail(crscd,crsseqId){
+		jQuery.ajax({
+			url : selectEduSubjInfoFormUrl,
+			cache : false,
+			dataType: 'html',
+			type:'POST',
+			async: false,
+			data : {
+				p_crscd : crscd,
+				p_crsseq_id : crsseqId ,
+				mkey : '121810'
+			},
+			success : function(result){
+				jQuery("#subjDetail_"+crsseqId).html(result);
+			}
+		});
+	}
+
+	//리스트 호출
+	function doReviewList(){
+		displayWorkProgress();
+		jQuery.ajax({
+			url : selectReviewUrl,
+			cache : false,
+			type:'POST',
+			dataType : 'JSON',
+			data : jQuery("#reviewForm").serialize(),
+			success : function(result){
+				closeWorkProgress();
+				jQuery("#reviewUlList").html(makeList(result.reviewList));
+
+				if(result.totalPageCount == 1 || result.totalPageCount == 0){
+					jQuery(".moreBox").hide();
+				}else{
+					jQuery(".moreBox").show();
+				}
+			}
+		});
+	}
+
+	function makeList(data){
+		var tag = "";
+		if(data && data.length > 0){
+			jQuery.each(data,function(key,obj) {
+				tag += '<li>';
+				tag += 	'<div class="info">';
+				tag += 		'<ul>';
+				tag += 			'<li>'+obj.USR_NM+'</li>';
+				tag += 			'<li><strong>교육기간</strong>'+obj.EDU_DATE+'</li>';
+				tag += 			'<li><strong>작성일</strong>'+obj.INDATE+'</li>';
+				tag += 		'</ul>';
+				tag += 	'</div>';
+				tag += 	'<div class="contents">'+obj.CNTNT+'</div>';
+				tag += '</li>';
+			});
+			return tag;
+		}else{
+			jQuery("#reviewTab").remove();/* 수강후기가 없을경우 수강후기 탭 숨김*/
+			// tab();/* 탭크기 리사이징 */
+		}
+	}
+
+	// 더보기
+	function jsReviewMore(){
+		var listscale = parseInt(jQuery("#p_listscale").val()) + parseInt(jQuery("#p_listscale").val())
+		jQuery("#p_listscale").val(listscale);
+		doReviewList();
+	}
+</script>
+
+<form name="formDetail" id="formDetail" method="POST" action=""
+	onsubmit="return false;">
+	<input type="hidden" id="p_crscd" name="p_crscd"
+		value="45355" /> <input type="hidden"
+		id="p_crsseq_id" name="p_crsseq_id"
+		value="76031" />
+</form>
+
+<form name="reviewForm" id="reviewForm" method="post" action=""
+	onsubmit="return false;">
+	<input type="hidden" id="p_crscd" name="p_crscd"
+		value="45355" /> <input type="hidden"
+		id="p_pageno" name="p_pageno" value="1" /> <input type="hidden"
+		id="p_listscale" name="p_listscale" value="5" /> <input type="hidden"
+		id="p_sortorder" name="p_sortorder" value="FRDT DESC" />
+</form>
+
+<form id="appForm" name="appForm" method="post" onsubmit="return false;">
+	<input type="hidden" id="p_crstype" name="p_crstype"
+		value="ALL" />
+</form>
+<form id="formMove" name="formMove" method="post"
+	onsubmit="return false;">
+	<input type="hidden" id="p_crs_cd" name="p_crs_cd"
+		value="45355" /> <input type="hidden"
+		id="p_crscd" name="p_crscd"
+		value="45355" /> <input type="hidden"
+		id="p_crsseq_id" name="p_crsseq_id"
+		value="76031" /> <input
+		type="hidden" id="p_contsid" name="p_contsid"
+		value="0037630" /> <input type="hidden"
+		id="p_crsreg_tmpl_id" name="p_crsreg_tmpl_id" value="" /> <input
+		type="hidden" id="t_usrid" name="p_usrid" value="" /> <input
+		type="hidden" id="p_video_type" name="p_video_type" value="" /> <input
+		type="hidden" id="p_video_type_cd" name="p_video_type_cd" value="" />
+	<input type="hidden" id="p_video_data" name="p_video_data" value="" />
+	<input type="hidden" id="p_master_crscd" name="p_master_crscd" value="" />
+	<input type="hidden" id="p_crs_nm" name="p_crs_nm" value="" /> <input
+		type="hidden" id="p_returnUrl" name="p_returnUrl" value="" /> <input
+		type="hidden" id="p_opncls_yn" name="p_opncls_yn"
+		value="N" /> <input type="hidden" id="purl"
+		name="purl" value="" /> <input type="hidden" id="p_terms_srvc_id"
+		name="p_terms_srvc_id"
+		value="">
+		<input type="hidden" id="p_edu_day" name="p_edu_day" value="289">
+		<input type="hidden" id="p_alws_crs_yn" name="p_alws_crs_yn" value="N">
+
+	<!-- IE 브라우저 버전 체크  START-->
+	<input type="hidden" id="p_detect_ie_version"
+		name="p_detect_ie_version" value="">
+	<!-- 검출한 IE 버전-->
+	<!-- IE 브라우저 버전 체크 END -->
+	<div class="content_wrap">
+		
+
+
+		<!--  lectureLayout -->
+		<div class="lectureLayout">
+			<!-- lectureT -->
+			<div class="lectureT">
+				<!-- lectureBox -->
+				<div class="lectureBox flex">
+					<!-- lectureBoxL -->
+					<div class="lectureBoxL">
+						<div class="thumBox">
+							
+								
+									<img class="cropImg" src="https://cms23.step.or.kr/file/download?filePath=/olei/board/2022/02/A45A62EB-C697-EEF5-D1F7-3079B51B2AD9.png"
+										alt=""
+										title="" />
+								
+								
+							
+							
+						</div>
+
+					</div>
+					<!-- EOD:lectureBoxL -->
+					<!-- lectureBoxR -->
+					<div class="lectureBoxR">
+
+						<!-- lectureInfo -->
+						<div class="lectureInfo">
+							<div class="lectureInfoT">
+								<p class="tit">
+									스프링 부트 기초
+								</p>
+								<ul class="tag">
+									
+								</ul>
+							</div>
+							<div class="lectureInfoB">
+								<ul class="list">
+									<li>
+										<div class="label">
+											<span>교육기간</span>:
+										</div>
+										<div class="dataBox">
+												2024-03-18 ~ 2024-12-31
+										</div>
+									</li>
+									<li>
+										<div class="label">
+											<span>신청기간</span>:
+										</div>
+										<div class="dataBox" id="select_start_end_day">
+											<!-- 2022-03 김동진 수강신청기간이 아닐때 select box제거-->
+												<div class="selectBox">
+													<label for="p_crsseqreg_id"> <span>  
+																	2024-03-18 ~ 2024-12-31
+													</span>
+													</label> <select id="p_crsseqreg_id" name="p_crsseqreg_id"
+														onchange="doMoveCrs('45355',this.value);">
+														<option value="">선택</option>
+															<option value="76031"
+																selected="selected">
+																2024-03-18 ~
+																2024-12-31</option>
+														
+													</select>
+												</div>
+											
+										</div> 
+									</li>
+									<li>
+										<div class="label">
+											<span>교육시간</span>:
+										</div>
+										<div class="dataBox">
+											<span> 8 시간 
+												
+											</span>
+										</div>
+									</li>
+									<li>
+										<div class="label">
+											<span>교육비</span>:
+										</div>
+										<div class="dataBox">
+											<span>  
+														무료
+											</span>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- EOD : lectureInfo -->
+					</div>
+					<!-- EOD : lectureBoxR -->
+				</div>
+			</div>
+			<!-- EOD:lectureT -->
+			<!-- EOD:lectureBox -->
+			<div class="buttonBox pc">
+				<ul class="flex ai-c jc-c">
+					
+						
+							<li>
+								<button type="button" class="btn_white"
+									onclick="jsContentsPreView('45355','76031','0037630');">
+									<i class="icon_play"></i> <span> 맛보기
+									</span>
+								</button>
+							</li>
+					<li><button type="button" id="favorsp"
+							class="favorsp btn_white "
+							onclick="crsFavor('N','Y');">
+							<i class="icon_heart"></i><span>관심과정</span>
+						</button></li>
+										<li><button type="button" class="btn_blue"
+												onclick="fnGoStep1('22')">
+												<span>수강신청</span>
+											</button></li>
+					<!-- listBtnBox -->
+					<li class="listBtnBox"><a href="javascript:void(0);"
+						onclick="jsList();" class="btn_m_black">목록</a></li>
+					<!-- EOD : listBtnBox -->
+				</ul>
+			</div>
+
+			<!-- 타블렛 ~ 모바일에서만 보이는 영역 -->
+			<div class="t_mobS">
+				<!-- lecture_mob_btnBox -->
+				<div class="lecture_mob_btnBox">
+					<ul class="Apply_btnBox">
+						
+						
+							<li>
+								<button type="button" class="btn_white"
+									onclick="jsContentsPreView('45355','76031','0037630');">
+									<i class="icon_play"></i> <span> 맛보기
+									</span>
+								</button>
+							</li>
+						
+						
+						
+						<li><button type="button" id="favorsp"
+								class="favorsp btn_white "
+								onclick="crsFavor('N','Y');">
+								<i class="icon_heart"></i><span>관심과정</span>
+						</button></li>
+						
+							
+								
+									
+										
+											<li><button type="button" class="btn_m_blue_gra"
+												onclick="fnGoStep1('22')">
+												수강신청
+											</button></li>
+						<li><a href="javascript:void(0);" onclick="jsList();" class="btn_m_black">목록</a></li>
+					</ul>
+					
+					
+				</div>
+				<!-- EOD : lecture_mob_btnBox -->
+
+				<table class="table_hori pcLayout">
+					<caption>
+						교육일수
+						,
+						정원
+						,
+						복습기간
+						,
+						환급여부
+						,
+						난이도
+						,
+						지원기기
+						로 이루어진 테이블
+					</caption>
+					<colgroup>
+						<col width="95px">
+						<col width="*">
+					</colgroup>
+					<tbody>
+						<tr>
+							<th>교육일수</th>
+							<td>289 일</td>
+						</tr>
+						<tr>
+							<th>정원</th>
+							<td>1000 명</td>
+						</tr>
+						<tr>
+							<th>복습기간</th>
+							<td>교육 종료 후 365 일</td>
+						</tr>
+						<tr>
+							<th>환급여부</th>
+							<td>
+									
+									
+										비환급
+									
+								</td>
+						</tr>
+						<tr>
+							<th>난이도</th>
+							<td>
+									
+									-
+								</td>
+						</tr>
+						<tr>
+							<th>지원기기</th>
+							<td>
+									
+									
+									
+										모바일+PC
+								</td>
+						</tr>
+						
+					</tbody>
+				</table>
+			</div>
+			<!-- EOD :  -->
+
+			<!-- lectureB -->
+			<div class="lectureB">
+				<!-- lectureContent -->
+				<div class="lectureContent">
+					<div class="lectureContentIn">
+
+						<!-- table_hori -->
+						<table class="table_hori pc">
+							<caption>
+								수료증
+								,
+								교육일수
+								,
+								정원
+								,
+								복습기간
+								,
+								환급여부
+								,
+								난이도
+								,
+								지원기기
+								로 이루어진 테이블
+							</caption>
+							<colgroup>
+								<col width="14%">
+								<col width="*">
+								<col width="*">
+								<col width="*">
+								<col width="*">
+								<col width="*">
+								<col width="*">
+							</colgroup>
+							<thead>
+								<tr>
+									<th class="ac">수료증</th>
+									<th class="ac">교육일수</th>
+									<th class="ac">정원</th>
+									<th class="ac">복습기간</th>
+									<th class="ac">고용보험환급여부</th>
+									<th class="ac">난이도</th>
+									<th class="ac">지원기기</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="ac">
+											
+											
+												미발급
+											
+										</td>
+									
+										
+										
+											<td class="ac">289 일</td>
+										
+									
+									<td class="ac">1000 명</td>
+									<td class="ac">종료 후 365 일</td>
+									<td class="ac">
+											
+											
+												비환급
+											
+										</td>
+									<td class="ac">
+											
+											-
+										</td>
+									<td class="ac">
+											
+											
+											
+												모바일+PC
+										</td>
+								</tr>
+								
+								
+							</tbody>
+						</table>
+						<!-- EOD : table_hori -->
+
+						<!-- tab_arrowBox -->
+						<div class="tab_arrowBox">
+							<!-- tab_arrow -->
+							<ul class="tab_arrow flex" role="tablist">
+								<li class="active" id="crsTab0"><a
+									href="javascript:void(0);"
+									onclick="tabsClick('tabBox' , '#tab01', this);"><span>과정소개</span></a></li>
+								
+									<li><a href="javascript:void(0);"
+										onclick="tabsClick('tabBox' , '#tab02', this);"><span>학습목차</span></a></li>
+								
+								
+
+								<li><a href="javascript:void(0);"
+									onclick="tabsClick('tabBox' , '#tab03', this);"><span>강사소개</span></a></li>
+								
+									<li><a href="javascript:void(0);"
+										onclick="tabsClick('tabBox' , '#tab04', this);"><span>교재정보</span></a></li>
+								
+								<li id="reviewTab"><a href="javascript:void(0);"
+									onclick="tabsClick('tabBox' , '#tab05', this);"><span>수강후기</span></a></li>
+								
+							</ul>
+							<!-- EOD : tab_arrow -->
+						</div>
+						<!-- EOD : tab_arrowBox -->
+
+						<!-- tab Content -->
+						<div class="tab_Content">
+
+<script>
+
+$(document).ready(function() {
+	/** 훈련과정 상세 내용 초기화 */
+	// 교육개요
+	let eduOvrvw     = decodeHtmlSpecialCharCodes(`<p style="font-family: NanumGothic; font-size: 12pt; line-height: 1.2; margin-top: 0px; margin-bottom: 0px;">스프링 프레임워크는 Java를 기반으로 하는 소프트웨어 시장에서 가장 폭넓게 사용하는 오픈소스 프레임워크다. 하지만 초급 개발자가 스프링을 학습하고 숙달하기까지는 많은 시간과 노력이 필요하다. 스프링 학습을 어렵게 만드는 가장 큰 요인은 복잡한 라이브러리 의존성과 XML 설정에 있다. 이런 라이브러리 의존성과 XML 설정을 해결하면서 스프링에 대한 접근성을 획기적으로 개선시킨 것이 바로 스프링 부트다. 본 과정은 풍부한 실습을 바탕으로 스프링 부트의 동작 원리와 구조를 이해하는 것을 목적으로 한다.  </p>`);
+	// 학습목표
+	let stdyGole     = decodeHtmlSpecialCharCodes(`<p style="font-family: NanumGothic; font-size: 12pt; line-height: 1.2; margin-top: 0px; margin-bottom: 0px;">- 스프링 부트의 특징과 동작 원리를 설명할 수 있다. </p><p style="font-family: NanumGothic; font-size: 12pt; line-height: 1.2; margin-top: 0px; margin-bottom: 0px;">- 스프링 부트가 제공하는 기능을 이용하여 간단한 웹 애플리케이션을 작성할 수 있다. </p><p style="font-family: NanumGothic; font-size: 12pt; line-height: 1.2; margin-top: 0px; margin-bottom: 0px;">- 스프링 부트로 작성한 웹 애플리케이션을 테스트할 수 있다. </p><p style="font-family: NanumGothic; font-size: 12pt; line-height: 1.2; margin-top: 0px; margin-bottom: 0px;">- 스프링 부트로 작성한 웹 애플리케이션의 로그를 제어하고 빌드할 수 있다. </p>`);
+	// 학습대상
+	let takelectTrgt = decodeHtmlSpecialCharCodes(`<p style="font-family: NanumGothic; font-size: 12pt; line-height: 1.2; margin-top: 0px; margin-bottom: 0px;">? 관련 직군 및 직무 : 소프트웨어 개발</p><p style="font-family: NanumGothic; font-size: 12pt; line-height: 1.2; margin-top: 0px; margin-bottom: 0px;">? 학습 대상자 : Java 기반의 소프트웨어를 개발하고 유지보수하려는 개발자</p><p style="font-family: NanumGothic; font-size: 12pt; line-height: 1.2; margin-top: 0px; margin-bottom: 0px;">? 학습 난이도 : 중</p><p style="font-family: NanumGothic; font-size: 12pt; line-height: 1.2; margin-top: 0px; margin-bottom: 0px;">? NCS 비적용</p>`);
+	// 수료기준안내
+	let fcCntnt      = decodeHtmlSpecialCharCodes(`<p> </p>`);
+	// 수강신청안내
+	let crsregGuide  = decodeHtmlSpecialCharCodes(`<p> </p>`);
+	// 강사소개
+	let tchrIntrdctn = decodeHtmlSpecialCharCodes(`<p style="font-family: NanumGothic; font-size: 12pt; line-height: 1.2; margin-top: 0px; margin-bottom: 0px;">채규태 전임교수(멀티캠퍼스)</p>`); 
+	// 교재정보
+	let txtbkDtl     = decodeHtmlSpecialCharCodes(`<p style="font-family: NanumGothic; font-size: 12pt; line-height: 1.2; margin-top: 0px; margin-bottom: 0px;">채규태, 스프링 부트 퀵 스타트, 루비페이퍼, 2019.06</p>`);
+	
+	$('#edu_ovrvw').append($(eduOvrvw));
+	$('#stdy_gole').append($(stdyGole));
+	$('#takelect_trgt').append($(takelectTrgt));
+	$('#fc_cntnt').append($(fcCntnt));
+	$('#crsreg_guide').append($(crsregGuide));
+	$('#tchr_intrdctn').append($(tchrIntrdctn));
+	$('#txtbk_dtl').append($(txtbkDtl));
+	/** 훈련과정 상세 내용 초기화 끝 */
+});
+
+/** HTML 특수문자 코드 변환 */
+function decodeHtmlSpecialCharCodes(text) {
+	// text = text.replace(/<[^>]*>?/g, '');         // HTML 태그 제거
+	text = text.replace(/&amp;/g, '&');              // &amp; => &
+	text = text.replace(/&lt;|&gt;|&quot;/g, (matched) => {
+			switch (matched) {
+				case '&lt;'  : return '<';
+				case '&gt;'  : return '>';
+				case '&quot;': return '"';
+			}
+	});
+	return text;
+}
+
+function getTimeStr(seconds) {
+
+	var hour = parseInt(seconds/3600);
+	var min = parseInt((seconds%3600)/60);
+	var sec = seconds%60;
+	
+	var tmpStr = '';
+	if(hour > 0){
+		if(hour < 10){
+			tmpStr += '0';
+		}
+		tmpStr += hour+'시 ';
+		
+	}
+	if(min<10){
+		tmpStr += '0';
+	}
+	tmpStr += min+'분 ';
+	if(sec<10){
+		tmpStr += '0';
+	}
+	tmpStr += sec+'초';
+	
+	
+	return tmpStr;
+	//document.getElementById("demo").innerHTML = hour+":"+min+":" + sec
+}
+
+/*
+	function LtGtconverter(convertText){
+	let mapobj3 = {
+    	'<' : '&lt;',
+    	'>' : '&gt;',
+    	'&lt;' : '<',
+    	'&gt;' : '>'
+	}
+	
+	let str = convertText.replace(/<|>|&gt;|&lt;/gi, function(matched){
+   		return mapobj3[matched];
+   	});
+	
+	return str;
+}
+ */
+</script>
+<div class="tabBox active" id="tab01">
+	
+		<div class="lecture_grayBox">
+			
+			
+			<p>
+				<strong class="txt_point">NCS분류</strong>
+				<span>
+					
+						 &gt;  정보통신  &gt;  정보기술  &gt;  정보기술개발  &gt;  응용SW엔지니어링  &gt;  서버프로그램 구현
+					
+				</span>
+			</p>
+			
+		</div>
+
+			 <!-- 교육개요 -->
+				
+					<h4>교육개요</h4>
+					<div id="edu_ovrvw"></div>
+					 <!-- debugger; -->
+
+			 <!-- 학습목표 -->
+				
+					<h4>학습목표</h4>
+					<div id="stdy_gole"></div>
+
+			 <!-- 학습대상 -->
+				
+					<h4>학습대상</h4>
+					<div id="takelect_trgt"></div>
+			
+			 <!-- 수료기준안내 -->
+				<h4>수료기준안내</h4>
+				
+					<div id="fc_cntnt"></div>
+					
+				
+				
+					<table class="table_hori">
+						<caption>
+							총점
+							, 항목
+							, 반영비율
+							, 기준
+							으로 이루어진 테이블
+						</caption>
+						<colgroup>
+							
+							<col width="25%">
+							<col width="25%">
+							<col width="25%">
+							<col width="25%">
+						</colgroup>
+						<tbody>
+						
+						
+						<tr>
+							
+								
+								
+									<th style="text-align:center">총점</th>
+								
+							
+							<th style="text-align:center">항목</th>
+							<th style="text-align:center">반영비율</th>
+							<th style="text-align:center">기준</th>
+						</tr>
+						
+							
+							<tr>
+								
+									
+									
+										<td style="text-align:center" rowspan="1">60점 이상</td>
+									
+								
+								<td style="border-left: 1px solid #d7d7d7;text-align:center;">진도율</td>
+								<td style="border-left: 1px solid #d7d7d7;text-align:center;">100%</td>
+								<td style="border-left: 1px solid #d7d7d7;text-align:center;">80점 이상</td>
+							</tr>
+						
+						</tbody>
+					</table>
+</div>
+<!-- 학습목차 -->
+
+<div class="tabBox" id="tab02">
+	<!-- list_study -->
+	
+
+	<!-- list_contents -->
+	
+		
+			<span id="span_total_time">총 학습시간 : 00시 00분 00초</span>
+			<div class="list_contents_dpeth">
+					<div class="list">
+							<div class="titBox">
+								1. 실습 환경 설치
+								( 
+								<script>
+									document.write(getTimeStr('2410'));
+								</script>
+								 )
+							</div>
+							<div class="contentsBox">
+							</div>
+						</div>
+						<div class="list">
+							<div class="titBox">
+								2. 스프링 부트 개념 및 특징
+								( 
+								<script>
+									document.write(getTimeStr('1713'));
+								</script>
+								 )
+							</div>
+							<div class="contentsBox">
+							</div>
+						</div>
+						<div class="list">
+							<div class="titBox">
+								3. 스프링 부트 퀵 스타트
+								( 
+								<script>
+									document.write(getTimeStr('1703'));
+								</script>
+								 )
+							</div>
+							<div class="contentsBox">
+							</div>
+						</div>
+						<div class="list">
+							<div class="titBox">
+								4. 스프링 부트 스타터
+								( 
+								<script>
+									document.write(getTimeStr('1768'));
+								</script>
+								 )
+							</div>
+							<div class="contentsBox">
+							</div>
+						</div>
+						<div class="list">
+							<div class="titBox">
+								5. 스프링 부트 자동 설정
+								( 
+								<script>
+									document.write(getTimeStr('1863'));
+								</script>
+								 )
+							</div>
+							<div class="contentsBox">
+							</div>
+						</div>
+						<div class="list">
+							<div class="titBox">
+								6. 스프링 부트 테스트(웹 애플리케이션 테스트)
+								( 
+								<script>
+									document.write(getTimeStr('1749'));
+								</script>
+								 )
+							</div>
+							<div class="contentsBox">
+							</div>
+						</div>
+						<div class="list">
+							<div class="titBox">
+								7. 스프링 부트 테스트(통합 테스트)
+								( 
+								<script>
+									document.write(getTimeStr('1726'));
+								</script>
+								 )
+							</div>
+							<div class="contentsBox">
+							</div>
+						</div>
+						<div class="list">
+							<div class="titBox">
+								8. 스프링 부트의 로깅과 빌드
+								( 
+								<script>
+									document.write(getTimeStr('1877'));
+								</script>
+								 )
+							</div>
+							<div class="contentsBox">
+							</div>
+						</div>
+				<script>
+					$('#span_total_time').text('총 학습시간 : '+getTimeStr('14809'));
+				</script>
+			</div>
+	<!-- EOD : list_contents -->
+</div>
+<!-- EOD:학습목차 -->
+
+<!-- 강사소개 Start-->
+<div class="tabBox" id="tab03">
+	
+		<h4>강사소개</h4>
+		<div id="tchr_intrdctn"></div>
+</div>
+<!-- EOD:강사소개-->
+
+<!-- 교재정보 Start-->
+<div class="tabBox" id="tab04">
+
+	<h4>교재정보</h4>
+	<!-- list_Book -->
+	<div id="txtbk_dtl"></div>
+	
+
+</div>
+<!-- 교재정보 End -->
+<!-- 수강후기 Start -->
+<div class="tabBox" id="tab05">
+	<!-- list_review -->
+	<div class="list_review">
+		<ul id="reviewUlList">
+
+		</ul>
+	</div>
+	<!-- moreBox -->
+	<div class="moreBox">
+		<button type="button" class="more_btn" id="reviewMore" onclick="jsReviewMore();"><i class="icon_more"></i><span class="blind">더보기</span></button>
+	</div>
+	<!-- EOD : moreBox -->
+</div>
+<!-- 수강후기 End -->
+						</div>
+						<!-- EOD : tab_Content -->
+
+					</div>
+					<!-- EOD : lectureContentIn -->
+				</div>
+				<!-- EOD : lectureContent -->
+
+				<!-- lectureDeInfo -->
+				<div class="lectureDeInfo">
+					<!--기존 table위치  -->
+
+					
+						<h4>
+							연관
+							과정
+						</h4>
+						<!-- list_Process -->
+						<div class="list_Process">
+							<ul>
+								
+									<li>
+										<a href="javascript:void(0);" onclick="doMoveCrs('45356', '76032');" title="해당 연관과정으로 이동">
+											<div class="imgBox">
+														<img class="cropImg" src="https://cms23.step.or.kr/file/download?filePath=/olei/board/2022/02/FA2F6384-1C75-2E93-9F7B-4017D45C82DB.png" alt="스프링 부트 응용" title="스프링 부트 응용" onerror="this.src='/images/template9/resp/default/usr/no_img_process.png'"/>
+											</div>
+											<div class="txtBox">
+												<div class="titBoxIn">
+													<p class="tit">스프링 부트 응용</p>
+												</div>
+											</div>
+										</a>
+									</li>
+								
+							</ul>
+						</div>
+					
+					<!-- EOD : list_Process -->
+
+				</div>
+			</div>
+
+
+		</div>
+		<!-- EOD:lectureLayout -->
+	</div>
+</form>
+
+	</div>
+	<!-- EOD : contentLayout -->
+
+	 <!-- #footer start -->
+    <section >
+
+<!-- footerLayout -->
+<footer class="footerLayout">
+	<!-- footerBox -->
+	<div class="footerBox">
+		<!-- cop_area -->
+		<div class="cop_area">
+			<!-- cop_areaIn -->
+			<div class="cop_areaIn">
+				<ul class="cop_menu">
+					<li><a href="/privateTermsUse.do">서비스 이용약관</a></li>
+
+					<li><a class="personUrl">개인정보처리방침</a></li>  <!-- asis랑 병합 2023.07.20 -->
+					<li><a href="/emailReject.do">이메일무단수집거부</a></li>
+				</ul>
+
+
+				<!-- Family Site <기존에 없던 기능이라 임의로 위치, 위치이동 및 class 명 변경 필요>-->
+				<label for="familySite" class="blind"></label>
+			   	<select class="selectpicker ft_select" id="familySite">
+		          <option value="">Family Site</option>
+		         	
+		         		 <option value="http://tjdaewoo.co.kr">DW아카데미</option>
+					
+		        </select>
+		        <!-- EOD : Family Site -->
+
+			</div>
+			<!-- EOD : cop_areaIn -->
+		</div>
+		<!-- EOD : cop_area -->
+
+		<!-- footerInner -->
+		<div class="footerInner">
+		
+			<!-- siteInfo -->
+
+					<div class="siteInfo">
+						<p class="ft_color">DW아카데미학원</p>
+						<p></p>
+					</div>
+			<!-- EOD : siteInfo -->
+			<div class="hot_number">
+				  <p>고객센터</p>
+				  <div class="hot_numberIn flex">
+					<i class="icon_tel"></i>
+					<p class="hot_info">
+						<span class="number ft_color">042-222-2402</span>
+						<span class="ft_color">okdaewo@naver.com</span>
+						<span>09:00 - 18:00</span>
+					</p>
+				  </div>
+			</div>
+		</div>
+		<!-- EOD : footerInner -->
+	</div>
+	<!-- EOD : footerBox -->
+</footer>
+<script>
+  	jQuery("#familySite").change(function(){
+  		var url = jQuery("#familySite").val();
+  		if(url != '' && url != undefined){
+  			loadFamilySite(url);
+  		}
+  	});
+  	
+  	/* 2024-04-30 hwson 개인정보처리방침 링크 변경 */  
+	$(".personUrl").on("click" , function(){
+		var url= "https://www.koreatech.ac.kr/menu.es?mid=a10903000000"
+		window.open(url, '_blank');
+	});	  
+	/* 2024-04-30 hwson 개인정보처리방침 링크 변경 */  
+
+  	function loadFamilySite(url){
+		if(navigator.userAgent.indexOf("APP_Running")>-1){
+			location.href="wbviewer://outPageLoad?url="+url;
+		}else{
+			window.open(url);
+		}
+		jQuery("#familySite").val("");
+		$(".selectpicker").selectpicker('refresh');
+	}
+  </script>
+<!-- EOD : footerLayout -->
+
+    </section>
+    <!-- //#footer end -->
+
+<script type="text/javascript" charset="utf-8" src="/dext5/editor/js/dext5editor.js"></script>
+<script src="/js/common/jquery/jquery.cookie.js"></script>
+<style>
+.main_Pop img{
+	width: 100%;
+	height: 100%;
+}
+</style>
+<script >
+	var popYn = true;
+	var mModeYn = false;
+
+	/* 모바일 브라우저(앱 X)에서 팝업 사용하지 않을시 주석 해제 */
+	// if((navigator.userAgent.indexOf("APP_Running")>-1) || navigator.userAgent.match(/Android|BlackBerry|Windows CE|Nokia|Webos|OperaMini|SonyEricsson|Opera Mobi|IEMobile/)){
+	//  	popYn = false;
+	// }
+
+	function pophide(id, type){
+		jQuery("#pop_p_"+id).remove();
+		popUpDim();
+	}
+
+	//dext5 에디터 설정
+	function createDextEditor2(convertContent, mode, id, vrtclSize) { // 매개변수(에디터에들어갈내용, 에디터모드, 에디터 들어갈 div아이디)
+	    DEXT5.config.Height = (vrtclSize*0.9)+'px';
+		DEXT5.config.ViewModeAutoHeight = "0";
+	    DEXT5.config.Width = "100%";
+	    DEXT5.config.Mode = mode;
+	    DEXT5.config.EditorBorder = "0";
+	    DEXT5.setBodyValueEx(convertContent, id);
+	    DEXT5.config.EditorHolder = id;
+	    new Dext5editor(id);
+	}
+
+	function fnClose(id, type){
+		setCookiePop(id, 1);
+		if(type == "01"){
+			self.close();
+		}else if(type == "0201" ){
+			jQuery("#pop_p_"+id).hide();
+		}else if(type == "0202"){
+			jQuery("#pop_p_"+id).hide();
+		}
+		popUpDim();
+	}
+
+	function setCookiePop(id, expiredays){
+		var today = new Array();
+		var bCookie = true;
+		var cookies = document.cookie;
+		if(jQuery.cookie("today") != null){
+			today = jQuery.cookie("today").split(",");
+			for(var i = 0; i < today.length; i++){
+				if(today[i] == id){
+					bCookie = false;
+					return;
+				}
+			}
+		}
+		if(bCookie) today.push(id);
+		jQuery.cookie("today", today, {expires:expiredays,path:'/'});
+	}
+
+	if(popYn){
+		
+	
+		
+	
+	}else {
+	
+		
+	
+	}
+
+	function popUpDim(){
+		var popCount = $('.main_Pop_wrap .main_Pop').length; // 전체 팝업 개수
+		var modalNum = $('.main_modal_area .main_Pop').length; // 모달 팝업 개수
+
+		
+
+		if(popCount == "0") { // 레이어 팝업 개수가 0개일때
+			$('.main_Pop_wrap').hide(); // 전체 팝업 영역 가림 처리
+		}
+
+		if(modalNum == "0"){ // 레이어 모달 팝업 개수가 0개일때
+			$('.main_modal_area').hide(); // dim 영역 가림 처리
+		}
+	}
+
+	function popUpHeightChk(popWidth, popHeight, popTop, popLeft, obj, mode){
+		var winHeight = getWindowHeight();
+		var winWidth = getWindowWidth();
+		var useHeight = parseInt(winHeight * 0.9);
+		var useWidth = parseInt(winWidth * 0.9);
+
+		if(winWidth < (popWidth + popLeft) || winHeight < (popHeight + popTop)) {
+			if(winWidth < (popWidth + popLeft) ){
+				popWidth = useWidth;
+			}
+			if(winHeight < (popHeight + popTop)){
+				popHeight = useHeight;
+			}
+			// 레이어가 창보다 크면 크기 조정
+			var objTxt1 = obj + " > .main_PopC";
+			jQuery(obj).attr("style","width:" + popWidth + "px; top:" + parseInt(winHeight * 0.05) + "px; left:" + parseInt(winWidth * 0.05) + "px; height:" + popHeight + "px; !important;");
+			jQuery(".main_PopC").attr("style", "height:" + (popHeight - 120) + "px; !important");
+			jQuery(objTxt1).css("overflow", "auto");
+		}
+	}
+
+	function fnSurvalreturn(){
+		
+		
+		
+			opener.location.href="/usrs/mypage/mySurveyListForm.do";
+		
+		this.close();
+	}
+
+</script>
+<form name="popForm">
+	<input type="hidden" name="cntnt" id="cntnt" value="" />
+	<input type="hidden" name="title" id="title" value="" />
+	
+	
+	
+		<!-- main_Pop_wrap -->
+		<div class="main_Pop_wrap">
+			<!-- main_Pop_area -->
+			<div class="main_Pop_area">
+				<!-- main_layer_area -->
+				<div class="main_layer_area">
+					
+				</div>
+				<!-- EOD : main_layer_area -->
+
+				<!-- main_modal_area -->
+				<div class="main_modal_area">
+					
+				</div>
+				<!-- EOD : main_modal_area -->
+			</div>
+			<!-- EOD : main_Pop_area -->
+		</div>
+		<!-- EOD : main_Pop_wrap -->
+	
+</form>
+
+</body>
+</html>

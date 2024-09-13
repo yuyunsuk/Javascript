@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- <link rel="stylesheet" href="./css/wbUser.css" /> -->
+    <link rel="stylesheet" href="./css/wbCommon.css" />
+    
+    <!-- <link rel="stylesheet" href="./css/sub_contentLayout.css" /> -->
+    <!-- <link rel="stylesheet" href="./css/tab_arrowBox.css" /> -->
+    <link rel="stylesheet" href="./css/sub_navBox.css" />
+
+    <title>Document</title>
+</head>
+<body>
+
+     <!-- contentLayout -->
+	<div class="sub_contentLayout" id="content"></div>
+
+        <nav class="sub_navBox">
+            <p class="nav_tit">강의과정</p>
+            <div class="sub_navBoxIn">
+                <div class="content_wrap">
+                    <ul class="sub_nav">
+                        <li class='active open '>
+                            <a href="javascript:goMenu('/usrs/eduRegMgnt/crsRegListForm.do?p_crstype=ALL','00')"> <!-- 전체과정 57 --> 
+                                <span>전체과정</span><span>57</span>
+                            </a>
+                        </li>
+                        <li class="no_sub">
+                            <a href="javascript:goMenu('/usrs/eduRegMgnt/crsRegListForm.do?p_crstype=ON','01')"> <!-- 응용SW엔지니어링 10 -->
+                                <span>응용SW엔지니어링</span><span>10</span>
+                            </a>
+                        </li>
+                        <li class="no_sub">
+                             <a href="javascript:goMenu('/usrs/eduRegMgnt/crsRegListForm.do?p_crstype=OFF','02')"> <!-- DB엔지니어링 4 -->
+                                <span>DB엔지니어링</span><span>4</span>
+                             </a>
+                        </li>
+                        <li class="no_sub">
+                             <a href="javascript:goMenu('/usrs/eduRegMgnt/crsRegListForm.do?p_crstype=PK','03')"> <!-- 디자인 30 -->
+                                <span>디자인</span><span>30</span>
+                             </a>
+                        </li>
+                        <li class="no_sub">
+                            <a href="javascript:goMenu('/usrs/eduRegMgnt/crsRegListForm.do?p_crstype=PK','04')"> <!-- UI/UX엔지니어링 7 -->
+                                <span>UI/UX엔지니어링</span><span>7</span>
+                            </a>
+                        </li>
+                        <li class="no_sub">
+                            <a href="javascript:goMenu('/usrs/eduRegMgnt/crsRegListForm.do?p_crstype=PK','05')"> <!-- 인공지능 1 -->
+                                <span>인공지능</span><span>1</span>
+                            </a>
+                        </li>
+                        <li class="no_sub">
+                            <a href="javascript:goMenu('/usrs/eduRegMgnt/crsRegListForm.do?p_crstype=PK','06')"> <!-- 기타 5 -->
+                                <span>기타</span><span>5</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <form id="formMove" name="formMove" method="post"	onsubmit="return false;">
+
+            <!-- Start: content_wrap  -->
+            <div class="content_wrap">
+
+                <!--  lectureLayout -->
+                <div class="lectureLayout">
+
+                    <!-- lectureT -->
+                    <div class="lectureT">
+                        <!-- lectureBox -->
+                        <div class="lectureBox flex">
+                            
+                            <!-- lectureBoxL -->
+                            <div class="lectureBoxL">
+                                <div class="thumBox">
+                                        <img class="cropImg" src="http://localhost:8080/image/L00000000001.png"
+                                                alt=""
+                                                title="" />
+                                </div>
+                            </div>
+                            <!-- EOD:lectureBoxL -->
+
+                            <!-- lectureBoxR -->
+                            <div class="lectureBoxR">
+
+                                <!-- lectureInfo -->
+                                <div class="lectureInfo">
+                                    <div class="lectureInfoT">
+                                        <p class="tit">
+                                            스프링 부트 기초
+                                        </p>
+                                        <ul class="tag">
+                                        </ul>
+                                    </div>
+                                    <div class="lectureInfoB">
+                                        <ul class="list">
+                                            <li>
+                                                <div class="label">
+                                                    <span>교육기간</span>:
+                                                </div>
+                                                <div class="dataBox">
+                                                        2024-03-18 ~ 2024-12-31
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="label">
+                                                    <span>신청기간</span>:
+                                                </div>
+                                                <div class="dataBox" id="select_start_end_day">
+                                                    <!-- 2022-03 김동진 수강신청기간이 아닐때 select box제거-->
+                                                        <div class="selectBox">
+                                                            <label for="p_crsseqreg_id"> <span>  
+                                                                            2024-03-18 ~ 2024-12-31
+                                                            </span>
+                                                            </label> <select id="p_crsseqreg_id" name="p_crsseqreg_id"
+                                                                onchange="doMoveCrs('45355',this.value);">
+                                                                <option value="">선택</option>
+                                                                    <option value="76031"
+                                                                        selected="selected">
+                                                                        2024-03-18 ~
+                                                                        2024-12-31</option>
+                                                            </select>
+                                                        </div>
+                                                </div> 
+                                            </li>
+                                            <li>
+                                                <div class="label">
+                                                    <span>교육시간</span>:
+                                                </div>
+                                                <div class="dataBox">
+                                                    <span> 8 시간 
+                                                    </span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="label">
+                                                    <span>교육비</span>:
+                                                </div>
+                                                <div class="dataBox">
+                                                    <span>  
+                                                                무료
+                                                    </span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- EOD : lectureInfo -->
+                            </div>
+                            <!-- EOD : lectureBoxR -->
+                        </div>
+                    </div>
+                    <!-- EOD:lectureBox -->
+                    <!-- EOD:lectureT -->
+
+                    <div class="buttonBox pc">
+                        <ul class="flex ai-c jc-c">
+                            <li>
+                                <button type="button" class="btn_white"
+                                    onclick="jsContentsPreView('45355','76031','0037630');">
+                                    <i class="icon_play"></i> <span> 맛보기
+                                    </span>
+                                </button>
+                            </li>
+                            <li><button type="button" id="favorsp"
+                                    class="favorsp btn_white "
+                                    onclick="crsFavor('N','Y');">
+                                    <i class="icon_heart"></i><span>관심과정</span>
+                                </button>
+                            </li>
+                            <li><button type="button" class="btn_blue"
+                                    onclick="fnGoStep1('22')">
+                                    <span>수강신청</span>
+                                </button>
+                            </li>
+                            <!-- listBtnBox -->
+                            <li class="listBtnBox"><a href="javascript:void(0);"
+                                onclick="jsList();" class="btn_m_black">목록</a>
+                            </li>
+                            <!-- EOD : listBtnBox -->
+                        </ul>
+                    </div>
+
+                    <!-- lectureB -->
+                    <div class="lectureB">
+                        <!-- lectureContent -->
+                        <div class="lectureContent">
+                            <div class="lectureContentIn">
+
+                                <!-- tab_arrowBox -->
+                                <div class="tab_arrowBox">
+                                    <!-- tab_arrow -->
+                                    <ul class="tab_arrow flex" role="tablist">
+                                        <li class="active" id="crsTab0">
+                                            <a href="javascript:void(0);"
+                                                onclick="tabsClick('tabBox', '#tab01', this);"><span>과정소개</span></a></li>
+                                        <li><a href="javascript:void(0);"
+                                                onclick="tabsClick('tabBox', '#tab02', this);"><span>학습목차</span></a></li>
+                                        <li><a href="javascript:void(0);"
+                                                onclick="tabsClick('tabBox', '#tab03', this);"><span>강사소개</span></a></li>
+                                        <li><a href="javascript:void(0);"
+                                                onclick="tabsClick('tabBox', '#tab04', this);"><span>교재정보</span></a></li>
+                                        <li id="reviewTab">
+                                            <a href="javascript:void(0);"
+                                                onclick="tabsClick('tabBox', '#tab05', this);"><span>수강후기</span></a></li>
+                                    </ul>
+                                    <!-- EOD : tab_arrow -->
+                                </div>
+                                <!-- EOD : tab_arrowBox -->
+
+                                <!-- tab Content -->
+                                <div class="tab_Content">
+                                    <div class="tabBox active" id="tab01">
+                                        <!-- 교육개요 -->
+                                        <h4>교육개요</h4>
+                                        <div id="edu_ovrvw"></div>
+
+                                        <!-- 학습목표 -->
+                                        <h4>학습목표</h4>
+                                        <div id="stdy_gole"></div>
+
+                                        <!-- 학습대상 -->
+                                        <h4>학습대상</h4>
+                                        <div id="takelect_trgt"></div>
+
+                                        <!-- 수료기준안내 -->
+                                        <h4>수료기준안내</h4>
+                                        <div id="fc_cntnt"></div>
+
+                                        <table class="table_hori">
+                                            <caption>
+                                                총점
+                                                , 항목
+                                                , 반영비율
+                                                , 기준
+                                                으로 이루어진 테이블
+                                            </caption>
+                                            <colgroup>
+                                                <col width="25%">
+                                                <col width="25%">
+                                                <col width="25%">
+                                                <col width="25%">
+                                            </colgroup>
+                                            <tbody>
+                                                <tr>
+                                                    <th style="text-align:center">총점</th>
+                                                    <th style="text-align:center">항목</th>
+                                                    <th style="text-align:center">반영비율</th>
+                                                    <th style="text-align:center">기준</th>
+                                                </tr>
+                                                <tr>
+                                                    <td style="text-align:center" rowspan="1">60점 이상</td>
+                                                    <td style="border-left: 1px solid #d7d7d7;text-align:center;">진도율</td>
+                                                    <td style="border-left: 1px solid #d7d7d7;text-align:center;">100%</td>
+                                                    <td style="border-left: 1px solid #d7d7d7;text-align:center;">80점 이상</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                                                
+                                    <!-- 학습목차 -->
+                                    <div class="tabBox" id="tab02">
+                                    <!-- list_study -->
+                                    <!-- list_contents -->
+                                        <span id="span_total_time">총 학습시간 : 00시 00분 00초</span>
+                                        <div class="list_contents_dpeth">
+                                                <div class="list">
+                                                        <div class="titBox">
+                                                            1. 실습 환경 설치
+                                                            ( 
+                                                            <script>
+                                                                document.write(getTimeStr('2410'));
+                                                            </script>
+                                                            )
+                                                        </div>
+                                                        <div class="contentsBox">
+                                                        </div>
+                                                    </div>
+                                                    <div class="list">
+                                                        <div class="titBox">
+                                                            2. 스프링 부트 개념 및 특징
+                                                            ( 
+                                                            <script>
+                                                                document.write(getTimeStr('1713'));
+                                                            </script>
+                                                            )
+                                                        </div>
+                                                        <div class="contentsBox">
+                                                        </div>
+                                                    </div>
+                                                    <div class="list">
+                                                        <div class="titBox">
+                                                            3. 스프링 부트 퀵 스타트
+                                                            ( 
+                                                            <script>
+                                                                document.write(getTimeStr('1703'));
+                                                            </script>
+                                                            )
+                                                        </div>
+                                                        <div class="contentsBox">
+                                                        </div>
+                                                    </div>
+                                                    <div class="list">
+                                                        <div class="titBox">
+                                                            4. 스프링 부트 스타터
+                                                            ( 
+                                                            <script>
+                                                                document.write(getTimeStr('1768'));
+                                                            </script>
+                                                            )
+                                                        </div>
+                                                        <div class="contentsBox">
+                                                        </div>
+                                                    </div>
+                                                    <div class="list">
+                                                        <div class="titBox">
+                                                            5. 스프링 부트 자동 설정
+                                                            ( 
+                                                            <script>
+                                                                document.write(getTimeStr('1863'));
+                                                            </script>
+                                                            )
+                                                        </div>
+                                                        <div class="contentsBox">
+                                                        </div>
+                                                    </div>
+                                                    <div class="list">
+                                                        <div class="titBox">
+                                                            6. 스프링 부트 테스트(웹 애플리케이션 테스트)
+                                                            ( 
+                                                            <script>
+                                                                document.write(getTimeStr('1749'));
+                                                            </script>
+                                                            )
+                                                        </div>
+                                                        <div class="contentsBox">
+                                                        </div>
+                                                    </div>
+                                                    <div class="list">
+                                                        <div class="titBox">
+                                                            7. 스프링 부트 테스트(통합 테스트)
+                                                            ( 
+                                                            <script>
+                                                                document.write(getTimeStr('1726'));
+                                                            </script>
+                                                            )
+                                                        </div>
+                                                        <div class="contentsBox">
+                                                        </div>
+                                                    </div>
+                                                    <div class="list">
+                                                        <div class="titBox">
+                                                            8. 스프링 부트의 로깅과 빌드
+                                                            ( 
+                                                            <script>
+                                                                document.write(getTimeStr('1877'));
+                                                            </script>
+                                                            )
+                                                        </div>
+                                                        <div class="contentsBox">
+                                                        </div>
+                                                    </div>
+                                            <script>
+                                                $('#span_total_time').text('총 학습시간 : '+getTimeStr('14809'));
+                                            </script>
+                                        </div>
+                                    <!-- EOD : list_contents -->
+                                    </div>
+                                    <!-- EOD:학습목차 -->
+
+                                    <!-- 강사소개 Start-->
+                                    <div class="tabBox" id="tab03">
+                                        <h4>강사소개</h4>
+                                        <div id="tchr_intrdctn"></div>
+                                    </div>
+                                    <!-- EOD:강사소개-->
+
+                                    <!-- 교재정보 Start-->
+                                    <div class="tabBox" id="tab04">
+                                        <h4>교재정보</h4>
+                                        <!-- list_Book -->
+                                        <div id="txtbk_dtl"></div>
+                                    </div>
+                                    <!-- 교재정보 End -->
+
+                                    <!-- 수강후기 Start -->
+                                    <div class="tabBox" id="tab05">
+                                        <!-- list_review -->
+                                        <div class="list_review">
+                                            <ul id="reviewUlList">
+                                    
+                                            </ul>
+                                        </div>
+                                        <!-- moreBox -->
+                                        <div class="moreBox">
+                                            <button type="button" class="more_btn" id="reviewMore" onclick="jsReviewMore();"><i class="icon_more"></i><span class="blind">더보기</span></button>
+                                        </div>
+                                        <!-- EOD : moreBox -->
+                                    </div>
+                                    <!-- 수강후기 End -->
+
+                                </div>
+                                <!-- EOD : tab_Content -->
+                            </div>
+                            <!-- EOD : lectureContentIn -->
+                        </div>
+                        <!-- EOD : lectureContent -->
+
+                    </div>
+                    <!-- EOD : lectureB -->
+
+                </div>
+                <!-- EOD : lectureLayout -->
+
+            </div>
+            <!-- End : content_wrap -->
+
+        </form>
+
+    </div>
+    <!-- EOD : contentLayout -->
+
+</body>
+</html>

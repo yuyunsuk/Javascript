@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Event Tracker</title>
+</head>
+<body>
+    <!-- <video id="video" width="640" height="360" controls>
+        <source src="your-video-file.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video> -->
+    <video
+    id="my-video"
+    class="video-js"
+    controls
+    preload="auto"
+    width="810"
+    height="540"
+    poster="http://localhost:8080/lecture/L00000000055/01.png"
+    data-setup="{}"
+  >
+    <source src="http://localhost:8080/lecture/L00000000055/01.mp4" type="video/mp4" />
+    <source src="" type="video/mp4" />
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a
+      web browser that
+      <a href="https://videojs.com/html5-video-support/" target="_blank"
+        >supports HTML5 video</a
+      >
+    </p>
+  </video>
+    <script>
+        const video = document.getElementById('my-video');
+        let startTime = 0;
+        let totalTime = 0;
+
+        video.addEventListener('play', () => {
+            startTime = video.currentTime;
+            console.log('Video started at: ' + startTime);
+            alert('Video started at: ' + startTime);
+        });
+
+        video.addEventListener('pause', () => {
+            const elapsedTime = video.currentTime - startTime;
+            totalTime += elapsedTime;
+            console.log('Video paused. Elapsed time: ' + elapsedTime + ', Total time: ' + totalTime);
+            alert('Video paused. Elapsed time: ' + elapsedTime + ', Total time: ' + totalTime);
+            sendTimeToServer(totalTime);
+        });
+
+        video.addEventListener('ended', () => {
+            const elapsedTime = video.currentTime - startTime;
+            totalTime += elapsedTime;
+            console.log('Video ended. Elapsed time: ' + elapsedTime + ', Total time: ' + totalTime);
+            alert('Video ended. Elapsed time: ' + elapsedTime + ', Total time: ' + totalTime);
+            sendTimeToServer(totalTime);
+        });
+
+        function sendTimeToServer(time) {
+
+            function formatTime(seconds) {
+                const hrs = Math.floor(seconds / 3600);
+                const mins = Math.floor((seconds % 3600) / 60);
+                const secs = Math.floor(seconds % 60);
+
+                const formattedHrs = hrs > 0 ? `0${hrs}:` : "00";
+                const formattedMins = mins < 10 ? `0${mins}` : mins;
+                const formattedSecs = secs < 10 ? `0${secs}` : secs;
+
+                //return `${formattedHrs}:${formattedMins}:${formattedSecs}`;
+                return `${formattedHrs}${formattedMins}${formattedSecs}`;
+            }
+
+            console.log("totalTime: " + formatTime(time));
+            alert("totalTime: " + formatTime(time));
+
+            // fetch('/save-time', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     },
+            //     body: JSON.stringify({ time: time })
+            // })
+            // .then(response => response.json())
+            // .then(data => {
+            //     console.log('Success:', data);
+            // })
+            // .catch((error) => {
+            //     console.error('Error:', error);
+            // });
+        }
+    </script>
+</body>
+</html>

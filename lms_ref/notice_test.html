@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 실행시 공지사항 입력부분 hidden [visually-hidden 으로 숨겨짐] -->
+    <!-- <link rel="stylesheet" href="/ref_css3/bootstrap.css" /> -->
+
+    <!-- <link rel="stylesheet" href="/ref_css3/bootstrap-icons.css" /> -->
+
+    <!-- 제목+내용 부분 selectpicker{display:none!important} -->
+    <!-- <link rel="stylesheet" href="/ref_css3/bootstrap-select.min.css" /> -->
+
+    <!-- <link rel="stylesheet" href="/ref_css3/jquery-ui.css" /> -->
+
+    <!-- <link rel="stylesheet" href="/ref_css3/style.min.css" /> -->
+    <!-- <link rel="stylesheet" href="/ref_css3/theme.css" /> -->
+    <!-- <link rel="stylesheet" href="/ref_css3/swiper.min.css" /> -->
+    <link rel="stylesheet" href="/ref_css3/style.css" /> <!-- 메뉴 및 버튼, 테이블 디자인 부분 -->
+    <!-- <link rel="stylesheet" href="/ref_css3/style_custom.css" /> -->
+
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 헤더 시작 -->
+    <div id="header"></div>
+    <!-- 헤더 끝 -->
+
+    <!-- 바디 시작 -->
+    <div class="layer " id="mainLayer">
+        <div id="contentsLayer">
+            
+            <!-- 탑메뉴 시작 -->
+            <div class="page_hd">
+                <div class="hd_con">
+                    <span onclick="moLeftMenuOpen()" class="hd_cate_btn">
+                        커뮤니티<b class="M_only"><img src="/step/img/hd_select_arrow.png" alt="" ></b>
+                    </span>
+                    <ul class="page_menu">
+                        <li><a href="/home">HOME</a></li>
+                        <li><a href="/home/community">커뮤니티</a></li>
+                        <li><a href="/home/community/notice">공지사항</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 탑메뉴 종료 -->
+
+            <!-- 바디 컨텐츠 시작 -->
+            <div class="left_menu_wrapper">
+                <!-- 왼쪽 메뉴 시작 -->
+                <div class="left_menu">
+                    <ul>
+                        <li  class="active no_sub">
+                            <button type="button" class="menu_btn chk_mboile_sub_menu active" onclick="resize_chk_mobile_menu(this);" data-url = '/home/community/notice'>공지사항</button>
+                        </li>
+                        <li  class=" no_sub">
+                            <button type="button" class="menu_btn chk_mboile_sub_menu " onclick="resize_chk_mobile_menu(this);" data-url = '/home/community/freqQuestion'>자주묻는 질문</button>
+                        </li>
+                        <li  class=" no_sub">
+                            <button type="button" class="menu_btn chk_mboile_sub_menu " onclick="resize_chk_mobile_menu(this);" data-url = '/home/community/event'>이벤트</button>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 왼쪽 메뉴 종료 -->
+
+                <!-- 오른쪽 컨텐츠 시작 -->
+                <main class="responsive-container p-1">
+                    <div class="content w_1240 column">
+                        <form id="searchForm" name="searchForm" action="/home/community/notice" method="get" onsubmit="return false;">
+                            <input id="boardNo" name="boardNo" type="hidden" value="75"/>
+                            <input id="pstNo" name="pstNo" type="hidden" value=""/>
+                            <input id="pageIndex" name="pageIndex" type="hidden" value="1"/>
+                            <input id="pageSize" name="pageSize" type="hidden" value="10"/>
+                            <input id="pstCtgryNo" name="pstCtgryNo" type="hidden" value=""/>
+                            
+                            <input id="delYn" name="delYn" type="hidden" value="N" />   <!-- 삭제된 글은 안보임 -->
+                            <input id="secretUseYn" name="boardVO.fnctnStng.secretUseYn" type="hidden" value="N"/>
+                            <input id="anonUseYn" name="boardVO.fnctnStng.anonUseYn" type="hidden" value="N"/>
+                            <input id="cmntAnonUseYn" name="boardVO.fnctnStng.cmntAnonUseYn" type="hidden" value="N"/>
+                            <input id="multiLangYn" name="boardVO.fnctnStng.multiLangYn" type="hidden" value="N"/>
+                            <input id="listPostCnYn" name="boardVO.sknStng.listPostCnYn" type="hidden" value="N"/>
+                            <input id="listPostCnTextYn" name="boardVO.sknStng.listPostCnTextYn" type="hidden" value="N"/>
+
+                            <div id="list">
+                                <div class="step_top_title">공지사항</div>
+
+                                <!-- 검색 부분 디자인 시작 -->
+                                <div class="sch_box m_20">
+                                    <label for="searchType" class="blind">검색 카테고리</label>
+                                    <select class="selectpicker" id="searchType" name="searchType">
+                                        <option value="searchTtlCn">제목+내용</option> 
+                                        <option value="searchTtl">제목</option>
+                                    </select>
+
+                                    <div class="sch_input_box">
+                                        <label for="searchValue" class="blind">검색어</label>
+                                        <input id="searchValue" name="searchValue" title="검색어" placeholder="검색어를 입력하세요." type="text" value=""/>
+                                        <button type="button" id="searchBtn" name="button" class="btn sch_btn brd_btn">
+                                            <img src="/step/img/sch_ico.png" alt="검색">
+                                        </button>
+                                    </div>
+                                </div>
+                                <!-- 검색 부분 디자인 종료 -->
+
+                                <style>
+
+                                    .sch_box.m_20 {
+                                        display: grid;
+                                        grid-template-columns: 3fr 7fr;
+                                    }
+
+                                    /* CSS 코드를 여기에 작성합니다 */
+                                    .selectpicker {
+                                        display: inline-block;
+                                        vertical-align: top;
+                                        position: relative;
+                                        padding-right: 60px;
+                                        border-radius: 5px;
+                                        overflow: hidden;
+                                        border: 2px solid #317abe;
+                                        width: 69.5%;
+                                        margin-left: 0.5%;
+                                        height: 60px;
+                                        box-sizing: border-box;
+                                        
+                                        width: 100%;
+                                        height: 100%;
+                                        padding-left: 15px;
+                                        padding-right: 30px;
+                                        font-size: 18px;
+                                        color: #999;
+                                        line-height: 40px;
+                                        /* border-width: 1px */
+                                        border-width: 2px
+                                    }
+
+                                </style>
+
+                                <!-- 탭페이지 시작 -->
+                                <ul class="tab_menu tab_menu_4 mb-30 tab_line_menu">
+                                    <li class="active" data-cate-id="">전체</li>
+                                    <li class="" data-cate-id="1">일반공지</li>
+                                    <li class="" data-cate-id="2">수강정보</li>
+                                    <li class="" data-cate-id="3">기타</li>
+                                </ul>
+                                <!-- 탭페이지 종료 -->
+
+                                
+                                <div class="board_list m_20">
+                                    
+                                    <!-- 공지사항 건수 표시 -->
+                                    <div class="count_box">
+                                        <span class="count" id="tableCountInfo"></span>
+                                    </div>
+
+                                    <!-- 공지사항 테이블 시작 -->
+                                    <table class="t_notice fix_table mo_fixed">
+                                        <caption class="blind">공지사항</caption>
+                                        <colgroup>
+                                            <col width="8%" class="mo_col_10">
+                                            <col width="8%" class="mo_col_15 cate_td">
+                                            <col width="auto" class="">
+                                            <col width="10%" class="mo_none">
+                                            <col width="10%" class="mo_col_25">
+                                            <col width="10%" class="mo_none">
+                                        </colgroup>
+                                        <tbody id="postHead">
+                                            <th class="text_center">No</th>
+                                            <th class="text_center">카테고리</th>
+                                            <th class="text_center">제목</th>
+                                            <th class="text_center mo_none">첨부파일</th>
+                                            <th class="text_center">등록일</th>
+                                            <th class="text_center mo_none">조회</th>
+                                        </tbody>
+
+                                        <!-- 공지여부 (공지) 리스트 시작 -->
+                                        <tbody id="postNoticeList">
+                                        </tbody>
+                                        <!-- 공지여부 (공지) 리스트 종료 -->
+
+                                        <!-- 공지여부 (일반) 리스트 시작 -->
+                                        <tbody id="postList">
+                                        </tbody>
+                                        <!-- 공지여부 (일반) 리스트 종료 -->
+
+                                    </table>
+                                    <!-- 공지사항 테이블 종료 -->
+
+                                    <!-- 아래 데이터에 대한 페이지 시작 -->
+                                    <div class="pg_wrap paging" id="pagination">
+                                    </div>
+                                    <!-- 아래 데이터에 대한 페이지 종료 -->
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- 공지사항 아래 버튼 시작 -->
+                        <div id="detail">
+                            <input type="hidden" id="cmntPageIndex" name="cmntPageIndex" value="1" />
+
+                            <div class="step_top_title">공지사항</div>
+                            <div class="board_view" id="post">
+                            </div>
+                            <div class="list-btn">
+                                <a href="javascript:;" class="brd_btn black-btn btn" id="bltnCopy">링크복사</a>
+                                <a href="javascript:;" class="brd_btn black-btn btn" id="listBtn">목록</a>
+                                <a href="javascript:;" class="brd_btn black-btn btn " id="editBtn" >수정</a>
+                                <a href="javascript:;" class="brd_btn grey-btn btn " id="deleteBtn">삭제</a>
+                            </div>
+                        </div>
+                        <!-- 공지사항 아래 버튼 종료 -->
+
+                        <!-- 공지사항 입력 부분 시작 [visually-hidden 으로 숨겨짐] -->
+                        <form id="editorForm" action="" method="post" class="visually-hidden" onsubmit="return false;">
+                            <div id="editor">
+                                <div class="step_top_title">공지사항</div>
+
+                                <input type="hidden" id="sendType" name="sendType" value="" />
+                                <input type="hidden" id="editPstNo" name="pstNo" value="" />
+                                <input type="hidden" id="editBoardNo" name="boardNo" value="" />
+                                <input type="hidden" id="editPstGroupNo" name="pstGroupNo" value="" />
+                                <input type="hidden" id="editPstGroupOrdr" name="pstGroupOrdr" value="" />
+                                <input type="hidden" id="editPstGroupLvl" name="pstGroupLvl" value="" />
+
+                                <ul class="board_write">
+                                    <li class="flex ">
+                                        <p class="wr_tit required">
+                                            카테고리
+                                        </p>
+                                        <p class="wr_con">
+                                            <select id="boardCategory" name="pstCtgryNo" aria-label="카테고리명" title="카테고리명">
+                                                <option value="1" >일반공지</option>
+                                                <option value="2" >수강정보</option>
+                                                <option value="3" >기타</option>
+                                            </select>
+                                        </p>
+                                    </li>
+                                    <li class="flex no_block visually-hidden" id="pstNtcYn">
+                                        <p class="wr_tit required">
+                                            공지여부
+                                        </p>
+                                        <p class="wr_con flex ai-c display">
+                                            <label class="flex ai-c" for="editNtcY"><input type="radio" id="editNtcY" name="ntcYn" value="Y" />공지</label>
+                                            <label class="flex ai-c" for="editNtcN"><input type="radio" id="editNtcN" name="ntcYn" value="N" checked/>일반</label>
+                                        </p>
+                                    </li>
+                                    <li id="ntcDate" class="flex visually-hidden" >
+                                        <p class="wr_tit required">
+                                            공지일시
+                                        </p>
+                                        <div>
+                                            <div class="d-flex my-auto open_date">
+                                                <div class="flex-column me-3">
+                                                    <input type="datetime-local" id="editNtcBgngDt" name="ntcBgngDt" class="form-control ntcDateTime" aria-describedby="editNctBgngDtLabel" min="2024-06-19T00:00" value="2024-06-19T00:00">
+                                                </div>
+                                                <div class="flex-column">
+                                                    <input type="datetime-local" id="editNtcEndDt" name="ntcEndDt" class="form-control ntcDateTime" aria-describedby="editNctEndDtLabel" min="2024-06-19T00:00" value="9999-12-31T23:59"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="flex">
+                                        <p class="wr_tit required">
+                                            제목
+                                        </p>
+                                        <p class="wr_con">
+                                            <label for="editPstTtl" class="form-label visually-hidden">제목</label>
+                                            <input type="text" maxlength="100" class="form-control" id="editPstTtl" name="pstTtl" placeholder="제목" required/>
+                                        </p>
+                                    </li>
+                                    <li class="flex">
+                                        <p class="wr_tit required">
+                                            내용
+                                        </p>
+                                        <div id="editor_area" class="wr_con"></div>
+                                        <textarea id="editPstCn" name="pstCn" class="visually-hidden" style="height: 300px; width: 100%" placeholder="게시물내용"></textarea>
+                                        <label for="editPstCn" class="d-none">게시물내용</label>
+                                    </li>
+                                    <li class="flex ">
+                                        <p class="wr_tit">
+                                            첨부파일
+                                        </p>
+                                        <div id="fileUploader1" class="wr_con" data-max-cnt="3" data-max-size="100000">
+
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="list-btn">
+                                    <a href="javascript:;" class="black-btn btn brd_btn" id="saveBtn">저장</a>
+                                    <a href="javascript:;" class="black-btn btn brd_btn" id="list2Btn">목록</a>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- 공지사항 입력 부분 종료 -->
+                        
+                    </div>
+                </main>
+                <!-- 오른쪽 컨텐츠 종료 -->
+
+            </div>
+            <!-- 바디 컨텐츠 종료 -->
+            <!-- left_menu_wrapper end -->
+
+        </div><!-- contentsLayer-->
+    </div>  <!-- layer end -->
+    <!-- 바디 끝 -->
+
+    <!-- 푸터 시작 -->
+    <div id="footer"></div>
+    <!-- 푸터 끝 -->
+
+</body>
+</html>

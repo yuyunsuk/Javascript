@@ -1,0 +1,281 @@
+@charset "utf-8";
+/*@import url(http://api.mobilis.co.kr/webfonts/css/?fontface=NanumGothicWeb);*/
+
+/*******************************************************************************   base  */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.pop-body .detail_tit {
+  background: #E5EAFC;
+  display: flex;
+  justify-content: space-between;
+  padding: 22px;
+  align-items: center;
+}
+
+.pop-body .detail_tit h2 {
+  line-height: 1.5;
+}
+
+.pop-body .sec01 {
+  display: flex;
+  margin-top: 25px;
+  margin-bottom: 50px;
+}
+
+.pop-body .sec01 .Thum {
+  margin-right: 35px;
+}
+
+.pop-body .sec01 .Thum figure {
+  min-width: 380px;
+  width: 380px;
+  max-width: 100%;
+}
+
+.pop-body .sec01 .Thum>figure>img {
+  width: 100%;
+}
+
+.pop-body .sec01 .Thum .company {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+}
+
+
+.pop-body .sec01 .Thum .company li a.home {
+  background: url(../img/market-home.png)no-repeat left;
+  background-size: 20px;
+  padding: 15px 15px 15px 25px;
+  color: #0B60A1;
+}
+
+.pop-body .sec01 .list {
+  flex: 9;
+}
+
+.pop-body .sec01 .list ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.pop-body .sec01 .list ul li {
+  position: relative;
+  margin-bottom: 15px;
+  padding-left: 15px;
+}
+
+.pop-body .sec01 .list ul li:before {
+  position:
+    absolute;
+  content:
+    '';
+  width: 7px;
+  height: 2px;
+  background: #0B60A1;
+  left: 0;
+  top: 10px;
+}
+
+.pop-body .sec01 .list ul li span {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.pop-body .sec01 .list ul li em {
+  font-style: normal;
+}
+
+
+.pop-body .sec01 .list ul li.amount em {
+  font-size: 17px;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.pop-body .sec03 {
+  margin-top: 35px;
+  position: relative;
+  display: table;
+}
+
+.pop-body .guide-menu {
+
+  width: 1200px;
+}
+
+.pop-body .guide-menu.Fixed {
+  position: fixed;
+  z-index: 999;
+  top: 59px;
+  width: 1200px;
+}
+
+.pop-body .guide-menu ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.pop-body .guide-menu ul li {
+  flex: 3;
+  text-align: center;
+}
+
+.pop-body .guide-menu ul li a {
+  background: #2F5293;
+  border: 1px solid #D2DEFD;
+  color: #fff;
+  display: block;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  padding: 15px;
+}
+
+.pop-body .guide-menu ul li a.current {
+  background: #fff;
+  color: #323232;
+  border-top: 3px solid #2F5293;
+  border-left: 1px solid #C4C4C4;
+  border-bottom: 0;
+}
+
+.pop-body .detail-Box {
+  border-left: 1px solid #C4C4C4;
+  border-right: 1px solid #C4C4C4;
+  border-bottom: 1px solid #C4C4C4;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 30px 15px 30px;
+  box-sizing: border-box;
+}
+
+.pop-body .detail-bx {
+  background: #F5F6F8;
+  margin-bottom: 30px;
+  padding: 25px 0;
+}
+
+.pop-body .detail-bx .txt-p {
+  padding: 20px 30px 0px 30px;
+}
+
+.pop-body .detail-bx p {
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+.pop-body h3.subtit {
+  border-bottom: 1px solid #C4C4C4;
+  padding-bottom: 25px;
+}
+
+.pop-body .review-wrap {
+  padding-top: 20px;
+}
+
+.pop-body .review-wrap .tit {
+
+  display: flex;
+
+  padding-left: 10px;
+}
+
+.pop-body .review-wrap .tit p {
+
+  font-size: 16px;
+
+  font-weight: bold;
+}
+
+.pop-body .review-wrap .tit em {
+  font-style: normal;
+  color: #818181;
+  margin-left: 20px;
+}
+
+.pop-body .review-wrap .tit .cancel {
+  border: none;
+  background: no-repeat;
+  width: auto;
+  min-width: auto;
+  height: auto;
+}
+
+.pop-body .review-wrap .tit .cancel img {
+  width: 15px;
+}
+
+.pop-body .review-wrap>p {
+  font-size: 16px;
+  margin: 15px 0;
+  padding-left: 10px;
+}
+
+.pop-body .review-wrap .BoTTom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.pop-body .review-wrap .BoTTom a.file-Down {
+  color: #0B60A1;
+  text-decoration: underline;
+}
+
+.pop-body .review-wrap .Reply {
+  background: #E4EAF5;
+  padding: 25px 30px;
+  margin: 25px 0;
+  border-radius: 5px;
+}
+
+.pop-body .review-wrap .Reply .tit p {
+  background: url(../img/market-inqury-reply-re.png)no-repeat;
+  background-size: 15px;
+  left: 0;
+  padding-left: 25px;
+}
+
+.pop-body .review-wrap .Reply>p {
+  padding: 25px 25px 5px 25px;
+}
+
+.pop-body .review-wrap .Reply-writ {
+  background: #F4F4F4;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.pop-body .review-wrap .Reply-writ textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  resize: none;
+  min-height: 200px;
+  padding: 15px;
+}
+
+.pop-body .review-wrap .Reply-writ textarea:placeholder {
+  color: #939393;
+}
+
+.pop-body .review-wrap .Reply-writ .BoTTom-btn {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.pop-body .review-wrap .Reply-writ .BoTTom-btn p {
+  min-width: 315px;
+  background: #fff;
+  border: 1px solid #C4C4C4;
+  text-align: center;
+  line-height: 34px;
+  color: #C4C4C4;
+  border-radius: 5px;
+}
